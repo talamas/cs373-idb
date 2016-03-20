@@ -1,0 +1,53 @@
+data:
+  extends:
+    file: docker-compose-common.yml
+    service: data
+
+db:
+  extends:
+    file: docker-compose-common.yml
+    service: db
+  ports:
+    # Publish the port so it's visible on the host, you can access the db directly
+    - "3306:3306"
+  environment:
+    # Environment variables to configure MySQL on startup.
+    # We don't care about commiting these creds to GitHub because they're only
+    # for our local development environment
+    - MYSQL_ROOT_PASSWORD=my-root-password-dev
+    - MYSQL_DATABASE=guestbook-dev
+    - MYSQL_USER=guestbook-admin
+    - MYSQL_PASSWORD=my-guestbook-admin-password-dev
+  volumes_from:
+    # Mount the volumes from the data container to store our MySQL files
+    - data
+
+app:
+  extends:
+    file: docker-compose-common.yml
+    service: app
+  ports:
+    # Publish the port so it's visible on the host, you can access the app directly
+    - "8000:8000"
+  links:
+    # Link to the db service to store state
+    - db:db
+  volumes:
+    # Mount the app dir in the container as /src so our changes to the app code
+    # are also changed in the container
+    - ./app:/src
+  command: gunicorn --reload app:app --bind 0.0.0.0:8000
+    # Run Gunicorn to serve app requests and reload on change so we can see our
+    # changes to the app code
+
+
+web:
+  extends:
+    file: docker-compose-common.yml
+    service: web
+  ports:
+    # Publish the port so it's visible on the host
+    - "80:80"
+  links:
+    # Link to the app to serve requests
+    - app:app
