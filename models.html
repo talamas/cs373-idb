@@ -1,0 +1,191 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module models</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>models</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/v/filer4b/v38q001/getz/cs373/cs373-idb/models.py">/v/filer4b/v38q001/getz/cs373/cs373-idb/models.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial">flask_sqlalchemy.Model(<a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="models.html#car">car</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#manufacturer">manufacturer</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="car">class <strong>car</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;model&nbsp;for&nbsp;a&nbsp;<a href="#car">car</a>,&nbsp;encapsulating&nbsp;the&nbsp;attributes&nbsp;we&nbsp;track&nbsp;for&nbsp;the&nbsp;<a href="#car">car</a><br>
+and&nbsp;foreign&nbsp;key&nbsp;for&nbsp;the&nbsp;<a href="#manufacturer">manufacturer</a>.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#car">car</a></dd>
+<dd>flask_sqlalchemy.Model</dd>
+<dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="car-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
+&nbsp;<br>
+Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
+values&nbsp;in&nbsp;``kwargs``.<br>
+&nbsp;<br>
+Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
+attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
+for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>id</strong></dt>
+</dl>
+<dl><dt><strong>make</strong></dt>
+</dl>
+<dl><dt><strong>make_id</strong></dt>
+</dl>
+<dl><dt><strong>model</strong></dt>
+</dl>
+<dl><dt><strong>price</strong></dt>
+</dl>
+<dl><dt><strong>safety_rating</strong></dt>
+</dl>
+<dl><dt><strong>year</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x2b032f03b050; car&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('car', MetaData(bind=None), Column('id', I...ty_rating', Integer(), table=&lt;car&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'car'</dl>
+
+<hr>
+Methods inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>query</strong></dt>
+</dl>
+
+<hr>
+Data and other attributes inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>The&nbsp;default&nbsp;query&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as<br>
+:attr:`~SQLAlchemy.Query`.&nbsp;This&nbsp;can&nbsp;be&nbsp;subclassed&nbsp;and<br>
+replaced&nbsp;for&nbsp;individual&nbsp;models&nbsp;by&nbsp;setting&nbsp;the&nbsp;:attr:`~Model.query_class`<br>
+attribute.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;subclass&nbsp;of&nbsp;a&nbsp;standard&nbsp;SQLAlchemy<br>
+:class:`~sqlalchemy.orm.query.Query`&nbsp;class&nbsp;and&nbsp;has&nbsp;all&nbsp;the&nbsp;methods&nbsp;of&nbsp;a<br>
+standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="manufacturer">class <strong>manufacturer</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;model&nbsp;for&nbsp;a&nbsp;<a href="#manufacturer">manufacturer</a>,&nbsp;encapsulating&nbsp;the&nbsp;attributes&nbsp;we&nbsp;track&nbsp;for<br>
+the&nbsp;<a href="#manufacturer">manufacturer</a><br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#manufacturer">manufacturer</a></dd>
+<dd>flask_sqlalchemy.Model</dd>
+<dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="manufacturer-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
+&nbsp;<br>
+Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
+values&nbsp;in&nbsp;``kwargs``.<br>
+&nbsp;<br>
+Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
+attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
+for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>avg_price</strong></dt>
+</dl>
+<dl><dt><strong>avg_saftey_rating</strong></dt>
+</dl>
+<dl><dt><strong>country</strong></dt>
+</dl>
+<dl><dt><strong>id</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<dl><dt><strong>num_models</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x2b032f04f2d0; manufacturer&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('manufacturer', MetaData(bind=None), Colum...', Integer(), table=&lt;manufacturer&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'manufacturer'</dl>
+
+<hr>
+Methods inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>query</strong></dt>
+</dl>
+
+<hr>
+Data and other attributes inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>The&nbsp;default&nbsp;query&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as<br>
+:attr:`~SQLAlchemy.Query`.&nbsp;This&nbsp;can&nbsp;be&nbsp;subclassed&nbsp;and<br>
+replaced&nbsp;for&nbsp;individual&nbsp;models&nbsp;by&nbsp;setting&nbsp;the&nbsp;:attr:`~Model.query_class`<br>
+attribute.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;subclass&nbsp;of&nbsp;a&nbsp;standard&nbsp;SQLAlchemy<br>
+:class:`~sqlalchemy.orm.query.Query`&nbsp;class&nbsp;and&nbsp;has&nbsp;all&nbsp;the&nbsp;methods&nbsp;of&nbsp;a<br>
+standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>app</strong> = &lt;Flask 'models'&gt;<br>
+<strong>db</strong> = &lt;SQLAlchemy engine='postgresql://user:password@localhost/test'&gt;</td></tr></table>
+</body></html>
