@@ -1,11 +1,8 @@
 #!/usr/bin/env python3
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://user:password@localhost/test'
-app.config['SQLALCHEMY_ECHO'] = False
-db = SQLAlchemy(app)
+from app import app
+from app import db
 
 class car(db.Model):
   '''
