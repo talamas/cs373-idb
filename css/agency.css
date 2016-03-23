@@ -665,13 +665,12 @@ body
  body
 {
 	webkit-tap-highlight-color:#fed136}
- 
 
+th {
+    background-color: #f9d553;
+}
 
-;
- 
- 
-	
-
+td {
+    background-color: #fce79c;
 }
  
