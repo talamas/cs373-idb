@@ -18,8 +18,13 @@ class car(db.Model):
   price = db.Column(db.Integer)
   safety_rating = db.Column(db.Integer)
 
-  # def __repr__(self):
-  #     return '<Car Model %r>' % self.model
+  def __init__(self,id,make_id,make,model,year,price,safety_rating):
+    self.id = id
+    self.make_id = make_id
+    self.model = model
+    self.year = year
+    self.price = price
+    self.safety_rating = safety_rating
 
 class manufacturer(db.Model):
   '''
@@ -32,5 +37,11 @@ class manufacturer(db.Model):
   avg_saftey_rating = db.Column(db.Integer)
   avg_price = db.Column(db.Integer)
   num_models = db.Column(db.Integer)
-    # def __repr__(self):
-    #   return '<Manufacturer name %r>' % self.name
+
+  def __init__(self,id,name,country,avg_saftey_rating,avg_price,num_models):
+    self.id = id
+    self.name = name
+    self.country = country
+    self.avg_saftey_rating = avg_saftey_rating
+    self.avg_price = avg_price
+    self.num_models = num_models
