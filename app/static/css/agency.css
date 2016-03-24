@@ -21,6 +21,9 @@ body
  a
 {
 	color:#fed136}
+a.column
+{
+	color:#000000}
  a:hover,a:focus,a:active,a.active
 {
 	color:#fec503}
@@ -29,6 +32,9 @@ body
 	font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
  text-transform:uppercase;
  font-weight:700}
+ img.manufacturer{
+ 	max-height: 10px;
+ }
  .img-centered
 {
 	margin:0 auto}
@@ -592,7 +598,8 @@ body
  border:0;
  min-height:100%;
  padding:100px 0;
- text-align:center}
+ text-align:center;
+overflow-y: scroll;}
  .car-modal .modal-content h2
 {
 	margin-bottom:15px;
@@ -659,6 +666,10 @@ body
  img::selection
 {
 	background:0 0}
+ .modal-image
+{
+	max-height: 300px;
+	max-width: 300px;}
  img::-moz-selection
 {
 	background:0 0}
@@ -682,4 +693,6 @@ td {
     /* ... */
     overflow-y: scroll;
 }
- 
+td{
+	max-height:60px;
+}

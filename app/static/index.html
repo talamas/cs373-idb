@@ -13,7 +13,10 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <!-- Added by Talamas, conflicts with scrolling, has green colors
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/sandstone/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+-->
     <!-- Custom CSS -->
     <link href="css/agency.css" rel="stylesheet">
 
@@ -33,8 +36,7 @@
 
 
     <!-- CSS -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/sandstone/bootstrap.min.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    
     <style>
         body { padding-top:50px; }
     </style>
@@ -111,35 +113,35 @@
                         Picture
                     </th>
                     <th class="col-md-1">
-                        <a href="#!" ng-click="sortTypeMan = 'name'; sortReverseMan = !sortReverseMan">
+                        <a class="column" href="#!" ng-click="sortTypeMan = 'name'; sortReverseMan = !sortReverseMan">
                             Name
                             <span ng-show="sortTypeMan =='name' && !sortReverseMan" class="fa fa-caret-down"></span>
                             <span ng-show="sortTypeMan =='name' &&  sortReverseMan" class="fa fa-caret-up"></span>
                         </a>
                     </th>
                     <th class="col-md-1">
-                        <a href="#!" ng-click="sortTypeMan = 'country'; sortReverseMan = !sortReverseMan">
+                        <a class="column" href="#!" ng-click="sortTypeMan = 'country'; sortReverseMan = !sortReverseMan">
                              Country
                             <span ng-show="sortTypeMan =='country' && !sortReverseMan" class="fa fa-caret-down"></span>
                             <span ng-show="sortTypeMan =='country' &&  sortReverseMan" class="fa fa-caret-up"></span>
                         </a>
                     </th>
                     <th class="col-md-1">
-                        <a href="#!" ng-click="sortTypeMan = 'avgSafety'; sortReverseMan = !sortReverseMan">
+                        <a class="column" href="#!" ng-click="sortTypeMan = 'avgSafety'; sortReverseMan = !sortReverseMan">
                              Avg Safety Rating
                             <span ng-show="sortTypeMan =='avgSafety' && !sortReverseMan" class="fa fa-caret-down"></span>
                             <span ng-show="sortTypeMan =='avgSafety' &&  sortReverseMan" class="fa fa-caret-up"></span>
                         </a>
                     </th>
                     <th class="col-md-1">
-                        <a href="#!" ng-click="sortTypeMan = 'avgPrice'; sortReverseMan = !sortReverseMan">
+                        <a class="column" href="#!" ng-click="sortTypeMan = 'avgPrice'; sortReverseMan = !sortReverseMan">
                               Avg Price
                             <span ng-show="sortTypeMan =='avgPrice' && !sortReverseMan" class="fa fa-caret-down"></span>
                             <span ng-show="sortTypeMan =='avgPrice' &&  sortReverseMan" class="fa fa-caret-up"></span>
                         </a>
                     </th>
                     <th class="col-md-1">
-                        <a href="#!" ng-click="sortTypeMan = 'modelsNum'; sortReverseMan = !sortReverseMan">
+                        <a class="column" href="#!" ng-click="sortTypeMan = 'modelsNum'; sortReverseMan = !sortReverseMan">
                              Num Models
                             <span ng-show="sortTypeMan =='modelsNum' && !sortReverseMan" class="fa fa-caret-down"></span>
                             <span ng-show="sortTypeMan =='modelsNum' &&  sortReverseMan" class="fa fa-caret-up"></span>
@@ -149,7 +151,7 @@
             </thead>
             <tbody>           
                 <tr ng-repeat="man in manufacturers | orderBy:sortTypeMan:sortReverseMan" data-target="{{man.dataTarget}}" class="cars-link" data-toggle="modal">
-                    <td><img ng-src='{{man.img}}' class="img-responsive" alt=""> </td>
+                    <td><img ng-src='{{man.img}}' class="img-responsive  img.manufacturer" alt=""> </td>
                     <td>{{man.name}}</td>
                     <td>{{man.country}}</td>
                     <td>{{man.avgSafety}}/5</td>
@@ -211,42 +213,42 @@
                     Picture
                 </th>
                 <th class="col-md-1">
-                    <a href="#!" ng-click="sortType = 'makeId'; sortReverse = !sortReverse">
+                    <a class="column" href="#!" ng-click="sortType = 'makeId'; sortReverse = !sortReverse">
                         Make id
                         <span ng-show="sortType =='makeId' && !sortReverse" class="fa fa-caret-down"></span>
                         <span ng-show="sortType =='makeId' &&  sortReverse" class="fa fa-caret-up"></span>
                     </a>
                 </th>
                 <th class="col-md-1">
-                    <a href="#!" ng-click="sortType = 'make'; sortReverse = !sortReverse">
+                    <a class="column" href="#!" ng-click="sortType = 'make'; sortReverse = !sortReverse">
                          Make
                         <span ng-show="sortType =='make' && !sortReverse" class="fa fa-caret-down"></span>
                         <span ng-show="sortType =='make' &&  sortReverse" class="fa fa-caret-up"></span>
                     </a>
                 </th>
                 <th class="col-md-1">
-                    <a href="#!" ng-click="sortType = 'model'; sortReverse = !sortReverse">
+                    <a class="column" href="#!" ng-click="sortType = 'model'; sortReverse = !sortReverse">
                          Model
                         <span ng-show="sortType =='model' && !sortReverse" class="fa fa-caret-down"></span>
                         <span ng-show="sortType =='model' &&  sortReverse" class="fa fa-caret-up"></span>
                     </a>
                 </th>
                 <th class="col-md-1">
-                    <a href="#!" ng-click="sortType = 'year'; sortReverse = !sortReverse">
+                    <a class="column" href="#!" ng-click="sortType = 'year'; sortReverse = !sortReverse">
                           Year
                         <span ng-show="sortType =='year' && !sortReverse" class="fa fa-caret-down"></span>
                         <span ng-show="sortType =='year' &&  sortReverse" class="fa fa-caret-up"></span>
                     </a>
                 </th>
                 <th class="col-md-1">
-                    <a href="#!" ng-click="sortType = 'price'; sortReverse = !sortReverse">
+                    <a class="column" href="#!" ng-click="sortType = 'price'; sortReverse = !sortReverse">
                          Price
                         <span ng-show="sortType =='price' && !sortReverse" class="fa fa-caret-down"></span>
                         <span ng-show="sortType =='price' &&  sortReverse" class="fa fa-caret-up"></span>
                     </a>
                 </th>
                 <th class="col-md-1">
-                    <a href="#!" ng-click="sortType = 'safety'; sortReverse = !sortReverse">
+                    <a class="column" href="#!" ng-click="sortType = 'safety'; sortReverse = !sortReverse">
                           Safety Rating
                         <span ng-show="sortType =='safety' && !sortReverse" class="fa fa-caret-down"></span>
                         <span ng-show="sortType =='safety' &&  sortReverse" class="fa fa-caret-up"></span>
@@ -710,30 +712,8 @@
                             <!-- Project Details Go Here -->
                             <h2>Aventador</h2>
                             <p class="item-intro text-muted">Aventador by Lamborghini.</p>
-                            <img class="img-responsive img-centered" src="img/cars/aventador_preview.jpg" alt="">
+                            <img class="img-responsive img-centered modal-image" src="img/cars/aventador_preview.jpg" alt="">
                             <p><a href="http://www.lamborghini.com/en/models/aventador-lp-750-4-superveloce-roadster/overview/">The Aventador</a> is a mid-engined sports car produced by the Italian manufacturer Lamborghini. Launched on 28 February 2011 at the Geneva Motor Show, five months after its initial unveiling in Sant'Agata Bolognese, the vehicle, internally codenamed LB834, was designed to replace the ten-year-old Murciélago as the new flagship model</p>
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Make Id</th>
-                                        <th>Make</th>
-                                        <th>Model</th>
-                                        <th>Year</th>
-                                        <th>Safety Rating</th>
-                                        <th>Safety Rating</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>123</td>
-                                        <td>asdf</td>
-                                        <td>Asdf</td>
-                                        <td>2015</td>
-                                        <td>50000</td>
-                                        <td>3</td>
-                                    </tr>   
-                                </tbody>
-                            </table>
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-12 text-left">
@@ -809,30 +789,8 @@
                             <!-- Project Details Go Here -->
                             <h2>Huracan</h2>
                             <p class="item-intro text-muted">Huracan by Lamborghini.</p>
-                            <img class="img-responsive img-centered" src="img/cars/huracan_preview.jpg" alt="">
+                            <img class="img-responsive img-centered modal-image" src="img/cars/huracan_preview.jpg" alt="">
                             <p><a href="http://www.lamborghini.com/en/models/huracan-lp-610-4-avio/overview/">The Lamborghini Huracan </a>. (Spanish for "hurricane"; [uɾaˈkan]) is a sports car built by Lamborghini, replacing Lamborghini's sales leader and most produced car, the Gallardo. The Huracán made its auto show debut at the March 2014 Geneva Auto Show,[2] and was released in the second quarter of 2014.</p>
-                            <tr data-id="2" data-target="#carsModal2" class="cars-link" data-toggle="modal">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Make Id</th>
-                                        <th>Make</th>
-                                        <th>Model</th>
-                                        <th>Year</th>
-                                        <th>Safety Rating</th>
-                                        <th>Safety Rating</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                        <td>124</td>
-                                        <td>asdf</td>
-                                        <td>Asdf</td>
-                                        <td>2015</td>
-                                        <td>50000</td>
-                                        <td>3</td>
-                                    </tr>
-                                </tbody>
-                            </table>
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-12 text-left">
@@ -908,7 +866,7 @@
                             <!-- Project Details Go Here -->
                             <h2>Centenario</h2>
                             <p class="item-intro text-muted">Centenario by Lamborghini.</p>
-                            <img class="img-responsive img-centered" src="img/cars/centenario_preview.jpg" alt="">
+                            <img class="img-responsive img-centered modal-image" src="img/cars/centenario_preview.jpg" alt="">
                             <p><a href="http://www.lamborghini.com/en/models/centenario-lp-770-4/overview/">The Lamborghini Centenario </a>. is a mid-engine sports car produced by the Italian manufacturer Lamborghini. Initially unveiled on March 1, 2016 during the Geneva Motor Show, all 40 cars slated for production have already been sold, each for a price of €1.75 million Euros (or $1.9 million USD).</p>
                             <div class="container">
                                 <div class="row">
@@ -985,7 +943,7 @@
                             <!-- Project Details Go Here -->
                             <h2>GTC4Lusso</h2>
                             <p class="item-intro text-muted">GTC4Lusso by Ferrari.</p>
-                            <img class="img-responsive img-centered" src="img/cars/gtc4lusso_preview.jpg" alt="">
+                            <img class="img-responsive img-centered modal-image" src="img/cars/gtc4lusso_preview.jpg" alt="">
                             <p><a href="http://gtc4lusso.ferrari.com/en_us/">The Ferrari GTC4Lusso </a> is a four-seater grand tourer produced by Italian car manufacturer Ferrari. It was unveiled on 8 February 2016, ahead of its world première at the Geneva Motor Show. Like the Ferrari FF it replaces, the GTC4Lusso is a 3-door shooting-brake with four-wheel drive, and is powered by a front-mid mounted 6.3-litre V12.</p>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                         </div>
@@ -1010,7 +968,7 @@
                         <div class="modal-body">
                             <h2>Berlinetta</h2>
                             <p class="item-intro text-muted">Berlinetta by Ferrari.</p>
-                            <img class="img-responsive img-centered" src="img/cars/berlinetta_preview.jpg" alt="">
+                            <img class="img-responsive img-centered modal-image" src="img/cars/berlinetta_preview.jpg" alt="">
                             <p><a href="http://auto.ferrari.com/en_US/sports-cars-models/car-range/f12-berlinetta/">The Berlinetta</a> (from Italian: berlinetta; Italian pronunciation: [berliˈnetta]) is an especially sporty form of coupé. Typically a two-seater, the type may include 2+2s.
                                 The original meaning for berlinetta in Italian is “little saloon”.
 Introduced in the 1930s, the term was popularized by Ferrari in the 1950s. Maserati, Opel, Alfa Romeo, and other European car manufacturers have also used the Berlinetta label. 
@@ -1040,7 +998,7 @@ In North America, Chevrolet also produced a version of the Chevrolet Camaro call
                             <!-- Project Details Go Here -->
                             <h2>LaFerrari</h2>
                             <p class="item-intro text-muted">LaFerrary by Ferrari.</p>
-                            <img class="img-responsive img-centered" src="img/cars/laferrari_preview.jpg" alt="">
+                            <img class="img-responsive img-centered modal-image" src="img/cars/laferrari_preview.jpg" alt="">
                             <p><a href="http://auto.ferrari.com/en_US/sports-cars-models/car-range/laferrari/">LaFerrari </a> (project name, F150) is a limited production hybrid sports car built by Italian sports car maker Ferrari. The car and its name were officially unveiled at the 2013 Geneva Auto Show. It is based on findings from testing of the Ferrari FXX and on research being conducted by the Millechili Project at the University of Modena. Association with the Millechili Project led to speculation during development that the car would weigh under 1,000 kg (2,205 lb), but a dry weight of around 1,255 kg (2,767 lb) was claimed. Only 499 units have been built, and each cost more than 1 million US dollars.</p>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                         </div>
@@ -1066,7 +1024,7 @@ In North America, Chevrolet also produced a version of the Chevrolet Camaro call
                             <!-- Project Details Go Here -->
                             <h2>Ferrari</h2>
                             <p class="item-intro text-muted">Automotive.</p>
-                            <img class="img-responsive img-centered" src="img/manufacturers/ferrari.jpg" alt="">
+                            <img class="img-responsive img-centered modal-image" src="img/manufacturers/ferrari.jpg" alt="">
                             <p><a href="http://www.ferrari.com/en_us/auto">Ferrari N.V. </a>  is a dutch company which controls Ferrari S.p.A., an Italian luxury sports car manufacturer based in Maranello. Founded by Enzo Ferrari in 1939 as Auto Avio Costruzioni, the company built its first car in 1940. However, the company's inception as an auto manufacturer is usually recognized in 1947 when the first Ferrari-badged car was completed.
 
 Ferrari is the world's most powerful brand according to Brand Finance.[6] In May 2012 the 1962 Ferrari 250 GTO became the most expensive car in history, selling in a private transaction for $38,115,000 to American communications magnate Craig McCaw.</p>
@@ -1145,9 +1103,8 @@ Ferrari is the world's most powerful brand according to Brand Finance.[6] In May
                             <!-- Project Details Go Here -->
                             <h2>Lamborghini</h2>
                             <p class="item-intro text-muted">Automotive.</p>
-                            <img class="img-responsive img-centered" src="img/manufacturers/lamborghini.jpg" alt="">
+                            <img class="img-responsive img-centered modal-image" src="img/manufacturers/lamborghini.jpg" alt="">
                             <p><a href="http://www.lamborghini.com/en/home/">Automobili Lamborghini S.p.A </a>   (Italian: [lamborˈɡiːni] ( listen)) is an Italian brand and manufacturer of luxury sports cars and, formerly, SUVs, which is owned by the Volkswagen Group through its subsidiary brand division Audi. Lamborghini's production facility and headquarters are located in Sant'Agata Bolognese, Italy. In 2011, Lamborghini's 831 employees produced 1,711 vehicles.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-12 text-left">
@@ -1199,6 +1156,7 @@ Ferrari is the world's most powerful brand according to Brand Finance.[6] In May
                                     </div>
                                 </div>
                             </div>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                         </div>
                     </div>
                 </div>
@@ -1222,7 +1180,7 @@ Ferrari is the world's most powerful brand according to Brand Finance.[6] In May
                             <!-- Project Details Go Here -->
                             <h2>McLaren</h2>
                             <p class="item-intro text-muted">Automotive.</p>
-                            <img class="img-responsive img-centered" src="img/manufacturers/mclaren.jpg" alt="">
+                            <img class="img-responsive img-centered modal-image" src="img/manufacturers/mclaren.jpg" alt="">
                             <p><a href="http://cars.mclaren.com/?_ga=1.53392043.2052479494.1458778494">The McLaren Technology Group</a> is a British conglomerate based in Woking, Surrey, United Kingdom. Founded shortly after Ron Dennis' acquisition of the McLaren Formula One team in 1981, it was originally named the TAG McLaren Group due to a partnership with Mansour Ojjeh's TAG Group. It was renamed to simply the McLaren Group in 2003, then to its current name in 2015, after an increased focus in the technology industry. The Group was originally formed from a Formula One team established by New Zealander Bruce McLaren in 1963 and is now focused around the McLaren Honda Formula One Racing Team, the group's second most profitable company.</p>
                             <div class="container">
                                 <div class="row">
