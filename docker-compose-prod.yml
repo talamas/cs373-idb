@@ -12,7 +12,7 @@ services:
     extends:
       file: docker-compose-common.yml
       service: app
-    image: etoews/idb_app
+    image: lincolnturner/idb_app
     expose:
       # Expose port 8000 so it's only visibile on the container, not the host
       - "8000"
