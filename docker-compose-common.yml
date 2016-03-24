@@ -1,0 +1,24 @@
+version: "2"
+
+# A Docker Compose file for common configuration between development and production environments
+
+services:
+  lb:
+    # The load balancer container. Built from the lb/Dockerfile.
+    container_name: idb_lb
+    build: lb
+    restart: unless-stopped
+    networks:
+      - backend
+    ports:
+      - "80:80"
+
+  app:
+    # The app container. Built from the app/Dockerfile.
+    build: app
+    restart: unless-stopped
+    networks:
+      backend:
+        aliases:
+          # All app servers be referred to by this alias with the backend network
+          - apps
