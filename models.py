@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from app import app
-from app import db
+from app.app import app
+from app.app import db
+
 
 class car(db.Model):
   '''
