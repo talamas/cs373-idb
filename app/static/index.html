@@ -31,9 +31,22 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/sandstone/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <style>
+        body { padding-top:50px; }
+    </style>
+
+    <!-- JS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+    <script src="sorting.js"></script>
+
+
 </head>
 
-<body id="page-top" class="index">
+<body id="page-top" class="index" ng-app="sortApp" ng-controller="mainController">
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -83,7 +96,7 @@
     </header>
 
     <!-- manufacturers Section -->
-    <section id="manufacturers">
+    <section id="manufacturers" >
         <div class="col-lg-12 text-center">
             <h2 class="section-heading">manufacturers</h2>
             <h3 class="section-subheading text-muted">Only the best.</h3>
@@ -93,43 +106,55 @@
         <!--cars Table Section-->
         <table class="table table-hover center-block" style="width:80%">
             <thead>
-                <tr>
-                    <th style="width:1%"class="col-md-6">#</th>
-                    <th class="col-md-2">Picture</th>
-                    <th class="col-md-2">Name</th>
-                    <th class="col-md-2">Country</th>
-                    <th class="col-md-2">Avg Safety Rating</th>
-                    <th class="col-md-2">Avg Price</th>
-                    <th class="col-md-2">Num Models</th>
+                <tr>                  
+                    <th class="col-md-1">
+                        Picture
+                    </th>
+                    <th class="col-md-1">
+                        <a href="#!" ng-click="sortTypeMan = 'name'; sortReverseMan = !sortReverseMan">
+                            Name
+                            <span ng-show="sortTypeMan =='name' && !sortReverseMan" class="fa fa-caret-down"></span>
+                            <span ng-show="sortTypeMan =='name' &&  sortReverseMan" class="fa fa-caret-up"></span>
+                        </a>
+                    </th>
+                    <th class="col-md-1">
+                        <a href="#!" ng-click="sortTypeMan = 'country'; sortReverseMan = !sortReverseMan">
+                             Country
+                            <span ng-show="sortTypeMan =='country' && !sortReverseMan" class="fa fa-caret-down"></span>
+                            <span ng-show="sortTypeMan =='country' &&  sortReverseMan" class="fa fa-caret-up"></span>
+                        </a>
+                    </th>
+                    <th class="col-md-1">
+                        <a href="#!" ng-click="sortTypeMan = 'avgSafety'; sortReverseMan = !sortReverseMan">
+                             Avg Safety Rating
+                            <span ng-show="sortTypeMan =='avgSafety' && !sortReverseMan" class="fa fa-caret-down"></span>
+                            <span ng-show="sortTypeMan =='avgSafety' &&  sortReverseMan" class="fa fa-caret-up"></span>
+                        </a>
+                    </th>
+                    <th class="col-md-1">
+                        <a href="#!" ng-click="sortTypeMan = 'avgPrice'; sortReverseMan = !sortReverseMan">
+                              Avg Price
+                            <span ng-show="sortTypeMan =='avgPrice' && !sortReverseMan" class="fa fa-caret-down"></span>
+                            <span ng-show="sortTypeMan =='avgPrice' &&  sortReverseMan" class="fa fa-caret-up"></span>
+                        </a>
+                    </th>
+                    <th class="col-md-1">
+                        <a href="#!" ng-click="sortTypeMan = 'modelsNum'; sortReverseMan = !sortReverseMan">
+                             Num Models
+                            <span ng-show="sortTypeMan =='modelsNum' && !sortReverseMan" class="fa fa-caret-down"></span>
+                            <span ng-show="sortTypeMan =='modelsNum' &&  sortReverseMan" class="fa fa-caret-up"></span>
+                        </a>
+                    </th>
                 </tr>
             </thead>
             <tbody>           
-                <tr data-id="1" data-target="#carsModal7" class="cars-link" data-toggle="modal">
-                    <td>1</td>
-                    <td><img src="img/manufacturers/ferrari.jpg" class="img-responsive" alt=""></td>
-                    <td>Ferrari</td>
-                    <td>Italy</td>
-                    <td>3/5</td>
-                    <td>$298,000</td>
-                    <td>9</td>
-                </tr>   
-                <tr data-id="2" data-target="#carsModal8" class="cars-link" data-toggle="modal">
-                    <td>2</td>
-                    <td><img src="img/manufacturers/lamborghini.jpg" class="img-responsive" alt=""></td>
-                    <td>Lamborghini</td>
-                    <td>Italy</td>
-                    <td>3/5</td>
-                    <td>$250,000</td>
-                    <td>6</td>
-                </tr>
-                <tr data-id="3" data-target="#carsModal9" class="cars-link" data-toggle="modal">
-                    <td>3</td>
-                    <td><img src="img/manufacturers/mclaren.jpg" class="img-responsive" alt=""></td>
-                    <td>McLaren</td>
-                    <td>Great Britain</td>
-                    <td>4/5</td>
-                    <td>$265,000</td>
-                    <td>10</td>
+                <tr ng-repeat="man in manufacturers | orderBy:sortTypeMan:sortReverseMan" data-target="{{man.dataTarget}}" class="cars-link" data-toggle="modal">
+                    <td><img ng-src='{{man.img}}' class="img-responsive" alt=""> </td>
+                    <td>{{man.name}}</td>
+                    <td>{{man.country}}</td>
+                    <td>{{man.avgSafety}}/5</td>
+                    <td>${{man.avgPrice}}</td>
+                    <td>{{man.modelsNum}}</td>
                 </tr>
             </tbody>
         </table>
@@ -178,64 +203,67 @@
             <h2 class="section-heading">cars</h2>
             <h3 class="section-subheading text-muted">Checkout our vast selection.</h3>
         </div>
+        
         <table class="table table-hover center-block" style="width:80%">
         <thead>
             <tr>
-                <th style="width:1%"class="col-md-6">#</th>
-                <th class="col-md-1">Picture</th>
-                <th class="col-md-1">Make id</th>
-                <th class="col-md-1">Make</th>
-                <th class="col-md-1">Model</th>
-                <th class="col-md-1">Year</th>
-                <th class="col-md-1">Price</th>
-                <th class="col-md-1">Safety Rating</th>
+                <th class="col-md-1">
+                    Picture
+                </th>
+                <th class="col-md-1">
+                    <a href="#!" ng-click="sortType = 'makeId'; sortReverse = !sortReverse">
+                        Make id
+                        <span ng-show="sortType =='makeId' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType =='makeId' &&  sortReverse" class="fa fa-caret-up"></span>
+                    </a>
+                </th>
+                <th class="col-md-1">
+                    <a href="#!" ng-click="sortType = 'make'; sortReverse = !sortReverse">
+                         Make
+                        <span ng-show="sortType =='make' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType =='make' &&  sortReverse" class="fa fa-caret-up"></span>
+                    </a>
+                </th>
+                <th class="col-md-1">
+                    <a href="#!" ng-click="sortType = 'model'; sortReverse = !sortReverse">
+                         Model
+                        <span ng-show="sortType =='model' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType =='model' &&  sortReverse" class="fa fa-caret-up"></span>
+                    </a>
+                </th>
+                <th class="col-md-1">
+                    <a href="#!" ng-click="sortType = 'year'; sortReverse = !sortReverse">
+                          Year
+                        <span ng-show="sortType =='year' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType =='year' &&  sortReverse" class="fa fa-caret-up"></span>
+                    </a>
+                </th>
+                <th class="col-md-1">
+                    <a href="#!" ng-click="sortType = 'price'; sortReverse = !sortReverse">
+                         Price
+                        <span ng-show="sortType =='price' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType =='price' &&  sortReverse" class="fa fa-caret-up"></span>
+                    </a>
+                </th>
+                <th class="col-md-1">
+                    <a href="#!" ng-click="sortType = 'safety'; sortReverse = !sortReverse">
+                          Safety Rating
+                        <span ng-show="sortType =='safety' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType =='safety' &&  sortReverse" class="fa fa-caret-up"></span>
+                    </a>
+                </th>
             </tr>
         </thead>
         <tbody>           
-            <tr data-id="1" data-target="#carsModal1" class="cars-link" data-toggle="modal">
-                <td>1</td>
-                <td><img src="img/cars/aventador.jpg" class="img-responsive" alt=""></td>
-                <td>123</td>
-                <td>Lamborghini</td>
-                <td>Aventador</td>
-                <td>2015</td>
-                <td>$399,500</td>
-                <td>4/5</td>
-            </tr>   
-            <tr data-id="2" data-target="#carsModal2" class="cars-link" data-toggle="modal">
-                <td>2</td>
-                <td><img src="img/cars/huracan.jpg" class="img-responsive" alt=""></td>
-                <td>124</td>
-                <td>Lamborghini</td>
-                <td>Huracan</td>
-                <td>2015</td>
-                <td>$199,800</td>
-                <td>4/5</td>
+            <tr ng-repeat="car in cars | orderBy:sortType:sortReverse" data-target="{{car.dataTarget}}" class="cars-link" data-toggle="modal">
+                <td><img ng-src='{{car.img}}' class="img-responsive" alt=""> </td>
+                <td>{{car.makeId}}</td>
+                <td>{{car.make}}</td>
+                <td>{{car.model}}</td>
+                <td>{{car.year}}</td>
+                <td>${{car.price}}</td>
+                <td>{{car.safety}}/5</td>
             </tr>
-            <tr data-id="1" data-target="#carsModal3" class="cars-link" data-toggle="modal">
-                <td>3</td>
-                <td><img src="img/cars/centenario.jpg" class="img-responsive" alt=""></td>
-                <td>125</td>
-                <td>Lamborghini</td>
-                <td>Centenario</td>
-                <td>2015</td>
-                <td>$1,900,800</td>
-                <td>3/5</td>
-            </tr>
-            <!--
-            <tr data-id="1" data-target="#carsModal4" class="cars-link" data-toggle="modal">
-                <td><img src="img/cars/gtc4lusso.jpg" class="img-responsive" alt=""></td>
-                <td><h2>Ferrari GTC4Lusso</h2></td>
-            </tr>
-            <tr data-id="1" data-target="#carsModal5" class="cars-link" data-toggle="modal">
-                <td><img src="img/cars/berlinetta.jpg" class="img-responsive" alt=""></td>
-                <td><h2>Ferrari Berlinetta</h2></td>
-            </tr>
-            <tr data-id="1" data-target="#carsModal6" class="cars-link" data-toggle="modal">
-                <td><img src="img/cars/laferrari.jpg" class="img-responsive" alt=""></td>
-                <td><h2>Ferrari LaFerrari</h2></td>
-            </tr>
-        -->
         </tbody>
     </table>
 </section>
