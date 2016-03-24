@@ -174,6 +174,13 @@
         <thead>
             <tr>
                 <th class="col-md-1">
+                    <a class="column" href="#!" ng-click="sortType = 'id'; sortReverse = !sortReverse">
+                        Id
+                        <span ng-show="sortType =='model' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType =='model' &&  sortReverse" class="fa fa-caret-up"></span>
+                    </a>
+                </th>
+                <th class="col-md-1">
                     Picture
                 </th>
                 <th class="col-md-1">
