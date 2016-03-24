@@ -674,7 +674,12 @@ td {
     background-color: #fce79c;
 }
 
-img {
-    width: 100%;
+.img-responsive{
+	max-width:60%;
+}
+
+.modal {
+    /* ... */
+    overflow-y: scroll;
 }
  

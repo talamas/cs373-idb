@@ -90,6 +90,50 @@
 
     <!-- manufacturers Section -->
     <section id="manufacturers">
+        <!--cars Table Section-->
+        <table class="table table-hover center-block" style="width:60%">
+            <thead>
+                <tr>
+                    <th style="width:30%"class="col-md-6">Id</th>
+                    <th class="col-md-2">Picture</th>
+                    <th class="col-md-2">Name</th>
+                    <th class="col-md-2">Country</th>
+                    <th class="col-md-2">Avg Safety Rating</th>
+                    <th class="col-md-2">Avg Price</th>
+                    <th class="col-md-2">Num Models</th>
+                </tr>
+            </thead>
+            <tbody>           
+                <tr data-id="1" data-target="#carsModal7" class="cars-link" data-toggle="modal">
+                    <td>1</td>
+                    <td><img src="img/manufacturers/ferrari.jpg" class="img-responsive" alt=""></td>
+                    <td>Ferrari</td>
+                    <td>Italy</td>
+                    <td>3/5</td>
+                    <td>$298,000</td>
+                    <td>9</td>
+                </tr>   
+                <tr data-id="2" data-target="#carsModal8" class="cars-link" data-toggle="modal">
+                    <td>2</td>
+                    <td><img src="img/manufacturers/lamborghini.png" class="img-responsive" alt=""></td>
+                    <td>Lamborghini</td>
+                    <td>Italy</td>
+                    <td>3/5</td>
+                    <td>$250,000</td>
+                    <td>6</td>
+                </tr>
+                <tr data-id="3" data-target="#carsModal9" class="cars-link" data-toggle="modal">
+                    <td>3</td>
+                    <td><img src="img/manufacturers/mclaren.jpg" class="img-responsive" alt=""></td>
+                    <td>McLaren</td>
+                    <td>Great Britain</td>
+                    <td>4/5</td>
+                    <td>$265,000</td>
+                    <td>10</td>
+                </tr>
+            </tbody>
+        </table>
+        <!--
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -124,50 +168,78 @@
                 </div>
             </div>
         </div>
+    -->
     </section>
 
 
     <!--cars Table Section-->
-    <table class="table table-hover center-block" style="width:60%">
-    <thead>
-        <tr>
-            <th style="width:30%"class="col-md-6">Row</th>
-            <th class="col-md-6">Model</th>
-        </tr>
-    </thead>
-    <tbody>           
-        <tr data-id="1" data-target="#carsModal1" class="cars-link" data-toggle="modal">
-            <td><img src="img/cars/aventador.jpg" class="img-responsive" alt=""></td>
-            <td><h2>Lamborghini Aventador</h2></td>
-        </tr>   
-        <tr data-id="2" data-target="#carsModal5" class="cars-link" data-toggle="modal">
-            <td><img src="img/cars/huracan.jpg" class="img-responsive" alt=""></td>
-            <td><h2>Lamborghini Huracan</h2></td>
-        </tr>
-        <tr data-id="1" data-target="#carsModal3" class="cars-link" data-toggle="modal">
-            <td><img src="img/cars/centenario.jpg" class="img-responsive" alt=""></td>
-            <td><h2>Lamborghini Centenario</h2></td>
-        </tr>
-        <!--
-        <tr data-id="1" data-target="#carsModal4" class="cars-link" data-toggle="modal">
-            <td><img src="img/cars/gtc4lusso.jpg" class="img-responsive" alt=""></td>
-            <td><h2>Ferrari GTC4Lusso</h2></td>
-        </tr>
-        <tr data-id="1" data-target="#carsModal2" class="cars-link" data-toggle="modal">
-            <td><img src="img/cars/berlinetta.jpg" class="img-responsive" alt=""></td>
-            <td><h2>Ferrari Berlinetta</h2></td>
-        </tr>
-        <tr data-id="1" data-target="#carsModal6" class="cars-link" data-toggle="modal">
-            <td><img src="img/cars/laferrari.jpg" class="img-responsive" alt=""></td>
-            <td><h2>Ferrari LaFerrari</h2></td>
-        </tr>
-    -->
-    </tbody>
-</table>
+    <section id="cars" class="bg-light-gray">
+        <table class="table table-hover center-block" style="width:60%">
+        <thead>
+            <tr>
+                <th style="width:30%"class="col-md-6">Id</th>
+                <th class="col-md-2">Picture</th>
+                <th class="col-md-2">Make id</th>
+                <th class="col-md-2">Make</th>
+                <th class="col-md-2">Model</th>
+                <th class="col-md-2">Year</th>
+                <th class="col-md-2">Price</th>
+                <th class="col-md-2">Safety Rating</th>
+            </tr>
+        </thead>
+        <tbody>           
+            <tr data-id="1" data-target="#carsModal1" class="cars-link" data-toggle="modal">
+                <td>1</td>
+                <td><img src="img/cars/aventador.jpg" class="img-responsive" alt=""></td>
+                <td>123</td>
+                <td>Lamborghini</td>
+                <td>Aventador</td>
+                <td>2015</td>
+                <td>$399,500</td>
+                <td>4/5</td>
+            </tr>   
+            <tr data-id="2" data-target="#carsModal2" class="cars-link" data-toggle="modal">
+                <td>2</td>
+                <td><img src="img/cars/huracan.jpg" class="img-responsive" alt=""></td>
+                <td>124</td>
+                <td>Lamborghini</td>
+                <td>Huracan</td>
+                <td>2015</td>
+                <td>$199,800</td>
+                <td>4/5</td>
+            </tr>
+            <tr data-id="1" data-target="#carsModal3" class="cars-link" data-toggle="modal">
+                <td>3</td>
+                <td><img src="img/cars/centenario.jpg" class="img-responsive" alt=""></td>
+                <td>125</td>
+                <td>Lamborghini</td>
+                <td>Centenario</td>
+                <td>2015</td>
+                <td>$1,900,800</td>
+                <td>3/5</td>
+            </tr>
+            <!--
+            <tr data-id="1" data-target="#carsModal4" class="cars-link" data-toggle="modal">
+                <td><img src="img/cars/gtc4lusso.jpg" class="img-responsive" alt=""></td>
+                <td><h2>Ferrari GTC4Lusso</h2></td>
+            </tr>
+            <tr data-id="1" data-target="#carsModal5" class="cars-link" data-toggle="modal">
+                <td><img src="img/cars/berlinetta.jpg" class="img-responsive" alt=""></td>
+                <td><h2>Ferrari Berlinetta</h2></td>
+            </tr>
+            <tr data-id="1" data-target="#carsModal6" class="cars-link" data-toggle="modal">
+                <td><img src="img/cars/laferrari.jpg" class="img-responsive" alt=""></td>
+                <td><h2>Ferrari LaFerrari</h2></td>
+            </tr>
+        -->
+        </tbody>
+    </table>
+</section>
 
 
 
     <!-- cars Grid Section -->
+    <!--
     <section id="cars" class="bg-light-gray">
         <div class="container">
             <div class="row">
@@ -198,11 +270,11 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img max-height:100% src="img/cars/berlinetta.jpg" class="img-responsive" alt="">
+                        <img src="img/cars/huracan.jpg" class="img-responsive" alt="">
                     </a>
                     <div class="cars-caption">
-                        <h4>Berlinetta</h4>
-                        <p class="text-muted">Ferrari</p>
+                        <h4>Huracàn</h4>
+                        <p class="text-muted">Lamborghini</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 cars-item">
@@ -242,11 +314,11 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/cars/huracan.jpg" class="img-responsive" alt="">
+                        <img max-height:100% src="img/cars/berlinetta.jpg" class="img-responsive" alt="">
                     </a>
                     <div class="cars-caption">
-                        <h4>Huracàn</h4>
-                        <p class="text-muted">Lamborghini</p>
+                        <h4>Berlinetta</h4>
+                        <p class="text-muted">Ferrari</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 cars-item">
@@ -266,6 +338,7 @@
             </div>
         </div>
     </section>
+    -->
 
     <!-- About Section -->
     <section id="about">
@@ -596,23 +669,76 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Row</th>
+                                        <th>Make Id</th>
+                                        <th>Make</th>
                                         <th>Model</th>
-                                        <th>Manufacturer</th>
-                                        <th>Price</th>
+                                        <th>Year</th>
+                                        <th>Safety Rating</th>
                                         <th>Safety Rating</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>1</td>
-                                        <td>Aventador</td>
-                                        <td>Lamborghini</td>
-                                        <td>$1,000,000</td>
-                                        <td>76/100</td>
-                                    </tr>
+                                        <td>123</td>
+                                        <td>asdf</td>
+                                        <td>Asdf</td>
+                                        <td>2015</td>
+                                        <td>50000</td>
+                                        <td>3</td>
+                                    </tr>   
                                 </tbody>
                             </table>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12 text-left">
+                                        <h2 class="section-heading ">Related Manufacturers</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 col-sm-6 cars-item">
+                                        <a href="#carsModal7" class="cars-link" data-toggle="modal" data-dismiss="modal">
+                                            <div class="cars-hover">
+                                                <div class="cars-hover-content">
+                                                    <i class="fa fa-plus fa-3x"></i>
+                                                </div>
+                                            </div>
+                                            <img src="img/manufacturers/ferrari.jpg" class="img-responsive" alt="">
+                                        </a>
+                                        <div class="cars-caption">
+                                            <h4>Ferrari</h4>
+                                            <p class="text-muted">Automotive</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 cars-item">
+                                        <a href="#carsModal8" class="cars-link" data-toggle="modal" data-dismiss="modal">
+                                            <div class="cars-hover">
+                                                <div class="cars-hover-content">
+                                                    <i class="fa fa-plus fa-3x"></i>
+                                                </div>
+                                            </div>
+                                            <img src="img/manufacturers/lamborghini.png" class="img-responsive" alt="">
+                                        </a>
+                                        <div class="cars-caption">
+                                            <h4>Lamborghini</h4>
+                                            <p class="text-muted">Automotive</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 cars-item">
+                                        <a href="#carsModal9" class="cars-link" data-toggle="modal" data-dismiss="modal">
+                                            <div class="cars-hover">
+                                                <div class="cars-hover-content">
+                                                    <i class="fa fa-plus fa-3x"></i>
+                                                </div>
+                                            </div>
+                                            <img src="img/manufacturers/mclaren.jpg" class="img-responsive" alt="">
+                                        </a>
+                                        <div class="cars-caption">
+                                            <h4>McLaren</h4>
+                                            <p class="text-muted">Automotive</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                         </div>
                     </div>
@@ -634,14 +760,84 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Berlinetta</h2>
-                            <p class="item-intro text-muted">Berlinetta by Ferrari.</p>
-                            <img class="img-responsive img-centered" src="img/cars/berlinetta_preview.jpg" alt="">
-                            <p><a href="http://auto.ferrari.com/en_US/sports-cars-models/car-range/f12-berlinetta/">The Berlinetta</a> (from Italian: berlinetta; Italian pronunciation: [berliˈnetta]) is an especially sporty form of coupé. Typically a two-seater, the type may include 2+2s.
-                                The original meaning for berlinetta in Italian is “little saloon”.
-Introduced in the 1930s, the term was popularized by Ferrari in the 1950s. Maserati, Opel, Alfa Romeo, and other European car manufacturers have also used the Berlinetta label. 
-In North America, Chevrolet also produced a version of the Chevrolet Camaro called the Berlinetta, from 1979 to 1986. The model offered European styling touches to emphasize the interior rather than the performance of the car, which had long been the main selling point of the Camaro.</p>
-                            
+                            <!-- Project Details Go Here -->
+                            <h2>Huracan</h2>
+                            <p class="item-intro text-muted">Huracan by Lamborghini.</p>
+                            <img class="img-responsive img-centered" src="img/cars/huracan_preview.jpg" alt="">
+                            <p><a href="http://www.lamborghini.com/en/models/huracan-lp-610-4-avio/overview/">The Lamborghini Huracan </a>. (Spanish for "hurricane"; [uɾaˈkan]) is a sports car built by Lamborghini, replacing Lamborghini's sales leader and most produced car, the Gallardo. The Huracán made its auto show debut at the March 2014 Geneva Auto Show,[2] and was released in the second quarter of 2014.</p>
+                            <tr data-id="2" data-target="#carsModal2" class="cars-link" data-toggle="modal">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Make Id</th>
+                                        <th>Make</th>
+                                        <th>Model</th>
+                                        <th>Year</th>
+                                        <th>Safety Rating</th>
+                                        <th>Safety Rating</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                        <td>124</td>
+                                        <td>asdf</td>
+                                        <td>Asdf</td>
+                                        <td>2015</td>
+                                        <td>50000</td>
+                                        <td>3</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12 text-left">
+                                        <h2 class="section-heading ">Related Manufacturers</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 col-sm-6 cars-item">
+                                        <a href="#carsModal7" class="cars-link" data-toggle="modal" data-dismiss="modal">
+                                            <div class="cars-hover">
+                                                <div class="cars-hover-content">
+                                                    <i class="fa fa-plus fa-3x"></i>
+                                                </div>
+                                            </div>
+                                            <img src="img/manufacturers/ferrari.jpg" class="img-responsive" alt="">
+                                        </a>
+                                        <div class="cars-caption">
+                                            <h4>Ferrari</h4>
+                                            <p class="text-muted">Automotive</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 cars-item">
+                                        <a href="#carsModal8" class="cars-link" data-toggle="modal" data-dismiss="modal">
+                                            <div class="cars-hover">
+                                                <div class="cars-hover-content">
+                                                    <i class="fa fa-plus fa-3x"></i>
+                                                </div>
+                                            </div>
+                                            <img src="img/manufacturers/lamborghini.png" class="img-responsive" alt="">
+                                        </a>
+                                        <div class="cars-caption">
+                                            <h4>Lamborghini</h4>
+                                            <p class="text-muted">Automotive</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 cars-item">
+                                        <a href="#carsModal9" class="cars-link" data-toggle="modal" data-dismiss="modal">
+                                            <div class="cars-hover">
+                                                <div class="cars-hover-content">
+                                                    <i class="fa fa-plus fa-3x"></i>
+                                                </div>
+                                            </div>
+                                            <img src="img/manufacturers/mclaren.jpg" class="img-responsive" alt="">
+                                        </a>
+                                        <div class="cars-caption">
+                                            <h4>McLaren</h4>
+                                            <p class="text-muted">Automotive</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                         </div>
                     </div>
@@ -668,6 +864,57 @@ In North America, Chevrolet also produced a version of the Chevrolet Camaro call
                             <p class="item-intro text-muted">Centenario by Lamborghini.</p>
                             <img class="img-responsive img-centered" src="img/cars/centenario_preview.jpg" alt="">
                             <p><a href="http://www.lamborghini.com/en/models/centenario-lp-770-4/overview/">The Lamborghini Centenario </a>. is a mid-engine sports car produced by the Italian manufacturer Lamborghini. Initially unveiled on March 1, 2016 during the Geneva Motor Show, all 40 cars slated for production have already been sold, each for a price of €1.75 million Euros (or $1.9 million USD).</p>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12 text-left">
+                                        <h2 class="section-heading ">Related Manufacturers</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 col-sm-6 cars-item">
+                                        <a href="#carsModal7" class="cars-link" data-toggle="modal" data-dismiss="modal">
+                                            <div class="cars-hover">
+                                                <div class="cars-hover-content">
+                                                    <i class="fa fa-plus fa-3x"></i>
+                                                </div>
+                                            </div>
+                                            <img src="img/manufacturers/ferrari.jpg" class="img-responsive" alt="">
+                                        </a>
+                                        <div class="cars-caption">
+                                            <h4>Ferrari</h4>
+                                            <p class="text-muted">Automotive</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 cars-item">
+                                        <a href="#carsModal8" class="cars-link" data-toggle="modal" data-dismiss="modal">
+                                            <div class="cars-hover">
+                                                <div class="cars-hover-content">
+                                                    <i class="fa fa-plus fa-3x"></i>
+                                                </div>
+                                            </div>
+                                            <img src="img/manufacturers/lamborghini.png" class="img-responsive" alt="">
+                                        </a>
+                                        <div class="cars-caption">
+                                            <h4>Lamborghini</h4>
+                                            <p class="text-muted">Automotive</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 cars-item">
+                                        <a href="#carsModal9" class="cars-link" data-toggle="modal" data-dismiss="modal">
+                                            <div class="cars-hover">
+                                                <div class="cars-hover-content">
+                                                    <i class="fa fa-plus fa-3x"></i>
+                                                </div>
+                                            </div>
+                                            <img src="img/manufacturers/mclaren.jpg" class="img-responsive" alt="">
+                                        </a>
+                                        <div class="cars-caption">
+                                            <h4>McLaren</h4>
+                                            <p class="text-muted">Automotive</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                         </div>
                     </div>
@@ -715,11 +962,14 @@ In North America, Chevrolet also produced a version of the Chevrolet Camaro call
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h2>Huracan</h2>
-                            <p class="item-intro text-muted">Huracan by Lamborghini.</p>
-                            <img class="img-responsive img-centered" src="img/cars/huracan_preview.jpg" alt="">
-                            <p><a href="http://www.lamborghini.com/en/models/huracan-lp-610-4-avio/overview/">The Lamborghini Huracan </a>. (Spanish for "hurricane"; [uɾaˈkan]) is a sports car built by Lamborghini, replacing Lamborghini's sales leader and most produced car, the Gallardo. The Huracán made its auto show debut at the March 2014 Geneva Auto Show,[2] and was released in the second quarter of 2014.</p>
+                            <h2>Berlinetta</h2>
+                            <p class="item-intro text-muted">Berlinetta by Ferrari.</p>
+                            <img class="img-responsive img-centered" src="img/cars/berlinetta_preview.jpg" alt="">
+                            <p><a href="http://auto.ferrari.com/en_US/sports-cars-models/car-range/f12-berlinetta/">The Berlinetta</a> (from Italian: berlinetta; Italian pronunciation: [berliˈnetta]) is an especially sporty form of coupé. Typically a two-seater, the type may include 2+2s.
+                                The original meaning for berlinetta in Italian is “little saloon”.
+Introduced in the 1930s, the term was popularized by Ferrari in the 1950s. Maserati, Opel, Alfa Romeo, and other European car manufacturers have also used the Berlinetta label. 
+In North America, Chevrolet also produced a version of the Chevrolet Camaro called the Berlinetta, from 1979 to 1986. The model offered European styling touches to emphasize the interior rather than the performance of the car, which had long been the main selling point of the Camaro.</p>
+                            
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                         </div>
                     </div>
@@ -746,6 +996,239 @@ In North America, Chevrolet also produced a version of the Chevrolet Camaro call
                             <p class="item-intro text-muted">LaFerrary by Ferrari.</p>
                             <img class="img-responsive img-centered" src="img/cars/laferrari_preview.jpg" alt="">
                             <p><a href="http://auto.ferrari.com/en_US/sports-cars-models/car-range/laferrari/">LaFerrari </a> (project name, F150) is a limited production hybrid sports car built by Italian sports car maker Ferrari. The car and its name were officially unveiled at the 2013 Geneva Auto Show. It is based on findings from testing of the Ferrari FXX and on research being conducted by the Millechili Project at the University of Modena. Association with the Millechili Project led to speculation during development that the car would weigh under 1,000 kg (2,205 lb), but a dry weight of around 1,255 kg (2,767 lb) was claimed. Only 499 units have been built, and each cost more than 1 million US dollars.</p>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- cars Modal 7 -->
+    <div class="cars-modal modal fade" id="carsModal7" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Ferrari</h2>
+                            <p class="item-intro text-muted">Automotive.</p>
+                            <img class="img-responsive img-centered" src="img/manufacturers/ferrari.jpg" alt="">
+                            <p><a href="http://www.ferrari.com/en_us/auto">Ferrari N.V. </a>  is a dutch company which controls Ferrari S.p.A., an Italian luxury sports car manufacturer based in Maranello. Founded by Enzo Ferrari in 1939 as Auto Avio Costruzioni, the company built its first car in 1940. However, the company's inception as an auto manufacturer is usually recognized in 1947 when the first Ferrari-badged car was completed.
+
+Ferrari is the world's most powerful brand according to Brand Finance.[6] In May 2012 the 1962 Ferrari 250 GTO became the most expensive car in history, selling in a private transaction for $38,115,000 to American communications magnate Craig McCaw.</p>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12 text-left">
+                                        <h2 class="section-heading ">Related Cars</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 col-sm-6 cars-item">
+                                        <a href="#carsModal1" class="cars-link" data-toggle="modal" data-dismiss="modal">
+                                            <div class="cars-hover">
+                                                <div class="cars-hover-content">
+                                                    <i class="fa fa-plus fa-3x"></i>
+                                                </div>
+                                            </div>
+                                            <img src="img/cars/aventador.jpg" class="img-responsive" alt="">
+                                        </a>
+                                        <div class="cars-caption">
+                                            <h4>Aventador</h4>
+                                            <p class="text-muted">Lamborghini</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 cars-item">
+                                        <a href="#carsModal2" class="cars-link" data-toggle="modal" data-dismiss="modal">
+                                            <div class="cars-hover">
+                                                <div class="cars-hover-content">
+                                                    <i class="fa fa-plus fa-3x"></i>
+                                                </div>
+                                            </div>
+                                            <img src="img/cars/huracan.jpg" class="img-responsive" alt="">
+                                        </a>
+                                        <div class="cars-caption">
+                                            <h4>Huracàn</h4>
+                                            <p class="text-muted">Lamborghini</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 cars-item">
+                                        <a href="#carsModal3" class="cars-link" data-toggle="modal" data-dismiss="modal">
+                                            <div class="cars-hover">
+                                                <div class="cars-hover-content">
+                                                    <i class="fa fa-plus fa-3x"></i>
+                                                </div>
+                                            </div>
+                                            <img src="img/cars/centenario.jpg" class="img-responsive" alt="">
+                                        </a>
+                                        <div class="cars-caption">
+                                            <h4>Centenario</h4>
+                                            <p class="text-muted">Lamborghini</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- cars Modal 8 -->
+    <div class="cars-modal modal fade" id="carsModal8" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Lamborghini</h2>
+                            <p class="item-intro text-muted">Automotive.</p>
+                            <img class="img-responsive img-centered" src="img/manufacturers/lamborghini.png" alt="">
+                            <p><a href="http://www.lamborghini.com/en/home/">Automobili Lamborghini S.p.A </a>   (Italian: [lamborˈɡiːni] ( listen)) is an Italian brand and manufacturer of luxury sports cars and, formerly, SUVs, which is owned by the Volkswagen Group through its subsidiary brand division Audi. Lamborghini's production facility and headquarters are located in Sant'Agata Bolognese, Italy. In 2011, Lamborghini's 831 employees produced 1,711 vehicles.</p>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12 text-left">
+                                        <h2 class="section-heading ">Related Cars</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 col-sm-6 cars-item">
+                                        <a href="#carsModal1" class="cars-link" data-toggle="modal" data-dismiss="modal">
+                                            <div class="cars-hover">
+                                                <div class="cars-hover-content">
+                                                    <i class="fa fa-plus fa-3x"></i>
+                                                </div>
+                                            </div>
+                                            <img src="img/cars/aventador.jpg" class="img-responsive" alt="">
+                                        </a>
+                                        <div class="cars-caption">
+                                            <h4>Aventador</h4>
+                                            <p class="text-muted">Lamborghini</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 cars-item">
+                                        <a href="#carsModal2" class="cars-link" data-toggle="modal" data-dismiss="modal">
+                                            <div class="cars-hover">
+                                                <div class="cars-hover-content">
+                                                    <i class="fa fa-plus fa-3x"></i>
+                                                </div>
+                                            </div>
+                                            <img src="img/cars/huracan.jpg" class="img-responsive" alt="">
+                                        </a>
+                                        <div class="cars-caption">
+                                            <h4>Huracàn</h4>
+                                            <p class="text-muted">Lamborghini</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 cars-item">
+                                        <a href="#carsModal3" class="cars-link" data-toggle="modal" data-dismiss="modal">
+                                            <div class="cars-hover">
+                                                <div class="cars-hover-content">
+                                                    <i class="fa fa-plus fa-3x"></i>
+                                                </div>
+                                            </div>
+                                            <img src="img/cars/centenario.jpg" class="img-responsive" alt="">
+                                        </a>
+                                        <div class="cars-caption">
+                                            <h4>Centenario</h4>
+                                            <p class="text-muted">Lamborghini</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- cars Modal 9 -->
+    <div class="cars-modal modal fade" id="carsModal9" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>McLaren</h2>
+                            <p class="item-intro text-muted">Automotive.</p>
+                            <img class="img-responsive img-centered" src="img/manufacturers/mclaren.jpg" alt="">
+                            <p><a href="http://cars.mclaren.com/?_ga=1.53392043.2052479494.1458778494">The McLaren Technology Group</a> is a British conglomerate based in Woking, Surrey, United Kingdom. Founded shortly after Ron Dennis' acquisition of the McLaren Formula One team in 1981, it was originally named the TAG McLaren Group due to a partnership with Mansour Ojjeh's TAG Group. It was renamed to simply the McLaren Group in 2003, then to its current name in 2015, after an increased focus in the technology industry. The Group was originally formed from a Formula One team established by New Zealander Bruce McLaren in 1963 and is now focused around the McLaren Honda Formula One Racing Team, the group's second most profitable company.</p>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12 text-left">
+                                        <h2 class="section-heading ">Related Cars</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 col-sm-6 cars-item">
+                                        <a href="#carsModal1" class="cars-link" data-toggle="modal" data-dismiss="modal">
+                                            <div class="cars-hover">
+                                                <div class="cars-hover-content">
+                                                    <i class="fa fa-plus fa-3x"></i>
+                                                </div>
+                                            </div>
+                                            <img src="img/cars/aventador.jpg" class="img-responsive" alt="">
+                                        </a>
+                                        <div class="cars-caption">
+                                            <h4>Aventador</h4>
+                                            <p class="text-muted">Lamborghini</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 cars-item">
+                                        <a href="#carsModal2" class="cars-link" data-toggle="modal" data-dismiss="modal">
+                                            <div class="cars-hover">
+                                                <div class="cars-hover-content">
+                                                    <i class="fa fa-plus fa-3x"></i>
+                                                </div>
+                                            </div>
+                                            <img src="img/cars/huracan.jpg" class="img-responsive" alt="">
+                                        </a>
+                                        <div class="cars-caption">
+                                            <h4>Huracàn</h4>
+                                            <p class="text-muted">Lamborghini</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 cars-item">
+                                        <a href="#carsModal3" class="cars-link" data-toggle="modal" data-dismiss="modal">
+                                            <div class="cars-hover">
+                                                <div class="cars-hover-content">
+                                                    <i class="fa fa-plus fa-3x"></i>
+                                                </div>
+                                            </div>
+                                            <img src="img/cars/centenario.jpg" class="img-responsive" alt="">
+                                        </a>
+                                        <div class="cars-caption">
+                                            <h4>Centenario</h4>
+                                            <p class="text-muted">Lamborghini</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                         </div>
                     </div>
