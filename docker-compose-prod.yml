@@ -7,12 +7,17 @@ services:
     extends:
       file: docker-compose-common.yml
       service: lb
+    # image: cs373sweg/idb_lb
+    # environment:
+    #   # Always deploy to n1 so the lb always has the same IP address. This is
+    #   # just for convenience and isn't strictly necessary.
+    #   - "constraint:node==*n1"
 
   app:
     extends:
       file: docker-compose-common.yml
       service: app
-    image: lincolnturner/idb_app
+    image: cs373sweg/idb_app
     expose:
       # Expose port 8000 so it's only visibile on the container, not the host
       - "8000"
