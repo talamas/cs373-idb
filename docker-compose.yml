@@ -7,7 +7,7 @@ services:
     extends:
       file: docker-compose-common.yml
       service: lb
-    image: etoews/idb_lb
+    image: lincolnturner/idb_lb
     environment:
       # Always deploy to n1 so the lb always has the same IP address. This is
       # just for convenience and isn't strictly necessary.
