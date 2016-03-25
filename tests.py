@@ -19,6 +19,22 @@ class tests(TestCase):
 		manufacturer_numModels = 9
 		manufacturer = (name = player_name)
 		self.assertEqual(player_name, test_player.name)
+		
+	def test_car_attr_1(self):
+		car_model = "Huracan"
+		test_car = car(model = car_model)
+		self.assertEqual(car_model, test_car.model)
+		
+	def test_car_attr_2(self):
+		car_year = 2015
+		test_car = car(year = car_year)
+		self.assertEqual(car_year, test_car.year)
+		
+	def test_car_attr_3(self):
+		car_safety_rating = 3
+		test_car = car(safety_rating = car_safety_rating)
+		self.assertEqual(car_safety_rating, test_car.safety_rating)
+
 
 if __name__ == '__main__':
     unittest.main()
