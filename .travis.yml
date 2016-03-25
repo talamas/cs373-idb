@@ -1,0 +1,22 @@
+language: python
+
+python:
+   - "3.5"
+
+sudo: false
+
+install:
+    - pip install --upgrade pip
+    - pip --version
+    - pip install coverage
+    - pip install numpy
+
+before_script:
+    - uname -a
+    - printenv
+    - pip list
+    - coverage --version
+
+script:
+    - date
+    - make test
