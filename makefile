@@ -33,6 +33,8 @@ clean:
 	rm -f  *.pyc
 	rm -f  tests.tmp
 
+test: 
+
 models.html: models.py
 	pydoc -w models
 
