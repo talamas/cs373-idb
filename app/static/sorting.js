@@ -9,9 +9,9 @@ angular.module('sortApp', [])
   
   // create the list of sushi rolls 
   $scope.cars = [
-    { img: 'img/cars/aventador.jpg', make: 'Lamborghini' , model:'Aventador', year:2015,price: 399500,safety: 4, dataTarget:'#carsModal1'},
-    { img: 'img/cars/berlinetta.jpg', make: 'Ferrari' , model:'Berlinetta', year:2015,price: 199800,safety: 4, dataTarget:'#carsModal5'},
-    { img: 'img/cars/mclarenp1.jpg', make: 'McLaren' , model:'McLaren P1', year:2015,price: 1030800,safety: 3, dataTarget:'#carsModal10'},
+    { id:1, img: 'img/cars/aventador.jpg', make: 'Lamborghini' , model:'Aventador', year:2015,price: 399500,safety: 4, dataTarget:'#carsModal1'},
+    { id:2, img: 'img/cars/berlinetta.jpg', make: 'Ferrari' , model:'Berlinetta', year:2015,price: 199800,safety: 4, dataTarget:'#carsModal5'},
+    { id:3, img: 'img/cars/mclarenp1.jpg', make: 'McLaren' , model:'McLaren P1', year:2015,price: 1030800,safety: 3, dataTarget:'#carsModal10'},
   ];
   $scope.manufacturers = [
     { id:1, img: 'img/manufacturers/ferrari.jpg', name: 'Ferrari', country: 'Italy' , avgSafety: 3, avgPrice: 298000, modelsNum: 9, dataTarget:'#carsModal7'},
