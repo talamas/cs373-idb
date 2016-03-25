@@ -9,7 +9,7 @@
 <td valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>models</strong></big></big></font></td
 ><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/v/filer4b/v38q001/getz/cs373/cs373-idb/models.py">/v/filer4b/v38q001/getz/cs373/cs373-idb/models.py</a></font></td></tr></table>
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/adolfomuller/Documents/UTA/cs373_Soft_Eng/cs373-idb/models.py">/Users/adolfomuller/Documents/UTA/cs373_Soft_Eng/cs373-idb/models.py</a></font></td></tr></table>
     <p></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -45,14 +45,7 @@ and&nbsp;foreign&nbsp;key&nbsp;for&nbsp;the&nbsp;<a href="#manufacturer">manufac
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="car-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
-&nbsp;<br>
-Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
-values&nbsp;in&nbsp;``kwargs``.<br>
-&nbsp;<br>
-Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
-attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
-for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
+<dl><dt><a name="car-__init__"><strong>__init__</strong></a>(self, id, make_id, make, model, year, price, safety_rating)</dt></dl>
 
 <hr>
 Data descriptors defined here:<br>
@@ -72,7 +65,7 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x2b032f03b050; car&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x1037cef90; car&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('car', MetaData(bind=None), Column('id', I...ty_rating', Integer(), table=&lt;car&gt;), schema=None)</dl>
 
@@ -122,14 +115,7 @@ the&nbsp;<a href="#manufacturer">manufacturer</a><br>&nbsp;</tt></td></tr>
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="manufacturer-__init__"><strong>__init__</strong></a>(self, **kwargs)</dt><dd><tt>A&nbsp;simple&nbsp;constructor&nbsp;that&nbsp;allows&nbsp;initialization&nbsp;from&nbsp;kwargs.<br>
-&nbsp;<br>
-Sets&nbsp;attributes&nbsp;on&nbsp;the&nbsp;constructed&nbsp;instance&nbsp;using&nbsp;the&nbsp;names&nbsp;and<br>
-values&nbsp;in&nbsp;``kwargs``.<br>
-&nbsp;<br>
-Only&nbsp;keys&nbsp;that&nbsp;are&nbsp;present&nbsp;as<br>
-attributes&nbsp;of&nbsp;the&nbsp;instance's&nbsp;class&nbsp;are&nbsp;allowed.&nbsp;These&nbsp;could&nbsp;be,<br>
-for&nbsp;example,&nbsp;any&nbsp;mapped&nbsp;columns&nbsp;or&nbsp;relationships.</tt></dd></dl>
+<dl><dt><a name="manufacturer-__init__"><strong>__init__</strong></a>(self, id, name, country, avg_saftey_rating, avg_price, num_models)</dt></dl>
 
 <hr>
 Data descriptors defined here:<br>
@@ -147,7 +133,7 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x2b032f04f2d0; manufacturer&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x1037f3550; manufacturer&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('manufacturer', MetaData(bind=None), Colum...', Integer(), table=&lt;manufacturer&gt;), schema=None)</dl>
 
@@ -186,6 +172,6 @@ standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><strong>app</strong> = &lt;Flask 'models'&gt;<br>
+<td width="100%"><strong>app</strong> = &lt;Flask 'app.app'&gt;<br>
 <strong>db</strong> = &lt;SQLAlchemy engine='postgresql://user:password@localhost/test'&gt;</td></tr></table>
 </body></html>
