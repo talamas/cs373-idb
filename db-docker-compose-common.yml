@@ -5,7 +5,7 @@ version: "2"
 services:
   lb:
     # The load balancer container. Built from the lb/Dockerfile.
-    container_name: idb_lb
+    container_name: db_test_lb
     build: lb
     restart: unless-stopped
     networks:
@@ -24,12 +24,12 @@ services:
           - apps
     environment:
       # Environment variables to configure the app on startup.
-      - MYSQL_DATABASE=sweetrides
-      - MYSQL_HOST=idb_db
+      - MYSQL_DATABASE=cars_db
+      - MYSQL_HOST=sweetrides
 
   db:
     # The database container. Built from the db/Dockerfile.
-    container_name: idb_db
+    container_name: db_test_db
     build: db
     restart: unless-stopped
     networks:
@@ -39,7 +39,7 @@ services:
       - MYSQL_DATABASE=sweetrides
 
   data:
-    container_name: idb_db_data
+    container_name: db_test_db_data
     # The Data Volume Container used to mount a volume to store our persistent data
     # https://getcarina.com/docs/tutorials/data-volume-containers/
     image: cirros
