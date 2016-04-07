@@ -57,8 +57,8 @@ def get_manufacturers():
     mans_json['mans'].append(make_man_json(man))
   return jsonify(mans_json)
 
-@app.route('/get_car/<int:manufacturer_id>')
-def get_car(manufacturer_id):
+@app.route('/get_manufacturer/<int:manufacturer_id>')
+def get_manufacturer(manufacturer_id):
   man = Manufacturer.query.filter(Manufacturer.id.like(manufacturer_id)).all()
   return jsonify(make_man_json(man))
 
