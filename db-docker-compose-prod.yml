@@ -5,19 +5,19 @@ version: "2"
 services:
   lb:
     extends:
-      file: docker-compose-common.yml
+      file: db-docker-compose-common.yml
       service: lb
-    image: cs373sweg/idb_lb
-    environment:
-      # Always deploy to n1 so the lb always has the same IP address. This is
-      # just for convenience and isn't strictly necessary.
-      - "constraint:node==*n1"
+    image: cs373sweg/db_test_lb
+    # environment:
+    #   # Always deploy to n1 so the lb always has the same IP address. This is
+    #   # just for convenience and isn't strictly necessary.
+    #   - "constraint:node==*n1"
 
   app:
     extends:
-      file: docker-compose-common.yml
+      file: db-docker-compose-common.yml
       service: app
-    image: cs373sweg/idb_app
+    image: cs373sweg/db_test_app
     expose:
       # Expose port 8000 so it's only visibile on the container, not the host
       - "8000"
@@ -27,9 +27,9 @@ services:
 
   db:
     extends:
-      file: docker-compose-common.yml
+      file: db-docker-compose-common.yml
       service: db
-    image: cs373sweg/idb_db
+    image: cs373sweg/db_test_db
     expose:
       # Expose port 3306 so it's only visibile on the container, not the host
       - "3306"
@@ -42,7 +42,7 @@ services:
 
   data:
     extends:
-      file: docker-compose-common.yml
+      file: db-docker-compose-common.yml
       service: data
 
 networks:

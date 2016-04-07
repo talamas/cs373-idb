@@ -1,44 +1,77 @@
 #!/usr/bin/env python3
-from flask import Flask, request, send_from_directory, send_file
+from flask import *
 from flask_sqlalchemy import SQLAlchemy
-from flask_bootstrap import Bootstrap
-import os
+from flask.ext.script import Manager, Server
+from database import db, app, manager
+from setup_database import create_database
+from models import Car, Manufacturer
+#import requests
+import json
 
-app = Flask(__name__, static_url_path='')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://user:password@localhost/test'
-app.config['SQLALCHEMY_ECHO'] = False
-db = SQLAlchemy(app)
-Bootstrap(app)
-
+#APP ROUTING
 @app.route('/')
 @app.route('/index')
 def index():
-  print("index path")
-  return app.send_static_file('index.html')
+  return send_file('index.html')
 
-@app.route('/hello')
-def hello():
-  print("Hello")
-  return "not a page"
+#HELPER FUNCTIONS
+def make_car_json(car):
+  car_json = {}
+  car_json['id'] = car.id
+  car_json['make'] = car.make
+  car_json['model'] = car.model
+  car_json['year'] = car.year
+  car_json['price'] = car.price
+  car_json['horsepower'] = car.horsepower
+  return car_json
 
-@app.route('/img/<img_path>')
-def get_img(img_path):
-  img_path = "static/img/" + img_path
-  print("image path")
-  print(img_path)
-  fn, ext = os.path.splitext(img_path)
-  return send_file(img_path, mimetype='image/'+ext)
+def make_man_json(man):
+  man_json = {}
+  man_json['id'] = man.id
+  man_json['name'] = man.name
+  man_json['num_models'] = man.num_models
+  man_json['avg_price'] = man.avg_price
+  man_json['most_expensive'] = man.most_expensive
+  man_json['avg_horsepower'] = man.avg_horsepower
+  return man_json
 
-@app.route('/<src_path>')
-def get_src(src_path):
-  print("src path")
-  return app.send_static_file(src_path)
+#API ENDPOINTS
+@app.route('/get_cars')
+def get_cars():
+  cars_json = {'cars' : []}
+  cars = Car.query.all()
+  for car in cars:
+    cars_json['cars'].append(make_car_json(car))
+  return jsonify(cars_json)
 
+@app.route('/get_car/<int:car_id>')
+def get_car(car_id):
+  car = Car.query.filter(Car.id.like(car_id)).all()
+  return jsonify(make_car_json(car))
 
-@app.errorhandler(404)
-def page_not_found(e):
-    return app.send_static_file('index.html')
+@app.route('/get_manufacturers')
+def get_manufacturers():
+  mans_json = {'mans' : []}
+  mans = Manufacturer.query.all()
+  for man in mans:
+    mans_json['mans'].append(make_man_json(man))
+  return jsonify(mans_json)
+
+@app.route('/get_car/<int:manufacturer_id>')
+def get_car(manufacturer_id):
+  man = Manufacturer.query.filter(Manufacturer.id.like(manufacturer_id)).all()
+  return jsonify(make_man_json(man))
+
+#DATABASE FUNCTIONS
+@manager.command
+def create_db():
+  db.drop_all()
+  create_database()
+
+@manager.command
+def drop_db():
+  db.drop_all()
 
 if __name__ == '__main__':
   app.run(host = "0.0.0.0", port=5000, debug = True)
+  #manager.run()

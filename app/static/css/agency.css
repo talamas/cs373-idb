@@ -98,7 +98,7 @@ a.column
  .navbar-default
 {
 	background-color:#222;
- border-color:transparent}
+}
  .navbar-default .navbar-brand
 {
 	color:#fed136;
@@ -143,7 +143,6 @@ a.column
 {
 	.navbar-default
 {
-	background-color:transparent;
  padding:25px 0;
  -webkit-transition:padding .3s;
  -moz-transition:padding .3s;
@@ -165,7 +164,15 @@ a.column
  .navbar-default.navbar-shrink .navbar-brand
 {
 	font-size:1.5em}
+.navbar-default-table
+{
+	background-color:#222}
  }
+
+
+
+
+
  header
 {
 	background-image:url(../img/header-bg.jpg);
@@ -696,3 +703,9 @@ td {
 td{
 	max-height:60px;
 }
+div.with-padding{
+	padding-top: 200px;
+}
+
+
+
