@@ -1,0 +1,69 @@
+<div class="container" >
+    <div class="col-lg-12 text-center">
+        <h2 class="section-heading" style="padding-top:100px">{{message}}</h2>
+        <h3 class="section-subheading text-muted">Only the best.</h3>
+    </div>
+    <!--cars Table Section-->
+    <table class="table table-hover center-block table-condensed" style="width:70%">
+        <thead>
+            <tr>   
+                <th class="col-md-1" style="width:1%">
+                    <a class="column" href="#!" ng-click="sortTypeMan = 'id'; sortReverseMan = !sortReverseMan">
+                        Id
+                        <span ng-show="sortTypeMan =='id' && !sortReverseMan" class="fa fa-caret-down"></span>
+                        <span ng-show="sortTypeMan =='id' &&  sortReverseMan" class="fa fa-caret-up"></span>
+                    </a>
+                </th>               
+                <th class="col-md-1">
+                    Picture
+                </th>
+                <th class="col-md-1">
+                    <a class="column" href="#!" ng-click="sortTypeMan = 'name'; sortReverseMan = !sortReverseMan">
+                        Name
+                        <span ng-show="sortTypeMan =='name' && !sortReverseMan" class="fa fa-caret-down"></span>
+                        <span ng-show="sortTypeMan =='name' &&  sortReverseMan" class="fa fa-caret-up"></span>
+                    </a>
+                </th>
+                <th class="col-md-1">
+                    <a class="column" href="#!" ng-click="sortTypeMan = 'country'; sortReverseMan = !sortReverseMan">
+                         Country
+                        <span ng-show="sortTypeMan =='country' && !sortReverseMan" class="fa fa-caret-down"></span>
+                        <span ng-show="sortTypeMan =='country' &&  sortReverseMan" class="fa fa-caret-up"></span>
+                    </a>
+                </th>
+                <th class="col-md-1">
+                    <a class="column" href="#!" ng-click="sortTypeMan = 'avgSafety'; sortReverseMan = !sortReverseMan">
+                         Avg Safety Rating
+                        <span ng-show="sortTypeMan =='avgSafety' && !sortReverseMan" class="fa fa-caret-down"></span>
+                        <span ng-show="sortTypeMan =='avgSafety' &&  sortReverseMan" class="fa fa-caret-up"></span>
+                    </a>
+                </th>
+                <th class="col-md-1">
+                    <a class="column" href="#!" ng-click="sortTypeMan = 'avgPrice'; sortReverseMan = !sortReverseMan">
+                          Avg Price
+                        <span ng-show="sortTypeMan =='avgPrice' && !sortReverseMan" class="fa fa-caret-down"></span>
+                        <span ng-show="sortTypeMan =='avgPrice' &&  sortReverseMan" class="fa fa-caret-up"></span>
+                    </a>
+                </th>
+                <th class="col-md-1">
+                    <a class="column" href="#!" ng-click="sortTypeMan = 'modelsNum'; sortReverseMan = !sortReverseMan">
+                         No. Models
+                        <span ng-show="sortTypeMan =='modelsNum' && !sortReverseMan" class="fa fa-caret-down"></span>
+                        <span ng-show="sortTypeMan =='modelsNum' &&  sortReverseMan" class="fa fa-caret-up"></span>
+                    </a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>           
+            <tr ng-repeat="man in manufacturers | orderBy:sortTypeMan:sortReverseMan" data-target="{{man.dataTarget}}" class="cars-link" data-toggle="modal">
+                <td>{{man.id}}</td>
+                <td><img ng-src='../{{man.img}}' class="img-responsive  img.manufacturer" alt=""> </td>
+                <td>{{man.name}}</td>
+                <td>{{man.country}}</td>
+                <td>{{man.avgSafety}}/5</td>
+                <td>${{man.avgPrice}}</td>
+                <td>{{man.modelsNum}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

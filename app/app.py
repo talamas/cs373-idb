@@ -1,20 +1,36 @@
 #!/usr/bin/env python3
 from flask import *
-#from flask_restful import Resource, Api
 from flask_sqlalchemy import SQLAlchemy
 from flask.ext.script import Manager, Server
 from database import db, app, manager
 from setup_database import create_database
 from models import Car, Manufacturer
-import requests
+#import requests
 import json
 
 #APP ROUTING
 @app.route('/')
 @app.route('/index')
 def index():
-  print("index path")
-  return send_file('index.html')
+  #print("index path")
+  return app.send_static_file('index.html')
+
+@app.route('/testdata')
+def test_data():
+  # cars_json = {'cars' : []}
+  # cars = Car.query.all()
+  # for car in cars:
+  #   car_json = {}
+  #   car_json['id'] = car.id
+  #   car_json['make'] = car.make
+  #   car_json['model'] = car.model
+  #   car_json['year'] = car.year
+  #   car_json['price'] = car.price
+  #   car_json['horsepower'] = car.horsepower
+  #   cars_json['cars'].append(car_json)
+  car_file = open('cars_list.json')
+  cars_json = json.load(car_file)
+  return jsonify(cars_json)
 
 # @app.route('/hello')
 # def hello():
@@ -46,7 +62,7 @@ class Car(db.Model):
 @manager.command
 def create_db():
   db.drop_all()
-  db.create_database()
+  create_database()
 
 @manager.command
 def drop_db():
