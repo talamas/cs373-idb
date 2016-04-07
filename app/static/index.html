@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="sweatRidesApp">
 
 <head>
 
@@ -43,6 +43,7 @@
 
     <!-- JS -->
     <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
     <script src="sorting.js"></script>
 
 
@@ -71,13 +72,13 @@
                         <a href="#page-top"></a>
                     </li>
                     <li ng-class="{active: $route.current.activeTab == 'Manufacturers'}">
-                        <a href="partials/manufacturerTable.html">Manufacturers</a>
+                        <a href="#/mans">Manufacturers</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="partials/carsTable.html">Cars</a>
+                        <a href="#/cars">Cars</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="partials/about.html">About</a>
+                        <a href="#/about">About</a>
                     </li>
                 </ul>
             </div>
@@ -102,7 +103,7 @@
 
     <!--cars Table Section
         Moved this code to partials/manufacturerTable.html-->
-    <h2> Add Something Here about our project</h2>
+    <div ng-view></div>
 
     <!-- Team Section 
         Moved this code to partials/manufacturerTable.html-->

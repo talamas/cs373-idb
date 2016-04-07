@@ -13,7 +13,7 @@ import json
 @app.route('/index')
 def index():
   #print("index path")
-  return app.send_file('index.html')
+  return app.send_static_file('index.html')
 
 @app.route('/testdata')
 def test_data():
