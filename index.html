@@ -40,17 +40,17 @@
     <style>
         body {  }
     </style>
-
+    <script src="sorting.js"></script>
     <!-- JS -->
     <script src="js/angular.min.js"></script>
     <script src="js/angular-route.min.js"></script>
     <script src="js/app.js"></script>
-    <script src="sorting.js"></script>
+    
 
 
 </head>
 
-<body id="page-top" class="index" ng-app="sweatRidesApp" ng-controller="mainController">
+<body id="page-top" class="index">
     <!-- TODO: removed the ng-app="sortApp" -->
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -89,6 +89,7 @@
     </nav>
 
     <!-- Header -->
+    <div ng-view>
     <header>
         <div class="container">
             <div class="intro-text">
@@ -98,6 +99,7 @@
             </div>
         </div>
     </header>
+</div>
 
     <!-- manufacturers Section 
         Moved this code to partials/manufacturerTable.html-->
