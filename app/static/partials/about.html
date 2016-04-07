@@ -1,229 +1,128 @@
-<!DOCTYPE html>
-<html lang="en">
+<div class="col-lg-12 text-center">
+    <h1 class="section-heading">{{message}}</h1>
+    <h3 class="section-subheading text-muted">Meet The Team</h3>
+</div>
 
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>SWEg Cars - Manufacturer Table</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <!-- Added by Talamas, conflicts with scrolling, has green colors
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/sandstone/bootstrap.min.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
--->
-    <!-- Custom CSS -->
-    <link href="../css/agency.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="../css/montserrat.css" rel="stylesheet" type="text/css">
-    <link href='../css/kaushan_script.css' rel='stylesheet' type='text/css'>
-    <link href='../css/droid_serif.css' rel='stylesheet' type='text/css'>
-    <link href='../css/roboto_slab.css' rel='stylesheet' type='text/css'>
-     <style>
-        body {  }
-    </style>
-
-    <!-- JS -->
-    <script src="../js/angular.min.js"></script>
-    <script src="../sorting.js"></script>
-
-
-</head>
-
-<body id="page-top" class="index" ng-app="sortApp" ng-controller="mainController" style="padding-top:100px">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-default table navbar-fixed-top navbar-default-table">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="../index.html">SWEg Cars</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="../index.html"></a>
-                    </li>
-                    <li ng-class="{active: $route.current.activeTab == 'Manufacturers'}">
-                        <a href="manufacturerTable.html">Manufacturers</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="carsTable.html">Cars</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="about.html">About</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+<div class="row">
+    <div class="col-sm-4">
+        <div class="team-member">
+            <img src="../img/team/Samuel.jpg" class="img-responsive img-circle" alt="">
+            <h4>Samuel You</h4>
+            <p class="text-muted">Front End</p>
+            <dl>
+                <dt>Bio:</dt>
+                <dd>Just a CS Student trying to make it in the industry.</dd>
+                <dt>Major Responsibilities: </dt>
+                <dd>PhaseI Team Leader. Created "About" page and "Splash" Page, helped with other front end stuff.</dd>
+                <dt>Number of Commits:</dt>
+                <dd>15</dd>
+                <dt>Number of Issues:</dt>
+                <dd>3</dd>
+                <dt>Number of Unit Tests:</dt>
+                <dd>3</dd>
+            </dl>
         </div>
-        <!-- /.container-fluid -->
-    </nav>
-
-    <section id="about" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h1 class="section-heading">SWEg</h1>
-                    <h3 class="section-subheading text-muted">Meet The Team</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="../img/team/Samuel.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Samuel You</h4>
-                        <p class="text-muted">Front End</p>
-                        <dl>
-                            <dt>Bio:</dt>
-                            <dd>Just a CS Student trying to make it in the industry.</dd>
-                            <dt>Major Responsibilities: </dt>
-                            <dd>PhaseI Team Leader. Created "About" page and "Splash" Page, helped with other front end stuff.</dd>
-                            <dt>Number of Commits:</dt>
-                            <dd>15</dd>
-                            <dt>Number of Issues:</dt>
-                            <dd>3</dd>
-                            <dt>Number of Unit Tests:</dt>
-                            <dd>3</dd>
-                        </dl>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="../img/team/Adolfo.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Adolfo Muller</h4>
-                        <p class="text-muted">Front End</p>
-                        <dl>
-                            <dt>Bio:</dt>
-                            <dd>Adolfo enjoys going on long runs which help him think about how to build a better website. Due to this project he was not able to go running a lot. </dd>
-                            <dt>Major Responsibilities: </dt>
-                            <dd>Bootstrap and CSS. Formated data tables.</dd>
-                            <dt>Number of Commits:</dt>
-                            <dd>16</dd>
-                            <dt>Number of Issues:</dt>
-                            <dd>3</dd>
-                            <dt>Number of Unit Tests:</dt>
-                            <dd>-</dd>
-                        </dl>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="../img/team/Chris.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Chris Getz</h4>
-                        <p class="text-muted">Backend</p>
-                        <dl>
-                            <dt>Bio:</dt>
-                            <dd> Chris is a junior CS student. While not coding or doing class work he enjoys playing ultimate, swing dancing, and boardgames </dd>
-                            <dt>Major Responsibilities:</dt>
-                            <dd>Flask App, Database</dd>
-                            <dt>Number of Commits:</dt>
-                            <dd>6</dd>
-                            <dt>Number of Issues:</dt>
-                            <dd>3</dd>
-                            <dt>Number of Unit Tests:</dt>
-                            <dd>3</dd>
-                        </dl>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="../img/team/David.jpg" class="img-responsive img-circle" alt="">
-                        <h4>David Talamas</h4>
-                        <p class="text-muted">Full Stack</p>
-                        <dl>
-                            <dt>Bio:</dt>
-                            <dd> David enjoys country music and two step dancing. He likes blue jeans and pick up trucks. Everything that makes a good Texan. </dd>
-                            <dt>Major Responsibilities:</dt>
-                            <dd>Setup AngularJS and Apiary</dd>
-                            <dt>Number of Commits:</dt>
-                            <dd>14</dd>
-                            <dt>Number of Issues:</dt>
-                            <dd>3</dd>
-                            <dt>Number of Unit Tests:</dt>
-                            <dd>-</dd>
-                        </dl>
-                    </div>
-                </div>
-                 <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="../img/team/Lincoln.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Lincoln Turner</h4>
-                        <p class="text-muted">Full Stack</p>
-                        <dl>
-                            <dt>Bio:</dt>
-                            <dd>If he's not eating, he's coding. In his free time he enjoys cooking, dancing, and thinking about coding.</dd>
-                            <dt>Major Responsibilities:</dt>
-                            <dd>Hosting; linking Docker and Carina.</dd>
-                            <dt>Number of Commits:</dt>
-                            <dd>8</dd>
-                            <dt>Number of Issues:</dt>
-                            <dd>3</dd>
-                            <dt>Number of Unit Tests:</dt>
-                            <dd>-</dd>
-                        </dl>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <h4>Team Stats Summary</h4>
-                        <dl>
-                            <dt>Total no. of commits:<dd>56</dd></dt>
-                            <dt>Total no. of issues: <dd> 15</dd></dt>
-                            <dt>Total no. of unit tests:<dd>6</dd></dt>
-                        </dl>
-                    </div>
-                </div>
-            </div>
-            <center>
-            <h3>Data:</h3>
-            <h4>
-            <a href="http://developer.edmunds.com/api-documentation/overview/index.html">Edmund's Vehicle Dataset API</a><br>
-            Edmund's API played a vital role in helping the team retrieve large amounts of vehicle data from numerous major manufacturers. This data allowed the team to establish unique models for different vehicles and manufacturers. Our hope is to help our users find their own perfect car by helping them understand the complex relationships between different makes and models from only the best manufacturers.<br>
-            </h4>
-            </center>
-            <h3>External Links:</h3>
-            <h4>
-                <a href="http://docs.carsapi1.apiary.io">Apiary API</a><br>
-                <a href="https://github.com/talamas/cs373-idb/issues">GitHub Issue Tracker</a><br>
-                <a href="https://github.com/talamas/cs373-idb.git">GitHub Repo</a><br>
-                <a href="https://github.com/talamas/cs373-idb/wiki">GitHub Wiki</a><br>
-            </h4>
+    </div>
+    <div class="col-sm-4">
+        <div class="team-member">
+            <img src="../img/team/Adolfo.jpg" class="img-responsive img-circle" alt="">
+            <h4>Adolfo Muller</h4>
+            <p class="text-muted">Front End</p>
+            <dl>
+                <dt>Bio:</dt>
+                <dd>Adolfo enjoys going on long runs which help him think about how to build a better website. Due to this project he was not able to go running a lot. </dd>
+                <dt>Major Responsibilities: </dt>
+                <dd>Bootstrap and CSS. Formated data tables.</dd>
+                <dt>Number of Commits:</dt>
+                <dd>16</dd>
+                <dt>Number of Issues:</dt>
+                <dd>3</dd>
+                <dt>Number of Unit Tests:</dt>
+                <dd>-</dd>
+            </dl>
         </div>
-    </section>
-    <!-- jQuery -->
-    <script src="../js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="../js/jquery.easing.min.js"></script>
-    <script src="../js/classie.js"></script>
-    <script src="../js/cbpAnimatedHeader.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="../js/jqBootstrapValidation.js"></script>
-    <script src="../js/contact_me.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="../js/agency.js"></script>
-</body>
-</html>
+    </div>
+    <div class="col-sm-4">
+        <div class="team-member">
+            <img src="../img/team/Chris.jpg" class="img-responsive img-circle" alt="">
+            <h4>Chris Getz</h4>
+            <p class="text-muted">Backend</p>
+            <dl>
+                <dt>Bio:</dt>
+                <dd> Chris is a junior CS student. While not coding or doing class work he enjoys playing ultimate, swing dancing, and boardgames </dd>
+                <dt>Major Responsibilities:</dt>
+                <dd>Flask App, Database</dd>
+                <dt>Number of Commits:</dt>
+                <dd>6</dd>
+                <dt>Number of Issues:</dt>
+                <dd>3</dd>
+                <dt>Number of Unit Tests:</dt>
+                <dd>3</dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4">
+        <div class="team-member">
+            <img src="../img/team/David.jpg" class="img-responsive img-circle" alt="">
+            <h4>David Talamas</h4>
+            <p class="text-muted">Full Stack</p>
+            <dl>
+                <dt>Bio:</dt>
+                <dd> David enjoys country music and two step dancing. He likes blue jeans and pick up trucks. Everything that makes a good Texan. </dd>
+                <dt>Major Responsibilities:</dt>
+                <dd>Setup AngularJS and Apiary</dd>
+                <dt>Number of Commits:</dt>
+                <dd>14</dd>
+                <dt>Number of Issues:</dt>
+                <dd>3</dd>
+                <dt>Number of Unit Tests:</dt>
+                <dd>-</dd>
+            </dl>
+        </div>
+    </div>
+     <div class="col-sm-4">
+        <div class="team-member">
+            <img src="../img/team/Lincoln.jpg" class="img-responsive img-circle" alt="">
+            <h4>Lincoln Turner</h4>
+            <p class="text-muted">Full Stack</p>
+            <dl>
+                <dt>Bio:</dt>
+                <dd>If he's not eating, he's coding. In his free time he enjoys cooking, dancing, and thinking about coding.</dd>
+                <dt>Major Responsibilities:</dt>
+                <dd>Hosting; linking Docker and Carina.</dd>
+                <dt>Number of Commits:</dt>
+                <dd>8</dd>
+                <dt>Number of Issues:</dt>
+                <dd>3</dd>
+                <dt>Number of Unit Tests:</dt>
+                <dd>-</dd>
+            </dl>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="team-member">
+            <h4>Team Stats Summary</h4>
+            <dl>
+                <dt>Total no. of commits:<dd>56</dd></dt>
+                <dt>Total no. of issues: <dd> 15</dd></dt>
+                <dt>Total no. of unit tests:<dd>6</dd></dt>
+            </dl>
+        </div>
+    </div>
+</div>
+<center>
+<h3>Data:</h3>
+<h4>
+<a href="http://developer.edmunds.com/api-documentation/overview/index.html">Edmund's Vehicle Dataset API</a><br>
+Edmund's API played a vital role in helping the team retrieve large amounts of vehicle data from numerous major manufacturers. This data allowed the team to establish unique models for different vehicles and manufacturers. Our hope is to help our users find their own perfect car by helping them understand the complex relationships between different makes and models from only the best manufacturers.<br>
+</h4>
+</center>
+<h3>External Links:</h3>
+<h4>
+    <a href="http://docs.carsapi1.apiary.io">Apiary API</a><br>
+    <a href="https://github.com/talamas/cs373-idb/issues">GitHub Issue Tracker</a><br>
+    <a href="https://github.com/talamas/cs373-idb.git">GitHub Repo</a><br>
+    <a href="https://github.com/talamas/cs373-idb/wiki">GitHub Wiki</a><br>
+</h4>
