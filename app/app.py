@@ -13,7 +13,8 @@ import json
 @app.route('/index')
 def index():
   #print("index path")
-  return app.send_static_file('index.html')
+  #####
+  return send_file('index.html')
 
 @app.route('/testdata')
 def test_data():
@@ -28,6 +29,8 @@ def test_data():
   #   car_json['price'] = car.price
   #   car_json['horsepower'] = car.horsepower
   #   cars_json['cars'].append(car_json)
+  asldkjasdffaskdf = 'asddfadf'
+  asdfs='asdfas'
   car_file = open('cars_list.json')
   cars_json = json.load(car_file)
   return jsonify(cars_json)
@@ -49,6 +52,14 @@ def test_data():
 # def get_src(src_path):
 #   print("src path")
 #   return app.send_static_file(src_path)
+
+
+#DATABASE
+class Car(db.Model):
+  __tablename__ = 'cars'
+  id = db.Column(db.Integer, primary_key= True)
+  name = db.Column(db.String(256), nullable=False)
+>>>>>>> Stashed changes
 
 
 @manager.command
@@ -73,5 +84,5 @@ def drop_db():
 #     return app.send_static_file('index.html')
 
 if __name__ == '__main__':
-  #app.run(host = "0.0.0.0", port=5000, debug = True)
-  manager.run()
+  app.run(host = "0.0.0.0", port=5000, debug = True)
+  #manager.run()
