@@ -54,6 +54,14 @@ def test_data():
 #   return app.send_static_file(src_path)
 
 
+#DATABASE
+class Car(db.Model):
+  __tablename__ = 'cars'
+  id = db.Column(db.Integer, primary_key= True)
+  name = db.Column(db.String(256), nullable=False)
+>>>>>>> Stashed changes
+
+
 @manager.command
 def create_db():
   db.drop_all()
@@ -76,5 +84,5 @@ def drop_db():
 #     return app.send_static_file('index.html')
 
 if __name__ == '__main__':
-  #app.run(host = "0.0.0.0", port=5000, debug = True)
-  manager.run()
+  app.run(host = "0.0.0.0", port=5000, debug = True)
+  #manager.run()
