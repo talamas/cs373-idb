@@ -165,7 +165,15 @@ a.column
  .navbar-default.navbar-shrink .navbar-brand
 {
 	font-size:1.5em}
+.navbar-default-table
+{
+	background-color:#222}
  }
+
+
+
+
+
  header
 {
 	background-image:url(../img/header-bg.jpg);
