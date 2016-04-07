@@ -5,20 +5,6 @@ FORMAT: 1A
 
 This is where people are going to get cars and manufacturers. 
 
-## API Root [/]
-
-### Retrieve the API Entry Points [GET]
-
-+ Response 200 (application/json)
-
-        {
-            'urls': {
-                        "cars": "/cars",
-                        "manufacturers": "/manufacturers",
-                    }
-        }
-
-
 ## Cars Collection [/cars]
 
 A model for a car, encapsulating the attributes we track for the car
@@ -31,18 +17,20 @@ A model for a car, encapsulating the attributes we track for the car
 
         {
             "1":{
-                "make": "Lamborhini,
-                "model": "Centenario",
-                "year": 2015,
-                "price": 1900000,
-                "safety_rating": 3
+                "horsepower": 201,
+                "model": "ilx",
+                "price": 31890.0,
+                "make": : "acura",
+                "year": 2016,
+                "id": 1
             },
             "2":{
-                "make": "Lamborhini,
-                "model": "Huracan",
-                "year": 2015,
-                "price": 199000,
-                "safety_rating": 4
+                "horsepower": 279,
+                "model": "rdx",
+                "price": 40370.0,
+                "make": : "acura",
+                "year": 2016,
+                "id": 2
             }
         }
 
@@ -56,17 +44,19 @@ A model for a manufacturer, encapsulating the attributes we track for
 
         {
             "1":{
-                "name": "Lamborhini",
-                "country": "Italy",
-                "avg_safety_rating": 3,
-                "avg_price": 250000,
-                "num_models": 6,
+                "avg_price": 32971.67,
+                "id": 1,
+                "num_models": 3,                
+                "avg_horsepower": 291.33,
+                "name": "chrysler",
+                "max_car_id":104
             },
             "2":{
-                "name": "Ferrari",
-                "country": "Italy",
-                "avg_safety_rating": 4,
-                "avg_price": 265000,
-                "num_models": 9,
+                "avg_price": 27965.0,
+                "id": 2,
+                "num_models": 8,                
+                "avg_horsepower": 190.625,
+                "name": "honda",
+                "max_car_id": 152
             }
         }
