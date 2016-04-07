@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sweet Rides</title>
+</head>
+<body>
+    <h1>Cars</h1>
+    <h2>Add a car!</h2>
+    <form method="POST" action="">
+        <label for="name">Car:</label>
+        <input id="name" name="name" type="text" autofocus/>
+        <br/><br/>
+        <input type="submit"/>
+    </form>
+    <h2>List of Cars:</h2>
+    <ol>
+        {% for car in cars %}
+        <li>{{ car.name }}</li>
+        {% endfor %}
+    </ol>
+</body>
+</html>
