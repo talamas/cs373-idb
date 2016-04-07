@@ -10,6 +10,11 @@ install:
     - pip --version
     - pip install coverage
     - pip install numpy
+    - pip install flask
+    - pip install flask-script
+    - pip install flask-sqlalchemy
+    - pip install pymysql
+    - pip install gunicorn
 
 before_script:
     - uname -a
