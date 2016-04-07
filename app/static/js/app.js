@@ -15,7 +15,12 @@ angular.module("sweatRidesApp", ["ngRoute"])
 	            when("/about", {
 	                templateUrl: "../partials/about.html",
 	                controller: "aboutCtrl"
+	            }).
+	            when("/home", {
+	                templateUrl: "../partials/home.html",
+	                controller: "homeCtrl"
 	            })
+	            .otherwise({redirectTo: '/home'})
 	})
 	.controller("manTableCtrl", ['$scope',function($scope) {
 		$scope.message = "MANUFACTURERS";
@@ -25,4 +30,7 @@ angular.module("sweatRidesApp", ["ngRoute"])
 	}])
 	.controller("aboutCtrl", ['$scope',function($scope) {
 		$scope.message = "ABOUT";
+	}])
+	.controller("homeCtrl", ['$scope',function($scope) {
+		$scope.message = "HOME";
 	}])

@@ -63,7 +63,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">SWEg Cars</a>
+                <a class="navbar-brand page-scroll" href="#/home" data-target="#home">SWEg Cars</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -87,19 +87,12 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-
+    
+    <div ng-view>
     <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in">Welcome To Our Project!</div>
-                <div class="intro-heading">Brought to you by TEAM SWEg</div>
-                <a href="#/manufacturers" class="page-scroll btn btn-xl">Get Started</a>
-            </div>
-        </div>
-    </header>
+        <div href="#/home" data-target="#home">Home</a>
 
-    <ng-view></ng-view>
+    </div>
 
     <!-- manufacturers Section 
         Moved this code to partials/manufacturerTable.html-->
