@@ -1,11 +1,10 @@
 /// <reference path="angular.min.js" />
 
-var lax = angular.module('sweatRidesApp', ['ngRoute']);
+var lax = angular.module("sweatRidesApp", ["ngRoute"]);
 
-lax.config(['$routeProvider',
-function($routeProvider) {
+lax.config(function($routeProvider) {
     $routeProvider.
-            when('/manufacturers', {
+            when('/mans', {
                 templateUrl: '../partials/manufacturersTable.html',
                 controller: 'manTableCtrl'
             }).
@@ -13,13 +12,17 @@ function($routeProvider) {
                 templateUrl: '../partials/carsTable.html',
                 controller: 'carsTableCtrl'
             }).
-}]);
-
-lax.controller('manTableCtrl', function($scope) {
+            when('/about', {
+                templateUrl: '../partials/about.html',
+                controller: 'aboutCtrl'
+            })
+})
+.controller('manTableCtrl', function($scope) {
 $scope.message = 'This is Add new man info';
-});
-
-
-lax.controller('carsTableCtrl', function($scope) {
+})
+.controller('carsTableCtrl', function($scope) {
 $scope.message = 'This is car info';
-});
+})
+.controller('aboutCtrl', function($scope) {
+$scope.message = 'This is about info';
+})
