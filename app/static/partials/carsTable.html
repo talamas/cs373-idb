@@ -1,72 +1,70 @@
+<div class="container">
+    <div class="col-lg-12 text-center">
+        <h2 class="section-heading" style="padding-top:100px">{{message}}</h2>
+        <h3 class="section-subheading text-muted">Checkout our vast selection.</h3>
+    </div>
 
-<div class="col-lg-12 text-center">
-    <h2 class="section-heading">{{message}}</h2>
-    <h3 class="section-subheading text-muted">Checkout our vast selection.</h3>
+  <table class="table table-hover center-block table-condensed" style="width:70%">
+        <thead>
+            <tr>
+                <th class="col-md-1" style="width:1%">
+                    <a class="column" href="#/cars" ng-click="sortType = 'id'; sortReverse = !sortReverse">
+                        Id
+                        <span ng-show="sortType =='id' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType =='id' &&  sortReverse" class="fa fa-caret-up"></span>
+                    </a>
+                </th>
+                <th class="col-md-1">
+                    Picture
+                </th>
+                <th class="col-md-1">
+                    <a class="column" href="#/cars" ng-click="sortType = 'make'; sortReverse = !sortReverse">
+                         Make
+                        <span ng-show="sortType =='make' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType =='make' &&  sortReverse" class="fa fa-caret-up"></span>
+                    </a>
+                </th>
+                <th class="col-md-1">
+                    <a class="column" href="#/cars" ng-click="sortType = 'model'; sortReverse = !sortReverse">
+                         Model
+                        <span ng-show="sortType =='model' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType =='model' &&  sortReverse" class="fa fa-caret-up"></span>
+                    </a>
+                </th>
+                <th class="col-md-1">
+                    <a class="column" href="#/cars" ng-click="sortType = 'year'; sortReverse = !sortReverse">
+                          Year
+                        <span ng-show="sortType =='year' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType =='year' &&  sortReverse" class="fa fa-caret-up"></span>
+                    </a>
+                </th>
+                <th class="col-md-1">
+                    <a class="column" href="#/cars" ng-click="sortType = 'price'; sortReverse = !sortReverse">
+                         Price
+                        <span ng-show="sortType =='price' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType =='price' &&  sortReverse" class="fa fa-caret-up"></span>
+                    </a>
+                </th>
+                <th class="col-md-1">
+                    <a class="column" href="#/cars" ng-click="sortType = 'horsepower'; sortReverse = !sortReverse">
+                          Horsepower
+                        <span ng-show="sortType =='safety' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType =='safety' &&  sortReverse" class="fa fa-caret-up"></span>
+                    </a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>           
+            <tr dir-paginate="car in cars | orderBy:sortType:sortReverse | itemsPerPage:10" data-target="{{car.dataTarget}}" class="cars-link" data-toggle="modal">
+                <td>{{car.id}}</td>
+                <td><img ng-src='{{car.img_url}}' class="img-responsive" alt=""> </td>
+                <td>{{car.make}}</td>
+                <td>{{car.model}}</td>
+                <td>{{car.year}}</td>
+                <td>${{car.price|number:2}}</td>
+                <td>{{car.horsepower}}</td>
+            </tr>
+        </tbody>
+	
+    </table><dir-pagination-controls max-size="7" direction-links="true" boundary-links="true"></dir-pagination-controls>
 </div>
-
-<table class="table table-hover center-block table-condensed" style="width:70%">
-<thead>
-    <tr>
-        <th class="col-md-1" style="width:1%">
-            <a class="column" href="#!" ng-click="sortType = 'id'; sortReverse = !sortReverse">
-                Id
-                <span ng-show="sortType =='id' && !sortReverse" class="fa fa-caret-down"></span>
-                <span ng-show="sortType =='id' &&  sortReverse" class="fa fa-caret-up"></span>
-            </a>
-        </th>
-        <th class="col-md-1">
-            Picture
-        </th>
-        <th class="col-md-1">
-            <a class="column" href="#!" ng-click="sortType = 'make'; sortReverse = !sortReverse">
-                 Make
-                <span ng-show="sortType =='make' && !sortReverse" class="fa fa-caret-down"></span>
-                <span ng-show="sortType =='make' &&  sortReverse" class="fa fa-caret-up"></span>
-            </a>
-        </th>
-        <th class="col-md-1">
-            <a class="column" href="#!" ng-click="sortType = 'model'; sortReverse = !sortReverse">
-                 Model
-                <span ng-show="sortType =='model' && !sortReverse" class="fa fa-caret-down"></span>
-                <span ng-show="sortType =='model' &&  sortReverse" class="fa fa-caret-up"></span>
-            </a>
-        </th>
-        <th class="col-md-1">
-            <a class="column" href="#!" ng-click="sortType = 'year'; sortReverse = !sortReverse">
-                  Year
-                <span ng-show="sortType =='year' && !sortReverse" class="fa fa-caret-down"></span>
-                <span ng-show="sortType =='year' &&  sortReverse" class="fa fa-caret-up"></span>
-            </a>
-        </th>
-        <th class="col-md-1">
-            <a class="column" href="#!" ng-click="sortType = 'price'; sortReverse = !sortReverse">
-                 Price
-                <span ng-show="sortType =='price' && !sortReverse" class="fa fa-caret-down"></span>
-                <span ng-show="sortType =='price' &&  sortReverse" class="fa fa-caret-up"></span>
-            </a>
-        </th>
-        <th class="col-md-1">
-            <a class="column" href="#!" ng-click="sortType = 'safety'; sortReverse = !sortReverse">
-                  Safety Rating
-                <span ng-show="sortType =='safety' && !sortReverse" class="fa fa-caret-down"></span>
-                <span ng-show="sortType =='safety' &&  sortReverse" class="fa fa-caret-up"></span>
-            </a>
-        </th>
-    </tr>
-</thead>
-<tbody>           
-    <tr ng-repeat="car in cars | orderBy:sortType:sortReverse" data-target="{{car.dataTarget}}" class="cars-link" data-toggle="modal">
-        <td>{{car.id}}</td>
-        <td><img ng-src='../{{car.img}}' class="img-responsive" alt=""> </td>
-        <td>{{car.make}}</td>
-        <td>{{car.model}}</td>
-        <td>{{car.year}}</td>
-        <td>${{car.price}}</td>
-        <td>{{car.safety}}/5</td>
-    </tr>
-</tbody>
-<<<<<<< HEAD
-</table>
-=======
-</table>
->>>>>>> be1a3b4fd6844b057b2ab3c41f09e471cc4278df
