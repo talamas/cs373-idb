@@ -133,7 +133,7 @@
             </tr>
         </thead>
         <tbody>           
-            <tr ng-repeat="car in cars | orderBy:sortType:sortReverse" data-target="{{car.dataTarget}}" class="cars-link" data-toggle="modal">
+            <tr dir-paginate="car in cars | orderBy:sortType:sortReverse | itemsPerPage:5" data-target="{{car.dataTarget}}" class="cars-link" data-toggle="modal">
                 <td>{{car.id}}</td>
                 <td><img ng-src='../{{car.img}}' class="img-responsive" alt=""> </td>
                 <td>{{car.make}}</td>
@@ -143,7 +143,8 @@
                 <td>{{car.safety}}/5</td>
             </tr>
         </tbody>
-    </table>
+	
+    </table><dir-pagination-controls max-size="5" direction-links="true" boundary-links="true"></dir-pagination-controls>
 </section>
     <!-- jQuery -->
     <script src="../js/jquery.js"></script>
@@ -162,5 +163,6 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../js/agency.js"></script>
+    <script src="../js/dirPagination.js"></script>
 </body>
 </html>
