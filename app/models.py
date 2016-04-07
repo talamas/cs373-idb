@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import sqlalchemy
 from database import db
 
 
@@ -10,7 +10,7 @@ class Car(db.Model):
   '''
 
   id = db.Column(db.Integer, primary_key=True)
-  make = db.relationship("Manufacturer")
+  make = db.Column(db.String(80))
   model = db.Column(db.String(80), unique=True)
   year = db.Column(db.Integer)
   price = db.Column(db.Float)
