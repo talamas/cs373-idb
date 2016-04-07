@@ -4,7 +4,7 @@ var lax = angular.module("sweatRidesApp", ["ngRoute"])
 	.config(function($routeProvider) {
 	    $routeProvider.
 	            when('/mans', {
-	                templateUrl: '../partials/manufacturersTable.html',
+	                templateUrl: '../partials/manufacturerTable.html',
 	                controller: 'manTableCtrl'
 	            }).
 	            when('/cars', {
