@@ -6,11 +6,11 @@ lax.config(['$routeProvider',
 function($routeProvider) {
     $routeProvider.
             when('/manufacturers', {
-                templateUrl: '/app/static/partials/manufacturersTable.html',
+                templateUrl: '../partials/manufacturersTable.html',
                 controller: 'manTableCtrl'
             }).
             when('/cars', {
-                templateUrl: '/app/static/partials/carsTable.html',
+                templateUrl: '../partials/carsTable.html',
                 controller: 'carsTableCtrl'
             }).
 }]);
