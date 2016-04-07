@@ -1,0 +1,585 @@
+commit 733267a53bcea796aa99c3c02f60135e7a9276e4
+Merge: eb360ab 1a88cbc
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 7 14:30:16 2016 -0500
+
+    Merge branch 'david2.0' of https://github.com/talamas/cs373-idb into david2.0
+
+commit eb360abc0ba4ce794641f3abb7214ab6ddbee278
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 7 14:29:32 2016 -0500
+
+    fixed issue with API endpoints
+
+commit 1a88cbcae5263df90d89f2d21b2691e472131206
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 7 13:59:08 2016 -0500
+
+    made app.js pretty again
+
+commit d7ca94bcbbf9545d1dc0ffc26a5b90fb08adc8dd
+Merge: 3b17534 8d5c049
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 7 13:01:09 2016 -0500
+
+    Merge branch 'david2.0' of https://github.com/talamas/cs373-idb into david2.0
+    
+    .0
+    
+    t
+    quit
+
+commit 8d5c049f8298a0cda30406307fd52d2ecc15098d
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 7 12:54:26 2016 -0500
+
+    Added API endpoints
+
+commit 0ecfa14017ad2d703ad9e281749aae4388133858
+Author: David Talamas Cano <talamas@cs.utexas.edu>
+Date:   Thu Apr 7 12:52:58 2016 -0500
+
+    tables fully working
+
+commit 29723b38661634f6c067e9e71168dee80f85c0b1
+Author: David Talamas Cano <talamas@cs.utexas.edu>
+Date:   Thu Apr 7 12:42:21 2016 -0500
+
+    trying to pop stash
+
+commit 75d405f45feadcb353c6474ae5aaa09d4fb41f16
+Author: David Talamas Cano <talamas@cs.utexas.edu>
+Date:   Thu Apr 7 12:07:04 2016 -0500
+
+    tables working w pagination
+
+commit f3bd219b9c143aa49ade36b82f6c043c812954b6
+Author: David Talamas Cano <talamas@cs.utexas.edu>
+Date:   Thu Apr 7 00:55:41 2016 -0500
+
+    refactoring
+
+commit 636f457db48c3408c7e59d272b01794f04b06777
+Merge: 7be127f b948c82
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 7 00:48:28 2016 -0500
+
+    Merge branch 'database' of https://github.com/talamas/cs373-idb into database
+
+commit 7be127fea7ab081858ff81f1f66fdba05658c0bd
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 7 00:48:17 2016 -0500
+
+    added partials/home.html
+
+commit b948c82f124d4e392efb074281aa85eaf1a14ce9
+Author: David Talamas Cano <talamas@cs.utexas.edu>
+Date:   Thu Apr 7 00:48:05 2016 -0500
+
+    added sorting functionality
+
+commit 78d2699278b429b9e922e62c6eb31e4c16c8f63f
+Author: David Talamas Cano <talamas@cs.utexas.edu>
+Date:   Thu Apr 7 00:45:31 2016 -0500
+
+    removed extra index.html file
+
+commit 0766b113ab06c25cc4a7178331672259d144e4d5
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 7 00:29:42 2016 -0500
+
+    page is looking good
+
+commit 52d12b2c238f74b2f1f85252b698994b4d7f329a
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Wed Apr 6 23:10:11 2016 -0500
+
+    made the partials works
+
+commit 0a42b4214032c5d6ec53bbafe9824c6dc0270ad3
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Wed Apr 6 21:48:56 2016 -0500
+
+    removed ng-app sorting
+
+commit ea0d322744fecf2965439c83ec654cf2d75d6cf4
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Wed Apr 6 21:22:32 2016 -0500
+
+    added app.js to index
+
+commit 6b15bb3f5ee41f2685acd83d768ddea9c057a1d1
+Merge: fe63f87 be1a3b4
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Wed Apr 6 21:03:52 2016 -0500
+
+    adding partials to database
+
+commit fe63f87bfe8e65055eef793b0c6c61c72714150f
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Wed Apr 6 21:03:03 2016 -0500
+
+    added angular-route.min.js
+
+commit cb8cafd380af886357a4ba4ba50dad67fcd252e7
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Wed Apr 6 21:02:34 2016 -0500
+
+    added app.js and angular-route.min.js
+
+commit 7c1147f975d9adb0ba9202708686808e9e9162ff
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Wed Apr 6 21:01:31 2016 -0500
+
+    added partials to databse branch
+
+commit be1a3b4fd6844b057b2ab3c41f09e471cc4278df
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Wed Apr 6 20:59:52 2016 -0500
+
+    updating html files
+
+commit 92322d1c1db59c58734b6af92043874c01c0069d
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Wed Apr 6 20:44:29 2016 -0500
+
+    models moved to app directory
+
+commit a578615c42135be370235ba2bb6265e76966f40f
+Merge: 9f9d8e3 c1e9b6f
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Wed Apr 6 20:43:38 2016 -0500
+
+    adding updated html files for testing
+
+commit 9f9d8e3ffd094bdabccb5a4de13f473746907c98
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Wed Apr 6 20:36:32 2016 -0500
+
+    Fixed issues with models and setup_database files
+
+commit 38b9e72c1e32a4c256ddfe9cb012a30a8d42e1ad
+Author: getzchris <getzchris@ymail.com>
+Date:   Wed Apr 6 00:06:11 2016 -0500
+
+    refactored scraping script added
+
+commit 0603fe57c204c4e468c65c68a9433c378d4c1dc3
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Tue Apr 5 22:42:15 2016 -0500
+
+    created files to add basic database functionality and changed some docker files
+
+commit 89acccc583bb64aadeb49d2c74bb2ec702671430
+Author: getzchris <getzchris@ymail.com>
+Date:   Tue Apr 5 18:13:15 2016 -0500
+
+    created json lists
+
+commit 031ada7914589def7263f4fbb707ba78598c2c22
+Author: getzchris <getzchris@ymail.com>
+Date:   Mon Apr 4 17:41:09 2016 -0500
+
+    starting mysql work
+
+commit c1e9b6fef91a3d3b63c44545b9ca05cd97db8036
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Sun Apr 3 22:16:08 2016 -0500
+
+    changed it from scrollable to separate pages
+
+commit c5d10807e854d8fb075883651d26265835edfd7b
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Sun Apr 3 20:46:13 2016 -0500
+
+    added partials folder and some files in it
+
+commit 3b17534a28acec607f63de6b84e741c58d334f2e
+Merge: de2b458 a86b083
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Mar 24 20:57:38 2016 -0500
+
+    Merge branch 'dev'
+
+commit a86b083227685174e1e1e1662e65db98767ab191
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Mar 24 20:56:29 2016 -0500
+
+    final updates
+
+commit de2b4583b09f85189c47aed477a3d56b00d4cf2f
+Merge: 76cf553 378ebf4
+Author: SamuelY94 <SamuelY94@utexas.edu>
+Date:   Thu Mar 24 20:46:17 2016 -0500
+
+    Merge branch 'dev'
+
+commit 378ebf43be0a38b150009211c76a48cf3121995a
+Author: Samuely94 <samuely94@utexas.edu>
+Date:   Thu Mar 24 20:30:33 2016 -0500
+
+    Update Stats
+
+commit e648b382264a88706b61a57f2564c6dfbe253bab
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Mar 24 20:16:20 2016 -0500
+
+    added David's Bio
+
+commit d451efe0a8142a9ed97bc4875090577ce473f577
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Mar 24 20:09:44 2016 -0500
+
+    changed models.html and added idb1.log
+
+commit 25919b678126367acbc79c3c8dad7b8af5e5e1bb
+Author: SamuelY94 <SamuelY94@utexas.edu>
+Date:   Thu Mar 24 19:59:47 2016 -0500
+
+    fix makefile
+
+commit 12932ad50f031471a85cffe098d5e076d3f498b7
+Author: SamuelY94 <SamuelY94@utexas.edu>
+Date:   Thu Mar 24 19:56:59 2016 -0500
+
+    fix makefile
+
+commit 4203ab4f48150e5a2ee1cdac4310ba5edd378bf0
+Author: SamuelY94 <SamuelY94@utexas.edu>
+Date:   Thu Mar 24 19:54:04 2016 -0500
+
+    added info for people
+
+commit 58a8215f55985aa0c561e9ea0fe94c31951cf26f
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Mar 24 19:41:03 2016 -0500
+
+    remove padding on the top page
+
+commit 2816664811195a09aacdeabcbfb74caf53bc3260
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Mar 24 19:39:17 2016 -0500
+
+    Added Adolfo's bio
+
+commit 03b792bd7c43d71472abd206b1e26060ed855451
+Author: GetzChris <getzchris@utexas.edu>
+Date:   Thu Mar 24 19:14:48 2016 -0500
+
+    Update tests.py
+
+commit d0f6d9f9c275a02bfc284be9c12c785f790469b3
+Merge: ceb83d7 e4ccc66
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Mar 24 19:12:28 2016 -0500
+
+    Merge branch 'dev' of https://github.com/talamas/cs373-idb into dev
+
+commit ceb83d78933972a175f6131de08c135f9c7710f0
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Mar 24 19:12:11 2016 -0500
+
+    made the index smaller on both tables
+
+commit e4ccc6611ec04ff0ff7fb50634d5f2552395a4a9
+Author: Samuely94 <samuely94@utexas.edu>
+Date:   Thu Mar 24 19:05:12 2016 -0500
+
+    Update tests.py
+
+commit f3f9a63feddb7889d4a267ddbff2dbded3cd063b
+Merge: 9ae7c18 b3972ba
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Mar 24 19:02:01 2016 -0500
+
+    Merge branch 'dev' of https://github.com/talamas/cs373-idb into dev
+
+commit b3972badf9edec04bc5e782915bfb32fbeb633e5
+Author: Amullerf1 <muller.adolfo@gmail.com>
+Date:   Thu Mar 24 19:01:56 2016 -0500
+
+    Update sorting.js
+
+commit 9ae7c18a650f8325f1820845a998773c12c65cbb
+Merge: f910a2c 4b45218
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Mar 24 18:58:29 2016 -0500
+
+    Merge branch 'dev' of https://github.com/talamas/cs373-idb into dev
+
+commit f910a2c9081389ad2ad7daed118363b01f4103b8
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Mar 24 18:58:25 2016 -0500
+
+    added ID to car table
+
+commit 4b45218297f00f3c847097198bc8a7bb11e74c5a
+Author: Amullerf1 <muller.adolfo@gmail.com>
+Date:   Thu Mar 24 18:58:01 2016 -0500
+
+    Update sorting.js
+
+commit 78f25f3e0874316195f30e8154ec95d315bcc843
+Author: SamuelY94 <SamuelY94@utexas.edu>
+Date:   Thu Mar 24 18:43:04 2016 -0500
+
+    fix manufacturer table
+
+commit 17eb80a10ac823bfae56483fd3f162924660dd55
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Mar 24 18:01:55 2016 -0500
+
+    added a ferrari and a mclaren for related cars/manufacturers
+
+commit 2f7022809145b7d5975c378f3944467e6edd2f49
+Author: Amullerf1 <muller.adolfo@gmail.com>
+Date:   Thu Mar 24 17:58:20 2016 -0500
+
+    Update sorting.js
+
+commit 06fe563a1c0be001e1cdddaa3bf54c0b7cbd729b
+Author: Amullerf1 <muller.adolfo@gmail.com>
+Date:   Thu Mar 24 17:47:00 2016 -0500
+
+    Update sorting.js
+
+commit 19ec07052d664d092c3967caf540a77646f86eec
+Author: getzchris <getzchris@ymail.com>
+Date:   Thu Mar 24 17:33:13 2016 -0500
+
+    added python init files
+
+commit c2cab3b0508727d9305fa472b09c47f80b6bf63b
+Merge: ff5b558 4600b3c
+Author: getzchris <getzchris@ymail.com>
+Date:   Thu Mar 24 17:22:47 2016 -0500
+
+    Merge branch 'dev'
+
+commit ff5b5583860be4f349475747b973e1081f34babe
+Author: getzchris <getzchris@ymail.com>
+Date:   Thu Mar 24 17:22:27 2016 -0500
+
+    created models init method
+
+commit 4600b3c602c3297b4d104ec6827dbf122abd63d1
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Mar 24 17:16:31 2016 -0500
+
+    added pictures for the bootstrap wiki
+
+commit 7a63510267066910dea8971585b9a463d65d93af
+Author: SamuelY94 <SamuelY94@utexas.edu>
+Date:   Thu Mar 24 16:59:42 2016 -0500
+
+    fix ferrari logo
+
+commit 76cf55323f9b6db6ced622fb8252fe7c90c3f8e4
+Author: talamas <david.talamas@utexas.edu>
+Date:   Thu Mar 24 16:50:49 2016 -0500
+
+    Added image for the technical manual
+
+commit 4696ec2fc58dbf2e4e6eb932256ea4a39c5f21ef
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Mar 24 16:41:44 2016 -0500
+
+    saved the js and css files into local directories
+
+commit ea986afb09f1ee7ba7b03d66f8b079c970411610
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Mar 24 16:35:16 2016 -0500
+
+    fixed the modal scroling and resize images
+
+commit c8fbc60eb4737629169b6be1f6ebe7b2c08f8194
+Author: David Talamas <david.talamas@utexas.edu>
+Date:   Thu Mar 24 13:28:56 2016 -0500
+
+    Mock server working + changed attributes. Closes #15
+
+commit 291822f2734121c2c95ac0c8ae4c983468e88998
+Author: David Talamas Cano <talamas@cs.utexas.edu>
+Date:   Thu Mar 24 13:05:00 2016 -0500
+
+    added sorting to tables using AngularJS
+
+commit 5721531d1e34fcdbb028f3359d1640f0d1e99672
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Mar 24 07:08:17 2016 -0500
+
+    updated docker files
+
+commit bcfe7c6a18628d358d116ef0a52f53e993a54b80
+Author: Samuely94 <samuel@wireless-10-147-114-110.public.utexas.edu>
+Date:   Wed Mar 23 23:48:54 2016 -0500
+
+    fixed lambo photo
+
+commit 66d27f88d72b683c913f38567fd9eb19d49fb636
+Merge: 91998d3 a5a0cf3
+Author: Samuely94 <samuel@wireless-10-147-114-110.public.utexas.edu>
+Date:   Wed Mar 23 23:39:37 2016 -0500
+
+    Merge branch 'dev' of https://github.com/talamas/cs373-idb into dev
+
+commit 91998d39554b2d40cfb3ac0e0330d279168371a1
+Author: Samuely94 <samuel@wireless-10-147-114-110.public.utexas.edu>
+Date:   Wed Mar 23 23:38:21 2016 -0500
+
+    make page look nicer
+
+commit a5a0cf39d362a78cfa5507fdc8b61a61ac333b82
+Author: getzchris <getzchris@ymail.com>
+Date:   Wed Mar 23 22:58:26 2016 -0500
+
+    app correctly serves images
+
+commit 77d6c4a111e1da779c4f645ed4cd25fb00d87766
+Merge: cf94ddb 33215a2
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Wed Mar 23 22:30:34 2016 -0500
+
+    Merge branch 'dev' of https://github.com/talamas/cs373-idb into dev
+
+commit cf94ddb37af80590ea1106512439eee06cdad9f0
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Wed Mar 23 22:30:11 2016 -0500
+
+    added dummy tests.py file and moved other files to main folder
+
+commit 33215a243cea106db1bad2a936a4a8fe9bbe46aa
+Author: Samuely94 <samuel@wireless-10-147-114-110.public.utexas.edu>
+Date:   Wed Mar 23 22:15:04 2016 -0500
+
+    addded team pics
+
+commit 0d1fda05020add3024b78fc500a9c272ed99b5f5
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Wed Mar 23 21:28:23 2016 -0500
+
+    added .travis.yml
+
+commit 03311db88817ff78d8ba90953f06817a557d5227
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Wed Mar 23 20:31:50 2016 -0500
+
+    Added support for building project with docker and hosting on carina, closes #7
+
+commit 090d6a5d30ceea7e540682bb3dd13a99d6bf6964
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Wed Mar 23 20:22:18 2016 -0500
+
+    added related cars/manufacturers to the tables
+
+commit 25ab7157c4d30acd1823ffede89e1f66c8eb1580
+Author: getzchris <getzchris@ymail.com>
+Date:   Wed Mar 23 18:12:31 2016 -0500
+
+    Moved files to static directory
+
+commit 3807fa951deee8c37a86d4cd81be6eb05a199a64
+Merge: 801d36b 4d840f0
+Author: getzchris <getzchris@ymail.com>
+Date:   Wed Mar 23 16:39:18 2016 -0500
+
+    Merge branch 'adolfo' into dev
+
+commit 801d36b56be2998c423ddb0eb2a3b688166718b2
+Merge: e3ff3bb 703fdc1
+Author: getzchris <getzchris@ymail.com>
+Date:   Wed Mar 23 14:55:20 2016 -0500
+
+    "app serves static index.html page"
+
+commit 703fdc19092957e3552bc2d42d6cb217a3a7bd9e
+Author: getzchris <getzchris@ymail.com>
+Date:   Wed Mar 23 14:50:04 2016 -0500
+
+    app working, serves only static index page
+
+commit 13205c03535ebc2029fc137d58066f079ad9bc60
+Author: getzchris <getzchris@ymail.com>
+Date:   Wed Mar 23 14:30:56 2016 -0500
+
+    Split Modles and app into separate files
+
+commit 4d840f037eb125020d53b0cc5a5aff7db00875c2
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Tue Mar 22 21:33:21 2016 -0500
+
+    changed the table to show more attributes
+
+commit 2b1125fd624694fffa269d9c12da2e162c20035d
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Tue Mar 22 21:18:50 2016 -0500
+
+    fixed an issue with the car grid not being symetrical
+
+commit 09a535e52337c9ec24124cf8ed15e46056b116e9
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Tue Mar 22 20:48:26 2016 -0500
+
+    added car table
+
+commit e3ff3bba64b9d074697855ad781a6a1e670a7a0d
+Author: David Talamas <david.talamas@utexas.edu>
+Date:   Tue Mar 22 20:37:00 2016 -0500
+
+    Transferring API Description file from Apiary.io. Initial API design
+
+commit 902bbbc71f1624345ff32b257cd2076ee5801eeb
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Tue Mar 22 19:53:49 2016 -0500
+
+    changed the Cars Grid Section
+
+commit 72ce49b15fd51ee4aacc50eba076b154e699eac0
+Author: Samuely94 <samuel@wireless-10-147-16-49.public.utexas.edu>
+Date:   Tue Mar 22 19:19:26 2016 -0500
+
+    new background
+
+commit 7713d3b198ecb634d0d0e86e3718fd77d0c666b5
+Author: Samuely94 <samuel@wireless-10-147-16-49.public.utexas.edu>
+Date:   Tue Mar 22 19:16:00 2016 -0500
+
+    fix about page
+
+commit f2fe45c3d9c106951ecde94d56f2cd0401301163
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Tue Mar 22 19:12:16 2016 -0500
+
+    added a new tempalte for the website and modified some of the info, especially the cars section
+
+commit c77f8e0dec2444c9dd22c1b703e37c6a75093e42
+Author: David Talamas <david.talamas@utexas.edu>
+Date:   Tue Mar 22 17:51:10 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit 60297523d016902a71c8041a7177647f6dc315b0
+Author: getzchris <getzchris@ymail.com>
+Date:   Mon Mar 21 22:20:56 2016 -0500
+
+    Created SQLAlchemy Models and some initial files
+    closes #9
+    closes #10
+
+commit c3f075b66057ecbc42643c6bb5754619bda68340
+Author: Samuely94 <samuely94@utexas.edu>
+Date:   Mon Mar 21 18:30:14 2016 -0500
+
+    Delete docker-compose.yml
+
+commit 7795916e56c88ca3a2a900a4d0aaae19bf5da981
+Author: Samuely94 <samuely94@utexas.edu>
+Date:   Sun Mar 20 18:09:31 2016 -0500
+
+    Another commit
+
+commit aa99b85398bb903d65cd1654096e6f4cb9b4399c
+Author: Samuely94 <samuel@samuel-mbp.local>
+Date:   Sun Mar 20 17:40:01 2016 -0500
+
+    first commit

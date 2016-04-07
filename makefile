@@ -3,10 +3,10 @@ FILES :=                     \
 		.travis.yml              \
 		makefile                 \
 		apiary.apib              \
-		IDB1.log                 \
-		model.html               \
-		models.py                \
-		tests.py                 \
+		IDB2.log                 \
+		app/models.html               \
+		app/models.py                \
+		app/tests.py                 \
 		UML.pdf
 
 check:
@@ -30,13 +30,15 @@ check:
 
 clean:
 	rm -f  .coverage
-	rm -f  *.pyc
+	rm -f  app/*.pyc
 	rm -f  tests.tmp
 
 test: 
+	python app/tests.py
 
-models.html: models.py
-	pydoc -w models
+models.html:
+	pydoc -w app.models
+	mv app.models.html app/models.html
 
-IDB1.log:
-	git log > IDB1.log
+IDB2.log:
+	git log > IDB2.log
