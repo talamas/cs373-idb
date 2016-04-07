@@ -58,6 +58,8 @@ def add_make(make):
   expensive_car = reduce((lambda m, car:m if m['price'] > car['price'] else car),cars)
   make_json['max_car_id'] = expensive_car['id']
   make_json['avg_horsepower'] = float(total)/len(cars)
+  url_name = reduce(lambda r,x:  r + x.capitalize() + '-', make['name'].split('-'),'')
+  make_json['img_url'] = 'http://www.carlogos.org/uploads/car-logos/{}logo-1.jpg'.format(url_name)
   makes_list.append(make_json)
 
 for make in makes_json['makes']:
