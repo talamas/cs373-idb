@@ -13,6 +13,7 @@ import json
 @app.route('/index')
 def index():
   #print("index path")
+  #####
   return app.send_static_file('index.html')
 
 @app.route('/testdata')
@@ -28,6 +29,7 @@ def test_data():
   #   car_json['price'] = car.price
   #   car_json['horsepower'] = car.horsepower
   #   cars_json['cars'].append(car_json)
+  asldkjfaskdf = 'asdfasasdfadf'
   car_file = open('cars_list.json')
   cars_json = json.load(car_file)
   return jsonify(cars_json)
