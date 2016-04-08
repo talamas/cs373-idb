@@ -1,7 +1,6 @@
 /// <reference path="angular.min.js" />
 
-
-angular.module("sweatRidesApp", ["ngRoute","angularUtils.directives.dirPagination"])
+var sweatRidesApp = angular.module("sweatRidesApp", ["ngRoute","angularUtils.directives.dirPagination"])
 	.config(['$routeProvider','$locationProvider',function($routeProvider,$locationProvider) {
 	  $routeProvider
 	            .when("/mans", {
@@ -32,6 +31,18 @@ angular.module("sweatRidesApp", ["ngRoute","angularUtils.directives.dirPaginatio
 	}])
 
 
+
+.service('dataService2', function($http) {
+delete $http.defaults.headers.common['X-Requested-With'];
+this.getData = function() {
+    // $http() returns a $promise that we can add handlers with .then()
+    return $http({
+        method: 'GET',
+        url: 'http://private-2ac67-carsapi1.apiary-mock.com/manufacturer',
+        headers: {'Authorization': 'Token token=xxxxYYYYZzzz'}
+     });
+ }
+})
     .controller("manTableCtrl", ['$scope','$location','ManData',function($scope,$location,ManData) {
 	$scope.sortTypeMan     = ''; // set the default sort type
 	$scope.sortReverseMan  = false;  // set the default sort order
@@ -490,6 +501,26 @@ angular.module("sweatRidesApp", ["ngRoute","angularUtils.directives.dirPaginatio
        }
 
       })
+
+.service('dataService', function($http) {
+    delete $http.defaults.headers.common['X-Requested-With'];
+    this.getData = function() {
+	// $http() returns a $promise that we can add handlers with .then()
+	return $http({
+            method: 'GET',
+            url: 'http://private-2ac67-carsapi1.apiary-mock.com/cars',
+            headers: {'Authorization': 'Token token=xxxxYYYYZzzz'}
+	});
+    }
+})
+
+    .controller("aboutCtrl", ['$scope',function($scope) {
+	$scope.message = "ABOUT";
+    }])
+    .controller("homeCtrl", ['$scope',function($scope) {
+	$scope.message = "HOME";
+    }])
+
 
 
 
