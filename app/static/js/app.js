@@ -1,7 +1,6 @@
 /// <reference path="angular.min.js" />
 
-
-angular.module("sweatRidesApp", ["ngRoute","angularUtils.directives.dirPagination"])
+var sweatRidesApp = angular.module("sweatRidesApp", ["ngRoute","angularUtils.directives.dirPagination"])
 	.config(['$routeProvider','$locationProvider',function($routeProvider,$locationProvider) {
 	  $routeProvider
 	            .when("/mans", {
@@ -24,7 +23,7 @@ angular.module("sweatRidesApp", ["ngRoute","angularUtils.directives.dirPaginatio
                    templateUrl: "../partials/manufacturer.html",
                    controller: "manCtrl"
                }).
-               when("/car", {
+               when("/car_:id", {
                    templateUrl: "../partials/car.html",
                    controller: "carCtrl"
                })
@@ -32,11 +31,23 @@ angular.module("sweatRidesApp", ["ngRoute","angularUtils.directives.dirPaginatio
 	}])
 
 
+
+.service('dataService2', function($http) {
+delete $http.defaults.headers.common['X-Requested-With'];
+this.getData = function() {
+    // $http() returns a $promise that we can add handlers with .then()
+    return $http({
+        method: 'GET',
+        url: 'http://private-2ac67-carsapi1.apiary-mock.com/manufacturer',
+        headers: {'Authorization': 'Token token=xxxxYYYYZzzz'}
+     });
+ }
+})
     .controller("manTableCtrl", ['$scope','$location','ManData',function($scope,$location,ManData) {
 	$scope.sortTypeMan     = ''; // set the default sort type
 	$scope.sortReverseMan  = false;  // set the default sort order
-	$scope.message="David";
-   $scope.goToItem= function(man){
+	$scope.message="ManTable Message";
+   $scope.goToMan= function(man){
          ManData.set(man);
          $scope.selectedItem = man;
          $location.path("/man_"+man.id);
@@ -84,15 +95,24 @@ angular.module("sweatRidesApp", ["ngRoute","angularUtils.directives.dirPaginatio
 							{ "num_models":6, "id":40, "max_car_id":183, "name":"jaguar", "avg_horsepower":327.5, "avg_price":63783.333333333336, "img_url":"http://www.carlogos.org/uploads/car-logos/Jaguar-logo-1.jpg" }];
 	}])
 	.controller("manCtrl",['$scope','$location','ManData',function($scope,$location,ManData){
+      $scope.message="Manufacturer Message";
       $scope.man = ManData.get();
    }])
    .controller("carCtrl",['$scope','$location','CarData',function($scope,$location,CarData){
-      $scope.man = CarData.get();
+      $scope.message="Car Message";
+      $scope.car = CarData.get();
    }])
-	.controller("carsTableCtrl", ['$scope', function($scope) {
+	.controller("carsTableCtrl", ['$scope','$location','CarData', function($scope,$location,CarData) {
 	    $scope.sortType     = ''; // set the default sort type
 	    $scope.sortReverse  = false;  // set the default sort order
-	    $scope.cars = [  
+       $scope.message="CarTable Message"
+	    $scope.goToCar= function(car){
+         CarData.set(car);
+         $scope.selectedItem = car;
+         $location.path("/car_"+car.id);
+         $scope.apply();
+      };
+       $scope.cars = [  
    {  
       "year":2016,
       "id":1,
@@ -489,3 +509,14 @@ angular.module("sweatRidesApp", ["ngRoute","angularUtils.directives.dirPaginatio
        }
 
       })
+.service('dataService', function($http) {
+    delete $http.defaults.headers.common['X-Requested-With'];
+    this.getData = function() {
+	// $http() returns a $promise that we can add handlers with .then()
+	return $http({
+            method: 'GET',
+            url: 'http://private-2ac67-carsapi1.apiary-mock.com/cars',
+            headers: {'Authorization': 'Token token=xxxxYYYYZzzz'}
+	});
+    }
+})

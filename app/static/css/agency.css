@@ -706,6 +706,37 @@ td{
 div.with-padding{
 	padding-top: 200px;
 }
+.btn-lg
+{
+	color:#fff;
+ background-color:#fed136;
+ border-color:#fed136;
+ font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+ text-transform:uppercase;
+ font-weight:700;
+ border-radius:3px;
+ font-size:18px;
+ padding:20px 40px}
+ .btn-lg:hover,.btn-lg:focus,.btn-lg:active,.btn-lg.active,.open .dropdown-toggle.btn-lg
+{
+	color:#fff;
+ background-color:#fec503;
+ border-color:#f6bf01}
+ .btn-lg:active,.btn-lg.active,.open .dropdown-toggle.btn-lg
+{
+	background-image:none}
+ .btn-lg.disabled,.btn-lg[disabled],fieldset[disabled] .btn-lg,.btn-lg.disabled:hover,.btn-lg[disabled]:hover,fieldset[disabled] .btn-lg:hover,.btn-lg.disabled:focus,.btn-lg[disabled]:focus,fieldset[disabled] .btn-lg:focus,.btn-lg.disabled:active,.btn-lg[disabled]:active,fieldset[disabled] .btn-lg:active,.btn-lg.disabled.active,.btn-lg[disabled].active,fieldset[disabled] .btn-lg.active
+{
+	background-color:#fed136;
+ border-color:#fed136}
+ .btn-lg .badge
+{
+	color:#fed136;
+ background-color:#fff}
+
+
+
+
 
 
 
