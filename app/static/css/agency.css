@@ -734,6 +734,18 @@ div.with-padding{
 	color:#fed136;
  background-color:#fff}
 
+.attribute
+{
+	font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+ text-transform:uppercase;
+ font-weight:400;
+ letter-spacing:1px;
+ background-color:#fed136;
+ color:black;
+ max-width: 660px; /* for  below IE7 use `width: 660px;` */
+  margin: 0 auto;
+ border: 1px solid black;}
+
 
 
 

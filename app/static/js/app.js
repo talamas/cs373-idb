@@ -81,6 +81,9 @@ sweatRidesApp.controller("carCtrl",function($scope,$location,CarData, dataServic
     dataService2.getData().then(function(response) {
 	$scope.mans = response.data;
     });
+    $scope.random = function(){
+      return 0.5 - Math.random();
+    }
     
 });
 
