@@ -1,69 +1,71 @@
-<div class="container" >
-    <div class="col-lg-12 text-center">
-        <h2 class="section-heading" style="padding-top:100px">{{message}}</h2>
-        <h3 class="section-subheading text-muted">Only the best.</h3>
+<section>   
+    <div class="container" >
+        <div class="col-lg-12 text-center">
+            <h2 class="section-heading" style="padding-top:30px">Manufacturers</h2>
+            <h3 class="section-subheading text-muted">Only the best.</h3>
+        </div>
+        <!--cars Table Section-->
+        <table class="table table-hover center-block table-condensed" style="width:500%">
+            <thead>
+                <tr>   
+                    <th class="col-md-1" style="width:1%">
+                        <a class="column" href="#/mans" ng-click="sortTypeMan = 'id'; sortReverseMan = !sortReverseMan">
+                            Id
+                            <span ng-show="sortTypeMan =='id' && !sortReverseMan" class="fa fa-caret-down"></span>
+                            <span ng-show="sortTypeMan =='id' &&  sortReverseMan" class="fa fa-caret-up"></span>
+                        </a>
+                    </th>               
+                    <th class="col-md-3" style="width:30">
+                        Picture
+                    </th>
+                    <th class="col-md-2">
+                        <a class="column" href="#/mans" ng-click="sortTypeMan = 'name'; sortReverseMan = !sortReverseMan">
+                            Name
+                            <span ng-show="sortTypeMan =='name' && !sortReverseMan" class="fa fa-caret-down"></span>
+                            <span ng-show="sortTypeMan =='name' &&  sortReverseMan" class="fa fa-caret-up"></span>
+                        </a>
+                    </th>
+                    <th class="col-md-2">
+                        <a class="column" href="#/mans" ng-click="sortTypeMan = 'avg_price'; sortReverseMan = !sortReverseMan">
+                             Average Price
+                            <span ng-show="sortTypeMan =='country' && !sortReverseMan" class="fa fa-caret-down"></span>
+                            <span ng-show="sortTypeMan =='country' &&  sortReverseMan" class="fa fa-caret-up"></span>
+                        </a>
+                    </th>
+                    <th class="col-md-2">
+                        <a class="column" href="#/mans" ng-click="sortTypeMan = 'avg_horsepower'; sortReverseMan = !sortReverseMan">
+                             Average Horsepower
+                            <span ng-show="sortTypeMan =='avgSafety' && !sortReverseMan" class="fa fa-caret-down"></span>
+                            <span ng-show="sortTypeMan =='avgSafety' &&  sortReverseMan" class="fa fa-caret-up"></span>
+                        </a>
+                    </th>
+                    <th class="col-md-2">
+                        <a class="column" href="#/mans" ng-click="sortTypeMan = 'avg_price'; sortReverseMan = !sortReverseMan">
+                              Average Price
+                            <span ng-show="sortTypeMan =='avgPrice' && !sortReverseMan" class="fa fa-caret-down"></span>
+                            <span ng-show="sortTypeMan =='avgPrice' &&  sortReverseMan" class="fa fa-caret-up"></span>
+                        </a>
+                    </th>
+                    <th class="col-md-1">
+                        <a class="column" href="#/mans" ng-click="sortTypeMan = 'num_models'; sortReverseMan = !sortReverseMan">
+                             Number of Models
+                            <span ng-show="sortTypeMan =='modelsNum' && !sortReverseMan" class="fa fa-caret-down"></span>
+                            <span ng-show="sortTypeMan =='modelsNum' &&  sortReverseMan" class="fa fa-caret-up"></span>
+                        </a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>           
+                <tr dir-paginate="man in manufacturers | orderBy:sortTypeMan:sortReverseMan | itemsPerPage:10" data-target="{{man.dataTarget}}" class="cars-link" data-toggle="modal">
+                    <td>{{man.id}}</td>
+                    <td><img ng-src='{{man.img_url}}' class="img-responsive  img.manufacturer" alt=""> </td>
+                    <td>{{man.name}}</td>
+                    <td>{{man.avg_price|number:2}}</td>
+                    <td>{{man.avg_horsepower|number:2}}</td>
+                    <td>${{man.avg_price|number:2}}</td>
+                    <td>{{man.num_models}}</td>
+                </tr>
+            </tbody>
+        </table><dir-pagination-controls max-size="7" direction-links="true" boundary-links="true"></dir-pagination-controls>
     </div>
-    <!--cars Table Section-->
-    <table class="table table-hover center-block table-condensed" style="width:70%">
-        <thead>
-            <tr>   
-                <th class="col-md-1" style="width:1%">
-                    <a class="column" href="#/mans" ng-click="sortTypeMan = 'id'; sortReverseMan = !sortReverseMan">
-                        Id
-                        <span ng-show="sortTypeMan =='id' && !sortReverseMan" class="fa fa-caret-down"></span>
-                        <span ng-show="sortTypeMan =='id' &&  sortReverseMan" class="fa fa-caret-up"></span>
-                    </a>
-                </th>               
-                <th class="col-md-1">
-                    Picture
-                </th>
-                <th class="col-md-1">
-                    <a class="column" href="#/mans" ng-click="sortTypeMan = 'name'; sortReverseMan = !sortReverseMan">
-                        Name
-                        <span ng-show="sortTypeMan =='name' && !sortReverseMan" class="fa fa-caret-down"></span>
-                        <span ng-show="sortTypeMan =='name' &&  sortReverseMan" class="fa fa-caret-up"></span>
-                    </a>
-                </th>
-                <th class="col-md-1">
-                    <a class="column" href="#/mans" ng-click="sortTypeMan = 'avg_price'; sortReverseMan = !sortReverseMan">
-                         Average Price
-                        <span ng-show="sortTypeMan =='country' && !sortReverseMan" class="fa fa-caret-down"></span>
-                        <span ng-show="sortTypeMan =='country' &&  sortReverseMan" class="fa fa-caret-up"></span>
-                    </a>
-                </th>
-                <th class="col-md-1">
-                    <a class="column" href="#/mans" ng-click="sortTypeMan = 'avg_horsepower'; sortReverseMan = !sortReverseMan">
-                         Average Horsepower
-                        <span ng-show="sortTypeMan =='avgSafety' && !sortReverseMan" class="fa fa-caret-down"></span>
-                        <span ng-show="sortTypeMan =='avgSafety' &&  sortReverseMan" class="fa fa-caret-up"></span>
-                    </a>
-                </th>
-                <th class="col-md-1">
-                    <a class="column" href="#/mans" ng-click="sortTypeMan = 'avg_price'; sortReverseMan = !sortReverseMan">
-                          Average Price
-                        <span ng-show="sortTypeMan =='avgPrice' && !sortReverseMan" class="fa fa-caret-down"></span>
-                        <span ng-show="sortTypeMan =='avgPrice' &&  sortReverseMan" class="fa fa-caret-up"></span>
-                    </a>
-                </th>
-                <th class="col-md-1">
-                    <a class="column" href="#/mans" ng-click="sortTypeMan = 'num_models'; sortReverseMan = !sortReverseMan">
-                         Number of Models
-                        <span ng-show="sortTypeMan =='modelsNum' && !sortReverseMan" class="fa fa-caret-down"></span>
-                        <span ng-show="sortTypeMan =='modelsNum' &&  sortReverseMan" class="fa fa-caret-up"></span>
-                    </a>
-                </th>
-            </tr>
-        </thead>
-        <tbody>           
-            <tr dir-paginate="man in manufacturers | orderBy:sortTypeMan:sortReverseMan | itemsPerPage:10" data-target="{{man.dataTarget}}" class="cars-link" data-toggle="modal">
-                <td>{{man.id}}</td>
-                <td><img ng-src='{{man.img_url}}' class="img-responsive  img.manufacturer" alt=""> </td>
-                <td>{{man.name}}</td>
-                <td>{{man.avg_price|number:2}}</td>
-                <td>{{man.avg_horsepower|number:2}}</td>
-                <td>${{man.avg_price|number:2}}</td>
-                <td>{{man.num_models}}</td>
-            </tr>
-        </tbody>
-    </table><dir-pagination-controls max-size="7" direction-links="true" boundary-links="true"></dir-pagination-controls>
-</div>
+</section>
