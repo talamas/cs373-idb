@@ -51,7 +51,6 @@ this.getData = function() {
          ManData.set(man);
          $scope.selectedItem = man;
          $location.path("/man_"+man.id);
-         $scope.apply();
       };
    $scope.manufacturers = null;
    dataService2.getData().then(function(response) {
@@ -101,7 +100,6 @@ sweatRidesApp.service('dataService', function($http) {
          CarData.set(car);
          $scope.selectedItem = car;
          $location.path("/car_"+car.id);
-         $scope.apply();
       };
    $scope.cars =null;
        dataService.getData().then(function(response) {
@@ -114,7 +112,7 @@ sweatRidesApp.service('dataService', function($http) {
 
 
 
-    sweatRidesApp..controller("aboutCtrl", ['$scope','$http',function($scope,$http) {
+    sweatRidesApp.controller("aboutCtrl", ['$scope','$http',function($scope,$http) {
       $scope.message = "ABOUT";
       $scope.runUnitTests = function() {
          $scope.unitTestOutput = "Running unit tests";
