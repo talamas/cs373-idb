@@ -1,3 +1,165 @@
+commit 846e4a6b4906e675df2e2b24ae2bc44c5f5764b8
+Merge: 6ebab3b 0bc7e91
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 7 21:46:57 2016 -0500
+
+    Merge branch 'david2.0' of https://github.com/talamas/cs373-idb into david2.0
+
+commit 6ebab3bb5b91911fb1c28af8ff50740f14485c68
+Merge: 6aa0e90 7b36a59
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 7 21:46:10 2016 -0500
+
+    added unit test button to about.html
+
+commit 0bc7e917b7a7f8a644989562b43ea37c866adb15
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 7 21:39:36 2016 -0500
+
+    added car.html
+
+commit 6aa0e90702c2219ee6cab70722525057f6e128e2
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 7 21:32:13 2016 -0500
+
+    added unit test button to about page
+
+commit 7b36a59d52b6f0616ce45ff3d82dccc317134b21
+Merge: 3b1f4a5 651d51d
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 7 21:30:46 2016 -0500
+
+    changed app.js
+
+commit 3b1f4a58bf16a1c68d339ee16ec00be4ad526a91
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 7 21:23:16 2016 -0500
+
+    partials of cars and man work
+
+commit 651d51d7b48f84315695dd01164ea141748d48bb
+Author: David Talamas Cano <talamas@cs.utexas.edu>
+Date:   Thu Apr 7 21:07:22 2016 -0500
+
+    merged front end w db
+
+commit 9ef5b87941e318c96e27760b0d757bba183c79fc
+Merge: a65c0f2 5fedb9e
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 7 20:38:17 2016 -0500
+
+    Merge branch 'david2.0' of https://github.com/talamas/cs373-idb into david2.0
+
+commit a65c0f2bb2189d3a6bc8e4e2f8b58ad0689671c7
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 7 20:37:59 2016 -0500
+
+    changes to app.js
+
+commit 5fedb9ea00172b5cf8fde37f46ba9a3fe8814562
+Author: Samuely94 <samuel@wireless-10-147-101-177.public.utexas.edu>
+Date:   Thu Apr 7 20:29:54 2016 -0500
+
+    added unit test button in about page
+
+commit 1424cb32ee3f3e9d961afaec3801645fbfe08617
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 7 20:20:33 2016 -0500
+
+    added API endpoint to run unit tests
+
+commit 0fe6b819e36965cb2cad555e15b12cf568047369
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 7 20:12:04 2016 -0500
+
+    added dependency needed for unit tests
+
+commit cdf17d525bce750dac4c69a4754114ce3a1d508b
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 7 20:06:37 2016 -0500
+
+    fixed some issues with models
+
+commit fd313650f0b888c60c8bbcc84f3b7db8e1ab22a0
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 7 20:02:32 2016 -0500
+
+    fixed mantable
+
+commit d3a7b090b87088fa63691e8067cb9f6201fff126
+Merge: a8b7e46 dbc90c4
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 7 19:57:19 2016 -0500
+
+    Merge branch 'david2.0' of https://github.com/talamas/cs373-idb into david2.0
+
+commit a8b7e467944a3fb76cdffd0e4b3ec8eb2c0fb212
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 7 19:57:06 2016 -0500
+
+    changed extra chars
+
+commit dbc90c47d85a279b64bc7c406e0b06ec8f3df698
+Author: GetzChris <getzchris@utexas.edu>
+Date:   Thu Apr 7 19:56:23 2016 -0500
+
+    Update makes_list.json
+
+commit 433747b06953c141f721d18cfd80706f799af865
+Author: GetzChris <getzchris@utexas.edu>
+Date:   Thu Apr 7 19:55:29 2016 -0500
+
+    Update makes_list.json
+
+commit 7b23ed9270e7309918d8a61575adbe2522b6bb0f
+Merge: 06eaae7 499d6e5
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 7 19:52:46 2016 -0500
+
+    added services to app.js
+
+commit 06eaae7f01cc91dcc759b724b40262e985c5af0a
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 7 19:51:35 2016 -0500
+
+    Added services to app.js
+
+commit 499d6e59703093cf07618742c602d8c365820fea
+Author: Samuely94 <samuel@wireless-10-147-101-177.public.utexas.edu>
+Date:   Thu Apr 7 19:44:05 2016 -0500
+
+    fixed front end look
+
+commit 02ef8b4fad7d0513599b84779f692b721751dc8a
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 7 17:53:23 2016 -0500
+
+    added manufacturer.html
+
+commit e259a160100d2dbe48b8771d19d49f450ff87a7a
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 7 17:25:20 2016 -0500
+
+    added dependency to .travis.yml
+
+commit 2e2c5c4b17efd6ddad4018810291e57b636714a5
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 7 17:21:06 2016 -0500
+
+    fixed issues with unit tests
+
+commit 3effb30bfaff6835b55a31d323c4c9ad7f491b18
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 7 16:11:41 2016 -0500
+
+    Added dependencies to .travis.yml
+
+commit 09d5b90aba0f91a5b37c41c27dc1e10b5dacf96d
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 7 16:04:43 2016 -0500
+
+    Wrote unit tests and configured makefile to fit project requirements, closes #27
+
 commit 733267a53bcea796aa99c3c02f60135e7a9276e4
 Merge: eb360ab 1a88cbc
 Author: Lincoln Turner <lincoln.turner@utexas.edu>
