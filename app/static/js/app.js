@@ -55,15 +55,34 @@ sweatRidesApp.controller("manTableCtrl", function($scope,$location,ManData,dataS
    });
 });
 
-sweatRidesApp.controller("manCtrl",['$scope','$location','ManData',function($scope,$location,ManData){
-   $scope.message="Manufacturer Message";
-   $scope.man = ManData.get();
-}]);
+sweatRidesApp.controller("manCtrl", function($scope,$location,ManData, dataService, CarData){
+    $scope.message="Manufacturer Message";
+    $scope.man = ManData.get();
+    $scope.cars = null;
+    $scope.goToCar= function(car) {
+	CarData.set(car);
+	$scope.selectedItem = car;
+	$location.path("/car_"+car.id);
+    };
+    dataService.getData().then(function(response) {
+	$scope.cars = response.data;
+    });
+});
 
-sweatRidesApp.controller("carCtrl",['$scope','$location','CarData',function($scope,$location,CarData){
-   $scope.message="Car Message";
-   $scope.car = CarData.get();
-}]);
+sweatRidesApp.controller("carCtrl",function($scope,$location,CarData, dataService2,ManData){
+    $scope.message="Car Message";
+    $scope.car = CarData.get();
+    $scope.mans = null;
+    $scope.goToMan= function(man){
+	ManData.set(man);
+	$scope.selectedItem = man;
+	$location.path("/man_"+man.id);
+    };
+    dataService2.getData().then(function(response) {
+	$scope.mans = response.data;
+    });
+    
+});
 
 sweatRidesApp.service('dataService', function($http) {
    delete $http.defaults.headers.common['X-Requested-With'];
