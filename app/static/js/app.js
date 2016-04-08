@@ -32,12 +32,12 @@ angular.module("sweatRidesApp", ["ngRoute","angularUtils.directives.dirPaginatio
 	}])
 
 
-    .controller("manTableCtrl", ['$scope','$location','Data',function($scope,$location,Data) {
+    .controller("manTableCtrl", ['$scope','$location','ManData',function($scope,$location,ManData) {
 	$scope.sortTypeMan     = ''; // set the default sort type
 	$scope.sortReverseMan  = false;  // set the default sort order
 	$scope.message="ManTable Message";
-   $scope.goToItem= function(man){
-         Data.set(man);
+   $scope.goToMan= function(man){
+         ManData.set(man);
          $scope.selectedItem = man;
          $location.path("/man_"+man.id);
          $scope.apply();
@@ -83,19 +83,20 @@ angular.module("sweatRidesApp", ["ngRoute","angularUtils.directives.dirPaginatio
 							{ "num_models":3, "id":39, "max_car_id":68, "name":"buick", "avg_horsepower":236.33333333333334, "avg_price":31050.0, "img_url":"http://www.carlogos.org/uploads/car-logos/Buick-logo-1.jpg" }, 
 							{ "num_models":6, "id":40, "max_car_id":183, "name":"jaguar", "avg_horsepower":327.5, "avg_price":63783.333333333336, "img_url":"http://www.carlogos.org/uploads/car-logos/Jaguar-logo-1.jpg" }];
 	}])
-	.controller("manCtrl",['$scope','$location','Data',function($scope,$location,Data){
+	.controller("manCtrl",['$scope','$location','ManData',function($scope,$location,ManData){
       $scope.message="Manufacturer Message";
-      $scope.man = Data.get();
+      $scope.man = ManData.get();
    }])
-   .controller("carCtrl",['$scope','$location','Data',function($scope,$location,Data){
+   .controller("carCtrl",['$scope','$location','CarData',function($scope,$location,CarData){
       $scope.message="Car Message";
-      $scope.car = Data.get();
+      $scope.car = CarData.get();
    }])
-	.controller("carsTableCtrl", ['$scope','$location','Data', function($scope,$location,$Data) {
+	.controller("carsTableCtrl", ['$scope','$location','CarData', function($scope,$location,CarData) {
 	    $scope.sortType     = ''; // set the default sort type
 	    $scope.sortReverse  = false;  // set the default sort order
-	    $scope.goToItem= function(car){
-         Data.set(car);
+       $scope.message="CarTable Message"
+	    $scope.goToCar= function(car){
+         CarData.set(car);
          $scope.selectedItem = car;
          $location.path("/car_"+car.id);
          $scope.apply();
@@ -459,7 +460,22 @@ angular.module("sweatRidesApp", ["ngRoute","angularUtils.directives.dirPaginatio
 	.controller("homeCtrl", ['$scope',function($scope) {
 		$scope.message = "HOME";
 	}])
-   .factory('Data', function() {
+   .factory('ManData', function() {
+       var savedData = {}
+       function set(data) {
+         savedData = data;
+       }
+       function get() {
+        return savedData;
+       }
+
+       return {
+        set: set,
+        get: get
+       }
+
+      })
+   .factory('CarData', function() {
        var savedData = {}
        function set(data) {
          savedData = data;
