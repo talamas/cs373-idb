@@ -2,8 +2,8 @@
 
 
 angular.module("sweatRidesApp", ["ngRoute","angularUtils.directives.dirPagination"])
-	.config(function($routeProvider) {
-	    $routeProvider
+	.config(['$routeProvider','$locationProvider',function($routeProvider,$locationProvider) {
+	  $routeProvider
 	            .when("/mans", {
 	                templateUrl: "../partials/manufacturerTable.html",
 	                controller: "manTableCtrl"
@@ -19,15 +19,30 @@ angular.module("sweatRidesApp", ["ngRoute","angularUtils.directives.dirPaginatio
 	            when("/home", {
 	                templateUrl: "../partials/home.html",
 	                controller: "homeCtrl"
-	            })
+	            }).
+               when("/man_:id", {
+                   templateUrl: "../partials/manufacturer.html",
+                   controller: "manCtrl"
+               }).
+               when("/car", {
+                   templateUrl: "../partials/car.html",
+                   controller: "carCtrl"
+               })
 	            .otherwise({redirectTo: '/home'})
-	})
+	}])
 
 
-    .controller("manTableCtrl", ['$scope',function($scope) {
+    .controller("manTableCtrl", ['$scope','$location','ManData',function($scope,$location,ManData) {
 	$scope.sortTypeMan     = ''; // set the default sort type
 	$scope.sortReverseMan  = false;  // set the default sort order
-	$scope.manufacturers = [ { "num_models":3, "id":1, "max_car_id":104, "name":"chrysler", "avg_horsepower":291.3333333333333, "avg_price":32971.666666666664, "img_url":"http://www.carlogos.org/uploads/car-logos/Chrysler-logo-1.jpg" }, 
+	$scope.message="David";
+   $scope.goToItem= function(man){
+         ManData.set(man);
+         $scope.selectedItem = man;
+         $location.path("/man_"+man.id);
+         $scope.apply();
+      };
+   $scope.manufacturers = [ { "num_models":3, "id":1, "max_car_id":104, "name":"chrysler", "avg_horsepower":291.3333333333333, "avg_price":32971.666666666664, "img_url":"http://www.carlogos.org/uploads/car-logos/Chrysler-logo-1.jpg" }, 
 							{ "num_models":8, "id":2, "max_car_id":152, "name":"honda", "avg_horsepower":190.625, "avg_price":27965.0, "img_url":"http://www.carlogos.org/uploads/car-logos/Honda-logo-1.jpg" }, 
 							{ "num_models":18, "id":3, "max_car_id":270, "name":"mercedes-benz", "avg_horsepower":333.94444444444446, "avg_price":80681.94444444444, "img_url":"http://www.carlogos.org/uploads/car-logos/Mercedes-Benz-logo-1.jpg" }, 
 							{ "num_models":6, "id":4, "max_car_id":307, "name":"ram", "avg_horsepower":299.8333333333333, "avg_price":31406.666666666668, "img_url":"http://www.carlogos.org/uploads/car-logos/Ram-logo-1.jpg" }, 
@@ -68,7 +83,16 @@ angular.module("sweatRidesApp", ["ngRoute","angularUtils.directives.dirPaginatio
 							{ "num_models":3, "id":39, "max_car_id":68, "name":"buick", "avg_horsepower":236.33333333333334, "avg_price":31050.0, "img_url":"http://www.carlogos.org/uploads/car-logos/Buick-logo-1.jpg" }, 
 							{ "num_models":6, "id":40, "max_car_id":183, "name":"jaguar", "avg_horsepower":327.5, "avg_price":63783.333333333336, "img_url":"http://www.carlogos.org/uploads/car-logos/Jaguar-logo-1.jpg" }];
 	}])
-	
+	.controller("manCtrl",['$scope','$location','ManData',function($scope,$location,ManData){
+      $scope.message="FUCK";
+      $scope.man = ManData.get();
+   }])
+   .controller("carCtrl",['$scope',function($scope){
+      $scope.message="FUCK";
+      $scope.goToItem= function(id){
+        $location.path("/car"); // path not hash
+    };
+   }])
 	.controller("carsTableCtrl", ['$scope', function($scope) {
 	    $scope.sortType     = ''; // set the default sort type
 	    $scope.sortReverse  = false;  // set the default sort order
@@ -432,3 +456,23 @@ angular.module("sweatRidesApp", ["ngRoute","angularUtils.directives.dirPaginatio
 	.controller("homeCtrl", ['$scope',function($scope) {
 		$scope.message = "HOME";
 	}])
+   .factory('ManData', function() {
+       var savedData = {}
+       function set(data) {
+         savedData = data;
+       }
+       function get() {
+        return savedData;
+       }
+
+       return {
+        set: set,
+        get: get
+       }
+
+      })
+
+
+
+
+

@@ -55,7 +55,7 @@
             </tr>
         </thead>
         <tbody>           
-            <tr dir-paginate="man in manufacturers | orderBy:sortTypeMan:sortReverseMan | itemsPerPage:10" data-target="{{man.dataTarget}}" class="cars-link" data-toggle="modal">
+            <tr dir-paginate="man in manufacturers | orderBy:sortTypeMan:sortReverseMan | itemsPerPage:10" data-target="{{man.dataTarget}}" class="cars-link" data-toggle="modal" ng-click="goToItem(man)">
                 <td>{{man.id}}</td>
                 <td><img ng-src='{{man.img_url}}' class="img-responsive  img.manufacturer" alt=""> </td>
                 <td>{{man.name}}</td>
