@@ -1,33 +1,68 @@
 version: "2"
 
-# A Docker Compose file for configuration of the development environment
-
 services:
   lb:
-    extends:
-      file: docker-compose-common.yml
-      service: lb
-    image: cs373sweg/idb_lb
-    environment:
-      # Always deploy to n1 so the lb always has the same IP address. This is
-      # just for convenience and isn't strictly necessary.
-      - "constraint:node==*n1"
-
-  # app
-  app:
-    extends:
-      file: docker-compose-common.yml
-      service: app
+    # The load balancer container. Built from the lb/Dockerfile.
+    container_name: idb_lb
+    build: lb
+    restart: unless-stopped
+    networks:
+      - backend
     ports:
-      # Publish the port so it's visible on the host, you can access the app directly
-      - "8000:8000"
+      - "80:80"
+    image: cs373sweg/idb_lb
+
+  app:
+    # The app container. Built from the app/Dockerfile.
+    build: app
+    restart: unless-stopped
+    networks:
+      backend:
+        aliases:
+          # All app servers be referred to by this alias with the backend network
+          - apps
+    environment:
+      # Environment variables to configure the app on startup.
+      - MYSQL_DATABASE=cars_db
+      - MYSQL_HOST=sweetrides
+    image: cs373sweg/idb_app
+    expose:
+      # Expose port 8000 so it's only visibile on the container, not the host
+      - "8000"
+    env_file: idb-mysql.env
+    command: gunicorn app:app --bind 0.0.0.0:8000
+
+  db:
+    # The database container. Built from the db/Dockerfile.
+    container_name: idb_db
+    build: db
+    restart: unless-stopped
+    networks:
+      - backend
+    environment:
+      # Environment variables to configure MySQL on startup.
+      - MYSQL_DATABASE=sweetrides
+    image: cs373sweg/idb_db
+    expose:
+      # Expose port 3306 so it's only visibile on the container, not the host
+      - "3306"
+    env_file:
+      - idb-mysql.env
+      - idb-mysql-root.env
+    volumes_from:
+      # Mount the volumes from the data container to store our MySQL files
+      - data
+
+  data:
+    container_name: idb_db_data
+    # The Data Volume Container used to mount a volume to store our persistent data
+    # https://getcarina.com/docs/tutorials/data-volume-containers/
+    image: cirros
     volumes:
-      # Mount the app dir in the container as /src so our changes to the app code
-      # are also changed in the container
-      - ./app:/src
-    command: gunicorn --reload app:app --bind 0.0.0.0:8000
-      # Run Gunicorn to serve app requests and reload on change so we can see our
-      # changes to the app code
+      # Mount this path as a volume to store our MySQL files
+      - /var/lib/mysql
+    command: /bin/true
+      # Run a trivial command to exit quickly. Volumes don't need a running container.
 
 networks:
   backend: {}
