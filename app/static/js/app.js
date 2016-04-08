@@ -84,19 +84,14 @@ angular.module("sweatRidesApp", ["ngRoute","angularUtils.directives.dirPaginatio
 							{ "num_models":6, "id":40, "max_car_id":183, "name":"jaguar", "avg_horsepower":327.5, "avg_price":63783.333333333336, "img_url":"http://www.carlogos.org/uploads/car-logos/Jaguar-logo-1.jpg" }];
 	}])
 	.controller("manCtrl",['$scope','$location','ManData',function($scope,$location,ManData){
-      $scope.message="FUCK";
       $scope.man = ManData.get();
    }])
-   .controller("carCtrl",['$scope',function($scope){
-      $scope.message="FUCK";
-      $scope.goToItem= function(id){
-        $location.path("/car"); // path not hash
-    };
+   .controller("carCtrl",['$scope','$location','CarData',function($scope,$location,CarData){
+      $scope.man = CarData.get();
    }])
 	.controller("carsTableCtrl", ['$scope', function($scope) {
 	    $scope.sortType     = ''; // set the default sort type
 	    $scope.sortReverse  = false;  // set the default sort order
-  
 	    $scope.cars = [  
    {  
       "year":2016,
@@ -457,6 +452,21 @@ angular.module("sweatRidesApp", ["ngRoute","angularUtils.directives.dirPaginatio
 		$scope.message = "HOME";
 	}])
    .factory('ManData', function() {
+       var savedData = {}
+       function set(data) {
+         savedData = data;
+       }
+       function get() {
+        return savedData;
+       }
+
+       return {
+        set: set,
+        get: get
+       }
+
+      })
+   .factory('CanData', function() {
        var savedData = {}
        function set(data) {
          savedData = data;
