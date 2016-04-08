@@ -16,8 +16,7 @@ class Car(db.Model):
   price = db.Column(db.Float)
   horsepower = db.Column(db.Integer)
 
-  def __init__(self,id,make,model,year,price,horsepower):
-    self.id = id
+  def __init__(self,make,model,year,price,horsepower):
     self.make = make
     self.model = model
     self.year = year
@@ -36,8 +35,7 @@ class Manufacturer(db.Model):
   most_expensive = db.Column(db.Float)
   avg_horsepower = db.Column(db.Float)
 
-  def __init__(self,id,name,num_models,avg_price,most_expensive,avg_horsepower):
-    self.id = id
+  def __init__(self,name,num_models,avg_price,most_expensive,avg_horsepower):
     self.name = name
     self.num_models = num_models
     self.avg_price = avg_price

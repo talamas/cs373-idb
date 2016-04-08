@@ -12,13 +12,13 @@ class CarTests(TestCase):
 
 	def setUp(self):
 		db.create_all()
-		car1 = Car(1, 'acura', 'ilx', 2016, 31890.0, 201)
+		car1 = Car('acura', 'ilx', 2016, 31890.0, 201)
 		db.session.add(car1)
-		car2 = Car(2, 'toyota', 'tundra', 2015, 46530.0, 381)
+		car2 = Car('toyota', 'tundra', 2015, 46530.0, 381)
 		db.session.add(car2)
-		car3 = Car(3, 'ford', 'fusion', 2017, 33360.0, 325)
+		car3 = Car('ford', 'fusion', 2017, 33360.0, 325)
 		db.session.add(car3)
-		car4 = Car(4, 'acura', 'rdx', 2016, 40370.0, 279)
+		car4 = Car('acura', 'rdx', 2016, 40370.0, 279)
 		db.session.add(car4)
 		db.session.commit()
 
@@ -30,7 +30,7 @@ class CarTests(TestCase):
 		self.assertEqual(len(cars), 4)
 
 	def test_add_car(self):
-		car = Car(5, 'ferrari', 'f12-berlinetta', 2015, 319995.0, 731)
+		car = Car('ferrari', 'f12-berlinetta', 2015, 319995.0, 731)
 		db.session.add(car)
 		db.session.commit()
 		cars = Car.query.all()
@@ -69,13 +69,13 @@ class ManufacturerTests(TestCase):
 
 	def setUp(self):
 		db.create_all()
-		man1 = Manufacturer(1, 'chrysler', 3, 32971.67, 104, 291.33)
+		man1 = Manufacturer('chrysler', 3, 32971.67, 104, 291.33)
 		db.session.add(man1)
-		man2 = Manufacturer(2, 'buick', 3, 31050.0, 68, 236.33)
+		man2 = Manufacturer('buick', 3, 31050.0, 68, 236.33)
 		db.session.add(man2)
-		man3 = Manufacturer(3, 'kia', 9, 28725.56, 191, 216.11)
+		man3 = Manufacturer('kia', 9, 28725.56, 191, 216.11)
 		db.session.add(man3)
-		man4 = Manufacturer(4, 'lexus', 25, 52488.2, 222, 290.32)
+		man4 = Manufacturer('lexus', 25, 52488.2, 222, 290.32)
 		db.session.add(man4)
 		db.session.commit()
 
@@ -87,7 +87,7 @@ class ManufacturerTests(TestCase):
 		self.assertEqual(len(manufacturers), 4)
 
 	def test_add_manufacturer(self):
-		manufacturer = Manufacturer(5, 'bentley', 3, 235800.0, 67, 540.33)
+		manufacturer = Manufacturer('bentley', 3, 235800.0, 67, 540.33)
 		db.session.add(manufacturer)
 		db.session.commit()
 		manufacturers = Manufacturer.query.all()
