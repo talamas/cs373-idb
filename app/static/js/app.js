@@ -445,8 +445,16 @@ angular.module("sweatRidesApp", ["ngRoute","angularUtils.directives.dirPaginatio
       "img_url":"http://ts2.mm.bing.net/th?id=OIP.M9bc53ff98dd6355041b33ef32b33d9e9o0&pid=15.1"
    }];
 	}])
-	.controller("aboutCtrl", ['$scope',function($scope) {
+	.controller("aboutCtrl", ['$scope','$http',function($scope,$http) {
 		$scope.message = "ABOUT";
+      $scope.runUnitTests = function() {
+         $scope.unitTestOutput = "Running unit tests";
+         $http.get('/unit_tests').then(function(result) {
+            return result.data
+         }).then(function(output) {
+            $scope.unitTestOutput = output.output;
+         });
+      }
 	}])
 	.controller("homeCtrl", ['$scope',function($scope) {
 		$scope.message = "HOME";
@@ -466,7 +474,7 @@ angular.module("sweatRidesApp", ["ngRoute","angularUtils.directives.dirPaginatio
        }
 
       })
-   .factory('CanData', function() {
+   .factory('CarData', function() {
        var savedData = {}
        function set(data) {
          savedData = data;
@@ -481,8 +489,3 @@ angular.module("sweatRidesApp", ["ngRoute","angularUtils.directives.dirPaginatio
        }
 
       })
-
-
-
-
-
