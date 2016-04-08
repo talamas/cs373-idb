@@ -12,6 +12,9 @@ import os
 import sys
 import subprocess
 
+cars = json.loads(open('cars_list.json').read())
+makes = json.loads(open('makes_list.json').read())
+
 #APP ROUTING
 @app.route('/')
 @app.route('/index')
@@ -42,49 +45,41 @@ def make_man_json(man):
 #API ENDPOINTS
 @app.route('/get_cars')
 def get_cars():
-  '''try:
-    car_json = open('static/json/cars_list.json', 'r')
-  except IOError as e:
-    return e.strerror
-  try:
-    car_data = json.load(car_json)
-  except:
-    return 'fail2'
-  return jsonify(car_data)
-  with open('cars_list.json') as car_json:
-    car_data = json.load(car_json)
-  return car_data
-  try:
-    cars = db.session.query(Car).all()
-  except:
-    e = sys.exc_info()[0]
-    return e
-  return 'didn\'t fail'
-  return len(cars)'''
-  cars_json = {'cars' : []}
+  '''cars_json = {'cars' : []}
   cars = Car.query.all()
   for car in cars:
     cars_json['cars'].append(make_car_json(car))
-  return jsonify(cars_json)
+  return jsonify(cars_json)'''
+  return Response(json.dumps(cars),  mimetype='application/json')
 
 @app.route('/get_car/<int:car_id>')
 def get_car(car_id):
-  car = Car.query.filter(Car.id.like(car_id)).all()
-  return jsonify(make_car_json(car))
+  # car = Car.query.filter(Car.id.like(car_id)).all()
+  # return jsonify(make_car_json(car))
+  if car_id < len(cars) and car_id > 0:
+    return jsonify(cars[car_id-1])
 
 @app.route('/get_manufacturers')
 def get_manufacturers():
-  #return os.path.join(os.path.dirname(__file__),'static/json/makes_list.json')
-  mans_json = {'mans' : []}
-  mans = Manufacturer.query.all()
-  for man in mans:
-    mans_json['mans'].append(make_man_json(man))
-  return jsonify(mans_json)
+  return Response(json.dumps(makes),  mimetype='application/json')
+  # #return os.path.join(os.path.dirname(__file__),'static/json/makes_list.json')
+  # mans_json = {'mans' : []}
+  # mans = Manufacturer.query.all()
+  # for man in mans:
+  #   mans_json['mans'].append(make_man_json(man))
+  # return jsonify(mans_json)
 
-@app.route('/get_manufacturer/<int:manufacturer_id>')
-def get_manufacturer(manufacturer_id):
-  man = Manufacturer.query.filter(Manufacturer.id.like(manufacturer_id)).all()
-  return jsonify(make_man_json(man))
+@app.route('/get_manufacturer/<int:man_id>')
+def get_manufacturer(man_id):
+  if man_id < len(makes) and man_id > 0:
+    return jsonify(makes[man_id-1])
+  # man = Manufacturer.query.filter(Manufacturer.id.like(manufacturer_id)).all()
+  # return jsonify(make_man_json(man))
+
+@app.route('/get_manufacturer_cars/<int:id>')
+def get_manufecturer_cars(id):
+  man_name = makes[id-1]['name']
+  return Response(json.dumps([c for c in cars if c['make'] == man_name]),  mimetype='application/json')
 
 @app.route('/unit_tests')
 def unit_tests():

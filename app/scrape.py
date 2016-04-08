@@ -4,10 +4,12 @@ import requests
 import time
 from collections import defaultdict
 from functools import reduce
+from py_bing_search import PyBingSearch
 
-apikey = os.environ.get('EDMUND_API_KEY')
+apikey = 'wtprucmwrgk6bd92rq7tun97'
 edmund_url = 'http://api.edmunds.com/api/vehicle/v2/'
 end_url = '?fmt=json&view=full&api_key=' + apikey
+bing = PyBingSearch('Np5rmrL6fIPP3jpDqVi+Li/rJ1Joih4Q6wP69HrjQro=')
 
 model_id = 1
 make_id = 1
@@ -31,10 +33,10 @@ def add_model(make,model,year,make_id):
     eid = style['id']
     time.sleep(.6)
     car_json = requests.get(edmund_url + 'styles/{}'.format(eid) + end_url).json()
-    #print('got car')
-    #if 'price' in car_json and 'baseMSRP' in car_json['price'] and 'engine' in car_json and 'horsepower' in car_json['engine']:
-      #print('car {} has price and horsepower'.format(model_id))
+    query = car['make'] + ' ' + car['model']
+    result = bing.search(query, limit=1, format='json')
     car_dict = {'id':model_id,'make':make,'make_id':make_id,'model':model,'year':year,'price':car_json['price']['baseMSRP'],'horsepower':car_json['engine']['horsepower']}
+    car_dict['img_url'] = result
     makes_models_dict[make].append(car_dict)
     models_list.append(car_dict)
     model_id += 1
@@ -57,6 +59,12 @@ def add_make(make):
   total = reduce( (lambda t, car: t + car['horsepower']), cars, 0)
   expensive_car = reduce((lambda m, car:m if m['price'] > car['price'] else car),cars)
   make_json['max_car_id'] = expensive_car['id']
+  url_name = reduce(lambda r,x:  r + x.capitalize() + '-', make['name'].split('-'),'')
+  url = 'http://www.carlogos.org/uploads/car-logos/{}logo-1.jpg'.format(url_name)
+  response = requests.get(url)
+  if(response.status_code == 404):
+    url = bing.search(make['name'] + " logo", limit=1, format='json')
+  make_json['img_url'] = url
   make_json['avg_horsepower'] = float(total)/len(cars)
   makes_list.append(make_json)
 
