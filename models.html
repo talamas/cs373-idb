@@ -1,17 +1,25 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html><head><title>Python: module app.models</title>
+<html><head><title>Python: module models</title>
 <meta charset="utf-8">
 </head><body bgcolor="#f0f0f8">
 
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
 <tr bgcolor="#7799ee">
 <td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="app.html"><font color="#ffffff">app</font></a>.models</strong></big></big></font></td
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>models</strong></big></big></font></td
 ><td align=right valign=bottom
 ><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/lincoln/Documents/CS 373/IDB/cs373-idb/app/models.py">/Users/lincoln/Documents/CS 373/IDB/cs373-idb/app/models.py</a></font></td></tr></table>
     <p></p>
 <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="sqlalchemy.html">sqlalchemy</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ee77aa">
 <td colspan=3 valign=bottom>&nbsp;<br>
@@ -22,8 +30,8 @@
 <dt><font face="helvetica, arial">flask_sqlalchemy.Model(<a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>)
 </font></dt><dd>
 <dl>
-<dt><font face="helvetica, arial"><a href="app.models.html#Car">Car</a>
-</font></dt><dt><font face="helvetica, arial"><a href="app.models.html#Manufacturer">Manufacturer</a>
+<dt><font face="helvetica, arial"><a href="models.html#Car">Car</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Manufacturer">Manufacturer</a>
 </font></dt></dl>
 </dd>
 </dl>
@@ -38,14 +46,14 @@
 and&nbsp;foreign&nbsp;key&nbsp;for&nbsp;the&nbsp;manufacturer.<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%"><dl><dt>Method resolution order:</dt>
-<dd><a href="app.models.html#Car">Car</a></dd>
+<dd><a href="models.html#Car">Car</a></dd>
 <dd>flask_sqlalchemy.Model</dd>
 <dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
 <dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="Car-__init__"><strong>__init__</strong></a>(self, id, make, model, year, price, horsepower)</dt></dl>
+<dl><dt><a name="Car-__init__"><strong>__init__</strong></a>(self, make, model, year, price, horsepower)</dt></dl>
 
 <hr>
 Data descriptors defined here:<br>
@@ -63,7 +71,7 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10c81de10; Car&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x101a5b890; Car&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('car', MetaData(bind=None), Column('id', I...orsepower', Integer(), table=&lt;car&gt;), schema=None)</dl>
 
@@ -71,9 +79,7 @@ Data and other attributes defined here:<br>
 
 <hr>
 Methods inherited from flask_sqlalchemy.Model:<br>
-<dl><dt><strong>query</strong></dt>
-</dl>
-
+<strong>query</strong> = &lt;flask_sqlalchemy.BaseQuery object&gt;
 <hr>
 Data and other attributes inherited from flask_sqlalchemy.Model:<br>
 <dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
@@ -106,14 +112,14 @@ standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
 the&nbsp;manufacturer<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%"><dl><dt>Method resolution order:</dt>
-<dd><a href="app.models.html#Manufacturer">Manufacturer</a></dd>
+<dd><a href="models.html#Manufacturer">Manufacturer</a></dd>
 <dd>flask_sqlalchemy.Model</dd>
 <dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
 <dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="Manufacturer-__init__"><strong>__init__</strong></a>(self, id, name, num_models, avg_price, most_expensive, avg_horsepower)</dt></dl>
+<dl><dt><a name="Manufacturer-__init__"><strong>__init__</strong></a>(self, name, num_models, avg_price, most_expensive, avg_horsepower)</dt></dl>
 
 <hr>
 Data descriptors defined here:<br>
@@ -131,7 +137,7 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x10c84e3d0; Manufacturer&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x101a5bed0; Manufacturer&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('manufacturer', MetaData(bind=None), Colum...er', Float(), table=&lt;manufacturer&gt;), schema=None)</dl>
 
@@ -139,9 +145,7 @@ Data and other attributes defined here:<br>
 
 <hr>
 Methods inherited from flask_sqlalchemy.Model:<br>
-<dl><dt><strong>query</strong></dt>
-</dl>
-
+<strong>query</strong> = &lt;flask_sqlalchemy.BaseQuery object&gt;
 <hr>
 Data and other attributes inherited from flask_sqlalchemy.Model:<br>
 <dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>

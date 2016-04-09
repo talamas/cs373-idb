@@ -34,7 +34,7 @@ sweatRidesApp.service('dataService2', function($http) {
        // $http() returns a $promise that we can add handlers with .then()
       return $http({
          method: 'GET',
-         url: 'http://http://sweetrides.me/get_manufacturers',
+         url: 'http://sweetrides.me/get_manufacturers',
          headers: {'Authorization': 'Token token=xxxxYYYYZzzz'}
       });
    };
@@ -93,7 +93,7 @@ sweatRidesApp.service('dataService', function($http) {
       // $http() returns a $promise that we can add handlers with .then()
       return $http({
          method: 'GET',
-         url: 'http://http://sweetrides.me/get_cars',
+         url: 'http://sweetrides.me/get_cars',
          headers: {'Authorization': 'Token token=xxxxYYYYZzzz'}
       });
    }

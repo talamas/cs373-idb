@@ -4,7 +4,7 @@ FILES :=                     \
 		makefile                 \
 		apiary.apib              \
 		IDB2.log                 \
-		app/models.html               \
+		models.html               \
 		app/models.py                \
 		app/tests.py                 \
 		UML.pdf
@@ -38,7 +38,6 @@ test:
 
 models.html:
 	pydoc -w app.models
-	mv app.models.html app/models.html
 
 IDB2.log:
 	git log > IDB2.log

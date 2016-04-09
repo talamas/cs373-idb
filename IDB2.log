@@ -1,3 +1,153 @@
+commit 7bda88b35edc3e78d030d9c06296279b3bd9d2f0
+Author: getzchris <getzchris@ymail.com>
+Date:   Fri Apr 8 19:35:00 2016 -0500
+
+    updated jsons
+
+commit 7366518d0df229fd3765ce677f41ba2df293fa3e
+Author: David Talamas Cano <talamas@cs.utexas.edu>
+Date:   Fri Apr 8 19:18:55 2016 -0500
+
+    increasing # of commits
+
+commit 4ce1a04545ca9f0b47fad71c39bbdb09fef77d56
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Fri Apr 8 19:13:38 2016 -0500
+
+    added padding to home
+
+commit efbce22a02cadd845ccdffda7425e8e080875f71
+Merge: a434b0a c70da21
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Fri Apr 8 19:11:09 2016 -0500
+
+    Merge branch 'master' of https://github.com/talamas/cs373-idb
+
+commit a434b0a260bc0a5e5c32dafca7664993b0475123
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Fri Apr 8 19:11:02 2016 -0500
+
+    changed home.html
+
+commit c70da2149acea9611fabdaa943300d1de2fb4e9d
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Fri Apr 8 18:59:36 2016 -0500
+
+    updated about page with current statistics
+
+commit bbbce17a4815280fe837329527a9f9093317bac6
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Fri Apr 8 18:46:54 2016 -0500
+
+    NOW fixed manfuacturers button
+
+commit 0d7ead2bc21013c648e8de6d534e653bd958a85f
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Fri Apr 8 18:44:37 2016 -0500
+
+    fixed manufacteres button
+
+commit 554830925c8c863195fec0c9c4ad22f5740aba76
+Merge: e0740d7 7dcdf25
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Fri Apr 8 18:33:26 2016 -0500
+
+    Merge branch 'master' of https://github.com/talamas/cs373-idb
+
+commit e0740d74d76854464a2be17c7eba606c0932ad8f
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Fri Apr 8 18:32:04 2016 -0500
+
+    can go model to model
+
+commit 7dcdf25c1dec72e488db56535a0c92d4d2a61d6d
+Author: GetzChris <getzchris@utexas.edu>
+Date:   Fri Apr 8 17:28:44 2016 -0500
+
+    Update makes_list.json
+
+commit db6dd65124936214eabe072a93bc9f790b3ce4fd
+Author: David Talamas Cano <talamas@cs.utexas.edu>
+Date:   Fri Apr 8 17:16:07 2016 -0500
+
+    working relation bw models
+
+commit 475aa31ec2b2adcd9c0e51172616729bfafba5d4
+Merge: 24dfd19 f7b9edc
+Author: getzchris <getzchris@ymail.com>
+Date:   Fri Apr 8 17:05:45 2016 -0500
+
+    Merge branch 'master' of https://github.com/talamas/cs373-idb
+
+commit 24dfd19e60c6164cb4e1c06dd57ae3cb1b988dd2
+Author: getzchris <getzchris@ymail.com>
+Date:   Fri Apr 8 17:05:25 2016 -0500
+
+    updated scraper, fixed api calls
+
+commit f7b9edcd6f4bbfc7e502684dc8e151ef85a26926
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Fri Apr 8 16:44:45 2016 -0500
+
+    cleaned up docker files
+
+commit a6375332b5446879e22488ff809e929fa25c8a0f
+Author: David Talamas <david.talamas@utexas.edu>
+Date:   Fri Apr 8 16:34:55 2016 -0500
+
+    Final api push?
+
+commit 8a9cd6c9e717117c0dd6302be9da7f4316e23d0e
+Merge: d7db00c 58f54a8
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Fri Apr 8 16:12:09 2016 -0500
+
+    Merge branch 'master' of https://github.com/talamas/cs373-idb
+
+commit d7db00c713d3efb65ed5e26c7797319989b0007d
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Fri Apr 8 16:12:01 2016 -0500
+
+    Fixed a few errors
+
+commit 58f54a83224c2c305f14ea5d48f8956efda80224
+Author: David Talamas <david.talamas@utexas.edu>
+Date:   Fri Apr 8 16:02:45 2016 -0500
+
+    Working Apiary
+
+commit 496bea21373ad9dab768164f437f68f9d93348b9
+Merge: 8f8a711 c788017
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 7 22:22:50 2016 -0500
+
+    Merge branch 'master' of https://github.com/talamas/cs373-idb
+
+commit 8f8a7112dd73c70bb786308c508b5245ee155cf9
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 7 22:22:02 2016 -0500
+
+    fixed errors in app.js
+
+commit 59acea3426ebe564342e28e5695e22c15dbfa492
+Merge: ff1db99 0f37258
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 7 21:59:04 2016 -0500
+
+    final commit
+
+commit ff1db9974f9726880432ba37e6be5309e6cb66c7
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 7 21:55:29 2016 -0500
+
+    added git log
+
+commit 0f37258bede0c15bfc2b03f6b069f97c9ad324ab
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 7 21:54:57 2016 -0500
+
+    app.js works
+
 commit 846e4a6b4906e675df2e2b24ae2bc44c5f5764b8
 Merge: 6ebab3b 0bc7e91
 Author: Lincoln Turner <lincoln.turner@utexas.edu>
@@ -251,6 +401,12 @@ Author: Adolfo <muller.adolfo@gmail.com>
 Date:   Thu Apr 7 00:29:42 2016 -0500
 
     page is looking good
+
+commit c788017374e0ca95cd01c2cb0de63d1ec93b3048
+Author: David Talamas <david.talamas@utexas.edu>
+Date:   Thu Apr 7 00:26:51 2016 -0500
+
+    Updated the documentation for the API
 
 commit 52d12b2c238f74b2f1f85252b698994b4d7f329a
 Author: Adolfo <muller.adolfo@gmail.com>
