@@ -59,11 +59,11 @@
                 <tr dir-paginate="engine in engines | orderBy:sortTypeMan:sortReverseMan | itemsPerPage:10" data-target="{{engine.dataTarget}}" class="cars-link" data-toggle="modal" ng-click="goToEngine(engine)">
                     <td>{{engine.id}}</td>
                     <td><img ng-src='{{engine.attr1}}' class="img-responsive  img.manufacturer"  alt=""> </td>
-                    <td>{{engine.attr2}}</td>
-                    <td>{{engine.attr3}}</td>
-                    <td>{{engine.attr4}}</td>
-                    <td>{{engine.attr5}}</td>
-                    <td>{{engine.attr6}}</td>
+                    <td>{{engine.name}}</td>
+                    <td>{{engine.cylinder}}</td>
+                    <td>{{engine.horsepower}}</td>
+                    <td>{{engine.torque}}</td>
+                    <td>{{engine.fuelType}}</td>
                 </tr>
             </tbody>
         </table><dir-pagination-controls max-size="7" direction-links="true" boundary-links="true"></dir-pagination-controls>

@@ -48,6 +48,18 @@ sweatRidesApp.service('dataService2', function($http) {
    };
 });
 
+sweatRidesApp.service('dataService3', function($http) {
+   delete $http.defaults.headers.common['X-Requested-With'];
+   this.getData = function() {
+       // $http() returns a $promise that we can add handlers with .then()
+      return $http({
+         method: 'GET',
+         url: 'http://private-2ac67-carsapi1.apiary-mock.com/engines',
+         headers: {'Authorization': 'Token token=xxxxYYYYZzzz'}
+      });
+   };
+});
+
 sweatRidesApp.controller("manTableCtrl", function($scope,$location,ManData,dataService2) {
    $scope.sortTypeMan     = ''; // set the default sort type
    $scope.sortReverseMan  = false;  // set the default sort order
@@ -86,7 +98,7 @@ sweatRidesApp.controller("enginesTableCtrl", function($scope,$location,EngineDat
       $location.path("/engine_"+engine.id);
    };
    $scope.engines =null;
-   dataService.getData().then(function(response) {
+   dataService3.getData().then(function(response) {
       $scope.engines = response.data;
    });
 });
@@ -209,6 +221,20 @@ sweatRidesApp.factory('ManData', function() {
 });
 
 sweatRidesApp.factory('CarData', function() {
+   var savedData = {}
+   function set(data) {
+      savedData = data;
+   }
+   function get() {
+      return savedData;
+   }
+   return {
+      set: set,
+      get: get
+   }
+});
+
+sweatRidesApp.factory('EngineData', function() {
    var savedData = {}
    function set(data) {
       savedData = data;
