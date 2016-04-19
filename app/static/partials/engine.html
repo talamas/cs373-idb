@@ -1,0 +1,60 @@
+<section>  
+    <div class="container">
+        <div class="col-lg-12 text-center">
+            <h2 class="section-heading" style="padding-top:30px">{{engine.attr1}}</h2>
+        </div>
+        <img class="img-responsive img-centered modal-image" ng-src="{{car.img_url}}" alt="">
+        <br>        
+
+        <ul class="attribute">
+                    <li>Year: {{engine.attr2}}</li>
+                    <li>Price: ${{engine.attr3}}</li>
+                    <li>HorsePower: {{engine.attr4}}</li>
+        </ul>
+        <br>
+        <br>
+
+      <!-------------------------------------------------------------->
+   <!--
+        <td>{{man.id}}</td>
+        <td><img ng-src='{{man.img_url}}' class="img-responsive  img.manufacturer" alt=""> </td>
+        <td>{{man.name}}</td>
+        <td>{{man.avg_price|number:2}}</td>
+        <td>{{man.avg_horsepower|number:2}}</td>
+        <td>${{man.avg_price|number:2}}</td>
+        <td>{{man.num_models}}</td>
+    -->
+    <div class="col-md-12 text-left">
+            <h2 class="section-heading ">Related Manufacturers</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-5 col-sm-6 cars-item" ng-repeat="man in mans | filter:car.make"  class="cars-link" data-toggle="modal" ng-click="goToMan(man)">
+                <div class="cars-hover">
+                    <div class="cars-hover-content">
+                        <i class="fa fa-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img ng-src='{{man.img_url}}' class="img-responsive" alt="">
+                <div class="cars-caption">
+                    <h4 align="">{{man.name}}</h4>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-5 col-sm-6 cars-item" ng-repeat="man in mans | orderBy:random | limitTo:-2"  class="cars-link" data-toggle="modal" ng-click="goToMan(man)">
+                <div class="cars-hover">
+                    <div class="cars-hover-content">
+                        <i class="fa fa-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img ng-src='{{man.img_url}}' class="img-responsive" alt="">
+                <div class="cars-caption">
+                    <h4 align="">{{man.name}}</h4>
+                </div>
+            </div>
+            
+
+        </div>
+
+    <a href="#/cars" class="btn btn-lg" data-target="#cars">Back to Cars</a>    </div>
+
+
+</section>
