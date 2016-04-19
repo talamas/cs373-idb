@@ -43,6 +43,19 @@ def make_man_json(man):
   man_json['avg_horsepower'] = man.avg_horsepower
   return man_json
 
+def sort_results(lst):
+  done = False
+  n = len(lst)
+  while not done:
+    done = True
+    for i in range(1, n):
+      if lst[i]['matched_terms'] > lst[i - 1]['matched_terms']:
+        temp = lst[i]
+        lst[i] = lst[i - 1]
+        lst[i - 1] = temp
+        done = False
+    n -= 1
+
 #API ENDPOINTS
 @app.route('/get_cars')
 def get_cars():
@@ -158,6 +171,10 @@ def search(keywords):
           results['engines'].append(engine)
       except:
         pass
+
+  sort_results(results['cars'])
+  sort_results(results['manufacturers'])
+  sort_results(results['engines'])
 
   return jsonify(results)
 
