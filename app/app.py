@@ -14,6 +14,7 @@ import subprocess
 
 cars = json.loads(open('cars_list.json').read())
 makes = json.loads(open('makes_list.json').read())
+engines = json.loads(open('engines_list.json').read())
 
 #APP ROUTING
 @app.route('/')
@@ -81,6 +82,85 @@ def get_manufecturer_cars(id):
   man_name = makes[id-1]['name']
   return Response(json.dumps([c for c in cars if c['make'] == man_name]),  mimetype='application/json')
 
+@app.route('/search/<string:keywords>')
+def search(keywords):
+  terms = keywords.split(" ")
+  results = {'cars' : [], 'manufacturers' : [], 'engines' : []}
+  for car in cars:
+    car['matched_terms'] = 0
+  for term in terms:
+    for car in cars:
+      if term in car['make'] or term in car['model']:
+        if car in results['cars']:
+          results['cars'].remove(car)
+        car['matched_terms'] += 1
+        results['cars'].append(car)
+      try:
+        num = int(term)
+        if num == car['year'] or num == car['horsepower']:
+          car['matched_terms'] += 1
+          results['cars'].append(car)
+      except:
+        pass
+      try:
+        num = float(term)
+        if num == car['price']:
+          car['matched_terms'] += 1
+          results['cars'].append(car)
+      except:
+        pass
+
+  for make in makes:
+    make['matched_terms'] = 0
+  for term in terms:
+    for make in makes:
+      if type(term) is unicode:
+        if term in make['name']:
+          if make in results['manufacturers']:
+            results['manufacturers'].remove(make)
+          make['matched_terms'] += 1
+          results['manufacturers'].append(make)
+      try:
+        num = int(term)
+        if num == make['num_models']:
+          if make in results['manufacturers']:
+            results['manufacturers'].remove(make)
+          make['matched_terms'] += 1
+          results['manufacturers'].append(make)
+      except:
+        pass
+      try:
+        num = float(term)
+        if num == round(make['avg_horsepower'], 2) or round(make['avg_price'], 2):
+          if make in results['manufacturers']:
+            results['manufacturers'].remove(make)
+          make['matched_terms'] += 1
+          results['manufacturers'].append(make)
+      except:
+        pass
+
+  for engine in engines:
+    engine['matched_terms'] = 0
+  for term in terms:
+    for engine in engines:
+      if type(term) is unicode:
+        if term in engine['name'] or term in engine['fuelType']:
+          if engine in results['engines']:
+            results['engines'].remove(engine)
+          engine['matched_terms'] += 1
+          results['engines'].append(engine)
+      try:
+        num = int(term)
+        if num == engine['horsepower'] or num == engine['torque'] or num == engine['cylinder']:
+          if engine in results['engines']:
+            results['engines'].remove(engine)
+          engine['matched_terms'] += 1
+          results['engines'].append(engine)
+      except:
+        pass
+
+  return jsonify(results)
+
 @app.route('/unit_tests')
 def unit_tests():
   output = subprocess.getoutput("python tests.py")
@@ -97,5 +177,5 @@ def drop_db():
   db.drop_all()
 
 if __name__ == '__main__':
-  app.run(host = "0.0.0.0", port=5006, debug = True)
+  app.run(host = "0.0.0.0", port=5000, debug = True)
   #manager.run()
