@@ -16,39 +16,39 @@
                         </a>
                     </th>               
                     <th class="col-md-3" style="width:30">
-                        Picture
+                        Engine Attr1
                     </th>
                     <th class="col-md-2">
                         <a class="column" href="#/engines" ng-click="sortTypeMan = 'name'; sortReverseMan = !sortReverseMan">
-                            Name
+                            Engine Attr2
                             <span ng-show="sortTypeMan =='name' && !sortReverseMan" class="fa fa-caret-down"></span>
                             <span ng-show="sortTypeMan =='name' &&  sortReverseMan" class="fa fa-caret-up"></span>
                         </a>
                     </th>
                     <th class="col-md-2">
                         <a class="column" href="#/engines" ng-click="sortTypeMan = 'avg_price'; sortReverseMan = !sortReverseMan">
-                             Average Price
+                             Engine Attr3
                             <span ng-show="sortTypeMan =='country' && !sortReverseMan" class="fa fa-caret-down"></span>
                             <span ng-show="sortTypeMan =='country' &&  sortReverseMan" class="fa fa-caret-up"></span>
                         </a>
                     </th>
                     <th class="col-md-2">
                         <a class="column" href="#/engines" ng-click="sortTypeMan = 'avg_horsepower'; sortReverseMan = !sortReverseMan">
-                             Average Horsepower
+                             Engine Attr4
                             <span ng-show="sortTypeMan =='avgSafety' && !sortReverseMan" class="fa fa-caret-down"></span>
                             <span ng-show="sortTypeMan =='avgSafety' &&  sortReverseMan" class="fa fa-caret-up"></span>
                         </a>
                     </th>
                     <th class="col-md-2">
                         <a class="column" href="#/engines" ng-click="sortTypeMan = 'avg_price'; sortReverseMan = !sortReverseMan">
-                              Average Price
+                              Engine Attr5
                             <span ng-show="sortTypeMan =='avgPrice' && !sortReverseMan" class="fa fa-caret-down"></span>
                             <span ng-show="sortTypeMan =='avgPrice' &&  sortReverseMan" class="fa fa-caret-up"></span>
                         </a>
                     </th>
                     <th class="col-md-1">
                         <a class="column" href="#/engines" ng-click="sortTypeMan = 'num_models'; sortReverseMan = !sortReverseMan">
-                             Number of Models
+                             Engine Attr6
                             <span ng-show="sortTypeMan =='modelsNum' && !sortReverseMan" class="fa fa-caret-down"></span>
                             <span ng-show="sortTypeMan =='modelsNum' &&  sortReverseMan" class="fa fa-caret-up"></span>
                         </a>
@@ -58,12 +58,12 @@
             <tbody>           
                 <tr dir-paginate="engine in engines | orderBy:sortTypeMan:sortReverseMan | itemsPerPage:10" data-target="{{engine.dataTarget}}" class="cars-link" data-toggle="modal" ng-click="goToEngine(engine)">
                     <td>{{engine.id}}</td>
-                    <td><img ng-src='{{engine.attr2}}' class="img-responsive  img.manufacturer"  alt=""> </td>
-                    <td>{{engine.attr1}}</td>
+                    <td><img ng-src='{{engine.attr1}}' class="img-responsive  img.manufacturer"  alt=""> </td>
                     <td>{{engine.attr2}}</td>
                     <td>{{engine.attr3}}</td>
                     <td>{{engine.attr4}}</td>
                     <td>{{engine.attr5}}</td>
+                    <td>{{engine.attr6}}</td>
                 </tr>
             </tbody>
         </table><dir-pagination-controls max-size="7" direction-links="true" boundary-links="true"></dir-pagination-controls>
