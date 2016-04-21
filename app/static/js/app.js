@@ -46,7 +46,21 @@ sweatRidesApp.service('dataService2', function($http) {
        // $http() returns a $promise that we can add handlers with .then()
       return $http({
          method: 'GET',
-         url: 'http://sweetrides.me/get_manufacturers',
+         //url: 'http://sweetrides.me/get_manufacturers',
+	  url: 'http://private-2ac67-carsapi1.apiary-mock.com/manufacturers',
+         headers: {'Authorization': 'Token token=xxxxYYYYZzzz'}
+      });
+   };
+});
+
+sweatRidesApp.service('dataService4', function($http) {
+   delete $http.defaults.headers.common['X-Requested-With'];
+   this.getData = function(q) {
+       // $http() returns a $promise that we can add handlers with .then()
+      return $http({
+         method: 'GET',
+         //url: 'http://sweetrides.me/get_manufacturers',
+	  url: '/search/' + q,
          headers: {'Authorization': 'Token token=xxxxYYYYZzzz'}
       });
    };
@@ -182,22 +196,28 @@ sweatRidesApp.controller("engineCtrl",function($scope,$location,EngineData, data
     });
 });
 
-sweatRidesApp.controller("homeCtrl", function($scope) {
+sweatRidesApp.controller("homeCtrl", function($scope,$location,$rootScope) {
    $scope.message = "HOME";
-   $scope.search = function(){
-        $location.path("/search"); // path not hash
-    };
+
 });
 
-sweatRidesApp.controller("indexCtrl", function($scope,$location) {
+sweatRidesApp.controller("indexCtrl", function($scope,$location,$rootScope, $route, dataService4) {
    $scope.message = "INDEX";
-   $scope.search = function(){
+    $scope.search = function(){
+	
+
+	dataService4.getData($scope.query).then(function(response) {
+	    $rootScope.searchQuery = response.data;
+	});
+
+	console.log('bbbbbb')
+	$route.reload();
         $location.path("/search"); // path not hash
     };
 });
 
-sweatRidesApp.controller("searchCtrl", function($scope) {
-   $scope.message = "Search";
+sweatRidesApp.controller("searchCtrl", function($scope,$rootScope) {
+   $scope.message = $rootScope.searchQuery;
 });
 
 sweatRidesApp.service('dataService', function($http) {
@@ -206,7 +226,8 @@ sweatRidesApp.service('dataService', function($http) {
       // $http() returns a $promise that we can add handlers with .then()
       return $http({
          method: 'GET',
-         url: 'http://sweetrides.me/get_cars',
+         //url: 'http://sweetrides.me/get_cars',
+	  url: 'http://private-2ac67-carsapi1.apiary-mock.com/cars',
          headers: {'Authorization': 'Token token=xxxxYYYYZzzz'}
       });
    }
