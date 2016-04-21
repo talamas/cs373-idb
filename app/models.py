@@ -5,8 +5,7 @@ from database import db
 
 class Car(db.Model):
   '''
-  A model for a car, encapsulating the attributes we track for the car
-  and foreign key for the manufacturer.
+  A model for a car, encapsulating the attributes we track for the car.
   '''
 
   id = db.Column(db.Integer, primary_key=True)
@@ -26,7 +25,7 @@ class Car(db.Model):
 class Manufacturer(db.Model):
   '''
   A model for a manufacturer, encapsulating the attributes we track for
-  the manufacturer
+  the manufacturer.
   '''
   id = db.Column(db.Integer, primary_key=True)
   name = db.Column(db.String(80), unique=True)
@@ -41,3 +40,22 @@ class Manufacturer(db.Model):
     self.avg_price = avg_price
     self.most_expensive = most_expensive
     self.avg_horsepower = avg_horsepower
+
+class Engine(db.Model):
+  '''
+  A model for an engine, encapsulating the attributes we track for
+  the engine.
+  '''
+  id = db.Column(db.Integer, primary_key=True)
+  name = db.Column(db.String(80), unique=True)
+  cylinder = db.Column(db.Integer)
+  fuel_type = db.Column(db.String)
+  horsepower = db.Column(db.Integer)
+  torque = db.Column(db.Integer)
+
+  def __init__(self,name,cylinder,fuel_type,horsepower,torque):
+    self.name = name
+    self.cylinder = cylinder
+    self.fuel_type = fuel_type
+    self.horsepower = horsepower
+    self.torque = torque
