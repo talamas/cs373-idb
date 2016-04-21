@@ -49,7 +49,7 @@ def sort_results(lst):
   while not done:
     done = True
     for i in range(1, n):
-      if lst[i]['matched_terms'] > lst[i - 1]['matched_terms']:
+      if len(lst[i]['matched_terms']) > len(lst[i - 1]['matched_terms']):
         temp = lst[i]
         lst[i] = lst[i - 1]
         lst[i - 1] = temp
@@ -100,38 +100,55 @@ def search(keywords):
   terms = keywords.split(" ")
   results = {'cars' : [], 'manufacturers' : [], 'engines' : []}
   for car in cars:
-    car['matched_terms'] = 0
+    car['matched_terms'] = []
   for term in terms:
     for car in cars:
-      if term in car['make'] or term in car['model']:
-        if car in results['cars']:
-          results['cars'].remove(car)
-        car['matched_terms'] += 1
-        results['cars'].append(car)
+      try:
+        if term.lower() in car['make'].lower():
+          if car in results['cars']:
+            results['cars'].remove(car)
+          car['matched_terms'].append(3)
+          results['cars'].append(car)
+        if term.lower() in car['model'].lower():
+          if car in results['cars']:
+            results['cars'].remove(car)
+          car['matched_terms'].append(5)
+          results['cars'].append(car)
+      except:
+        pass
       try:
         num = int(term)
-        if num == car['year'] or num == car['horsepower']:
-          car['matched_terms'] += 1
+        if num == car['year']:
+          if car in results['cars']:
+            results['cars'].remove(car)
+          car['matched_terms'].append(7)
+          results['cars'].append(car)
+        if num == car['horsepower']:
+          if car in results['cars']:
+            results['cars'].remove(car)
+          car['matched_terms'].append(0)
           results['cars'].append(car)
       except:
         pass
       try:
         num = float(term)
         if num == car['price']:
-          car['matched_terms'] += 1
+          if car in results['cars']:
+            results['cars'].remove(car)
+          car['matched_terms'].append(6)
           results['cars'].append(car)
       except:
         pass
 
   for make in makes:
-    make['matched_terms'] = 0
+    make['matched_terms'] = []
   for term in terms:
     for make in makes:
       try:
-        if term in make['name']:
+        if term.lower() in make['name'].lower():
           if make in results['manufacturers']:
             results['manufacturers'].remove(make)
-          make['matched_terms'] += 1
+          make['matched_terms'].append(6)
           results['manufacturers'].append(make)
       except:
         pass
@@ -140,38 +157,58 @@ def search(keywords):
         if num == make['num_models']:
           if make in results['manufacturers']:
             results['manufacturers'].remove(make)
-          make['matched_terms'] += 1
+          make['matched_terms'].append(7)
           results['manufacturers'].append(make)
       except:
         pass
       try:
         num = float(term)
-        if num == round(make['avg_horsepower'], 2) or round(make['avg_price'], 2):
+        if num == round(make['avg_horsepower'], 2):
           if make in results['manufacturers']:
             results['manufacturers'].remove(make)
-          make['matched_terms'] += 1
+          make['matched_terms'].append(0)
+          results['manufacturers'].append(make)
+        if num == round(make['avg_price'], 2):
+          if make in results['manufacturers']:
+            results['manufacturers'].remove(make)
+          make['matched_terms'].append(1)
           results['manufacturers'].append(make)
       except:
         pass
 
   for engine in engines:
-    engine['matched_terms'] = 0
+    engine['matched_terms'] = []
   for term in terms:
     for engine in engines:
       try:
-        if term in engine['name'] or term in engine['fuelType']:
+        if term.lower() in engine['name'].lower():
           if engine in results['engines']:
             results['engines'].remove(engine)
-          engine['matched_terms'] += 1
+          engine['matched_terms'].append(5)
+          results['engines'].append(engine)
+        if term.lower() in engine['fuelType'].lower():
+          if engine in results['engines']:
+            results['engines'].remove(engine)
+          engine['matched_terms'].append(1)
           results['engines'].append(engine)
       except:
         pass
       try:
         num = int(term)
-        if num == engine['horsepower'] or num == engine['torque'] or num == engine['cylinder']:
+        if num == engine['horsepower']:
           if engine in results['engines']:
             results['engines'].remove(engine)
-          engine['matched_terms'] += 1
+          engine['matched_terms'].append(2)
+          results['engines'].append(engine)
+        if num == engine['torque']:
+          if engine in results['engines']:
+            results['engines'].remove(engine)
+          engine['matched_terms'].append(6)
+          results['engines'].append(engine)
+        if num == engine['cylinder']:
+          if engine in results['engines']:
+            results['engines'].remove(engine)
+          engine['matched_terms'].append(0)
           results['engines'].append(engine)
       except:
         pass
