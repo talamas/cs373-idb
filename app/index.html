@@ -52,10 +52,10 @@
 
 </head>
 
-<body class="index" ng-app="sweatRidesApp">
+<body class="index" ng-app="sweatRidesApp" >
     <!-- TODO: removed the ng-app="sortApp" -->
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top" ng-controller="indexCtrl">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -73,6 +73,13 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
                         <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <div class="form-inline" role="search">
+                            <form ng-submit="search()" class="navbar-form">
+                                <input ng-model="query" class="form-control search-input" placeholder="search">
+                            </form>
+                        </div>
                     </li>
                     <li>
                         <a href="#/mans" data-target="#mans">Manufacturers</a>

@@ -33,6 +33,10 @@ var sweatRidesApp = angular.module("sweatRidesApp", ["ngRoute","angularUtils.dir
             templateUrl: "../partials/engine.html",
             controller: "engineCtrl"
          })
+         .when('/search', {
+            templateUrl: '../partials/search.html',
+            controller: 'searchCtrl',
+         })
          .otherwise({redirectTo: '/home'});
 }]);
 
@@ -178,6 +182,24 @@ sweatRidesApp.controller("engineCtrl",function($scope,$location,EngineData, data
     });
 });
 
+sweatRidesApp.controller("homeCtrl", function($scope) {
+   $scope.message = "HOME";
+   $scope.search = function(){
+        $location.path("/search"); // path not hash
+    };
+});
+
+sweatRidesApp.controller("indexCtrl", function($scope,$location) {
+   $scope.message = "INDEX";
+   $scope.search = function(){
+        $location.path("/search"); // path not hash
+    };
+});
+
+sweatRidesApp.controller("searchCtrl", function($scope) {
+   $scope.message = "Search";
+});
+
 sweatRidesApp.service('dataService', function($http) {
    delete $http.defaults.headers.common['X-Requested-With'];
    this.getData = function() {
@@ -200,10 +222,6 @@ sweatRidesApp.controller("aboutCtrl", ['$scope','$http',function($scope,$http) {
          $scope.unitTestOutput = output.output;
       });
    }
-}]);
-
-sweatRidesApp.controller("homeCtrl", ['$scope',function($scope) {
-   $scope.message = "HOME";
 }]);
 
 sweatRidesApp.factory('ManData', function() {
