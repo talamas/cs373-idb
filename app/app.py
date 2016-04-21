@@ -127,12 +127,14 @@ def search(keywords):
     make['matched_terms'] = 0
   for term in terms:
     for make in makes:
-      if type(term) is unicode:
+      try:
         if term in make['name']:
           if make in results['manufacturers']:
             results['manufacturers'].remove(make)
           make['matched_terms'] += 1
           results['manufacturers'].append(make)
+      except:
+        pass
       try:
         num = int(term)
         if num == make['num_models']:
@@ -156,12 +158,14 @@ def search(keywords):
     engine['matched_terms'] = 0
   for term in terms:
     for engine in engines:
-      if type(term) is unicode:
+      try:
         if term in engine['name'] or term in engine['fuelType']:
           if engine in results['engines']:
             results['engines'].remove(engine)
           engine['matched_terms'] += 1
           results['engines'].append(engine)
+      except:
+        pass
       try:
         num = int(term)
         if num == engine['horsepower'] or num == engine['torque'] or num == engine['cylinder']:
