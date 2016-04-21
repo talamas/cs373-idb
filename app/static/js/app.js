@@ -216,8 +216,38 @@ sweatRidesApp.controller("indexCtrl", function($scope,$location,$rootScope, $rou
     };
 });
 
-sweatRidesApp.controller("searchCtrl", function($scope,$rootScope) {
+sweatRidesApp.controller("searchCtrl", function($scope,$rootScope,$location,dataService,dataService2,dataService3,ManData,CarData,EngineData) {
    $scope.message = $rootScope.searchQuery;
+   $scope.car = null;
+    $scope.mans = null;
+    $scope.engines = null;
+    $scope.goToMan= function(man){
+      ManData.set(man);
+      $scope.selectedItem = man;
+      $location.path("/man_"+man.id);
+    };
+    dataService2.getData().then(function(response) {
+      $scope.mans = response.data;
+    });
+    $scope.random = function(){
+      return 0.5 - Math.random();
+    }
+    $scope.goToCar= function(car) {
+      CarData.set(car);
+      $scope.selectedItem = car;
+      $location.path("/car_"+car.id);
+    };
+    dataService.getData().then(function(response) {
+      $scope.cars = response.data;
+    });
+    $scope.goToEngine= function(engine) {
+       CarData.set(engine);
+       $scope.selectedItem = engine;
+       $location.path("/engine_"+engine.id);
+    };
+    dataService3.getData().then(function(response) {
+       $scope.engines = response.data;
+    });
 });
 
 sweatRidesApp.service('dataService', function($http) {
