@@ -218,6 +218,8 @@ sweatRidesApp.controller("indexCtrl", function($scope,$location,$rootScope, $rou
 
 sweatRidesApp.controller("searchCtrl", function($scope,$rootScope,$location,dataService,dataService2,dataService3,ManData,CarData,EngineData) {
    $scope.message = $rootScope.searchQuery;
+   $scope.sortType     = ''; // set the default sort type
+   $scope.sortReverse  = false;  // set the default sort order
    $scope.car = null;
     $scope.mans = null;
     $scope.engines = null;

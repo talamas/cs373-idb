@@ -5,6 +5,7 @@
         </div>
 
 		<!-- CAR TABLE RESULTS -->
+		<h3>Manufacturer Results</h3>
 		<table class="table table-hover center-block table-condensed" style="width:200%">
 		    <thead>
 		        <tr>
@@ -69,6 +70,7 @@
 		</table><dir-pagination-controls max-size="7" direction-links="true" boundary-links="true"></dir-pagination-controls>
 
 		<!--cars Table Section-->
+		<h3>Car Results</h3>
 		<table class="table table-hover center-block table-condensed" style="width:500%">
 		    <thead>
 		        <tr>   
@@ -133,6 +135,7 @@
 		</table><dir-pagination-controls max-size="7" direction-links="true" boundary-links="true"></dir-pagination-controls>
 
 		<!--Engine Table Section-->
+		<h3>Engine Results</h3>
 		<table class="table table-hover center-block table-condensed" style="width:500%">
 		    <thead>
 		        <tr>   
@@ -184,7 +187,7 @@
 		        </tr>
 		    </thead>
 		    <tbody>           
-		        <tr dir-paginate="engine in message.engines | orderBy:sortTypeMan:sortReverseMan | itemsPerPage:10" data-target="{{engine.dataTarget}}" class="cars-link" data-toggle="modal" ng-click="goToEngine(engine)">
+		        <tr dir-paginate="engine in message.engines | orderBy:sortTypeMan:sortReverseMan | itemsPerPage:3" data-target="{{engine.dataTarget}}" class="cars-link" data-toggle="modal" ng-click="goToEngine(engine)">
 		            <td>{{engine.id}}</td>
 		            <td><img ng-src='{{engine.attr1}}' class="img-responsive  img.manufacturer"  alt=""> </td>
 		            <td>{{engine.name}}</td>
