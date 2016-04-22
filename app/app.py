@@ -49,7 +49,7 @@ def sort_results(lst):
   while not done:
     done = True
     for i in range(1, n):
-      if len(lst[i]['matched_terms']) > len(lst[i - 1]['matched_terms']):
+      if lst[i]['num_matched_terms'] > lst[i - 1]['num_matched_terms']:
         temp = lst[i]
         lst[i] = lst[i - 1]
         lst[i - 1] = temp
@@ -101,18 +101,23 @@ def search(keywords):
   results = {'cars' : [], 'manufacturers' : [], 'engines' : []}
   for car in cars:
     car['matched_terms'] = []
+    car['num_matched_terms'] = 0
   for term in terms:
     for car in cars:
       try:
         if term.lower() in car['make'].lower():
           if car in results['cars']:
             results['cars'].remove(car)
-          car['matched_terms'].append(3)
+          if 3 not in car['matched_terms']:
+            car['matched_terms'].append(3)
+          car['num_matched_terms'] += 1
           results['cars'].append(car)
         if term.lower() in car['model'].lower():
           if car in results['cars']:
             results['cars'].remove(car)
-          car['matched_terms'].append(5)
+          if 6 not in car['matched_terms']:
+            car['matched_terms'].append(6)
+          car['num_matched_terms'] += 1
           results['cars'].append(car)
       except:
         pass
@@ -121,12 +126,16 @@ def search(keywords):
         if num == car['year']:
           if car in results['cars']:
             results['cars'].remove(car)
-          car['matched_terms'].append(7)
+          if 9 not in car['matched_terms']:
+            car['matched_terms'].append(9)
+          car['num_matched_terms'] += 1
           results['cars'].append(car)
         if num == car['horsepower']:
           if car in results['cars']:
             results['cars'].remove(car)
-          car['matched_terms'].append(0)
+          if 1 not in car['matched_terms']:
+            car['matched_terms'].append(1)
+          car['num_matched_terms'] += 1
           results['cars'].append(car)
       except:
         pass
@@ -135,20 +144,25 @@ def search(keywords):
         if num == car['price']:
           if car in results['cars']:
             results['cars'].remove(car)
-          car['matched_terms'].append(6)
+          if 8 not in car['matched_terms']:
+            car['matched_terms'].append(8)
+          car['num_matched_terms'] += 1
           results['cars'].append(car)
       except:
         pass
 
   for make in makes:
     make['matched_terms'] = []
+    make['num_matched_terms'] = 0
   for term in terms:
     for make in makes:
       try:
         if term.lower() in make['name'].lower():
           if make in results['manufacturers']:
             results['manufacturers'].remove(make)
-          make['matched_terms'].append(6)
+          if 6 not in make['matched_terms']:
+            make['matched_terms'].append(6)
+          make['num_matched_terms'] += 1
           results['manufacturers'].append(make)
       except:
         pass
@@ -157,7 +171,9 @@ def search(keywords):
         if num == make['num_models']:
           if make in results['manufacturers']:
             results['manufacturers'].remove(make)
-          make['matched_terms'].append(7)
+          if 8 not in make['matched_terms']:
+            make['matched_terms'].append(8)
+          make['num_matched_terms'] += 1
           results['manufacturers'].append(make)
       except:
         pass
@@ -166,30 +182,39 @@ def search(keywords):
         if num == round(make['avg_horsepower'], 2):
           if make in results['manufacturers']:
             results['manufacturers'].remove(make)
-          make['matched_terms'].append(0)
+          if 0 not in make['matched_terms']:
+            make['matched_terms'].append(0)
+          make['num_matched_terms'] += 1
           results['manufacturers'].append(make)
         if num == round(make['avg_price'], 2):
           if make in results['manufacturers']:
             results['manufacturers'].remove(make)
-          make['matched_terms'].append(1)
+          if 1 not in make['matched_terms']:
+            make['matched_terms'].append(1)
+          make['num_matched_terms'] += 1
           results['manufacturers'].append(make)
       except:
         pass
 
   for engine in engines:
     engine['matched_terms'] = []
+    engine['num_matched_terms'] = 0
   for term in terms:
     for engine in engines:
       try:
         if term.lower() in engine['name'].lower():
           if engine in results['engines']:
             results['engines'].remove(engine)
-          engine['matched_terms'].append(5)
+          if 5 not in engine['matched_terms']:            
+            engine['matched_terms'].append(5)
+          engine['num_matched_terms'] += 1
           results['engines'].append(engine)
         if term.lower() in engine['fuelType'].lower():
           if engine in results['engines']:
             results['engines'].remove(engine)
-          engine['matched_terms'].append(1)
+          if 1 not in engine['matched_terms']:
+            engine['matched_terms'].append(1)
+          engine['num_matched_terms'] += 1
           results['engines'].append(engine)
       except:
         pass
@@ -198,17 +223,23 @@ def search(keywords):
         if num == engine['horsepower']:
           if engine in results['engines']:
             results['engines'].remove(engine)
-          engine['matched_terms'].append(2)
+          if 2 not in engine['matched_terms']:
+            engine['matched_terms'].append(2)
+          engine['num_matched_terms'] += 1
           results['engines'].append(engine)
         if num == engine['torque']:
           if engine in results['engines']:
             results['engines'].remove(engine)
-          engine['matched_terms'].append(6)
+          if 7 not in engine['matched_terms']:
+            engine['matched_terms'].append(7)
+          engine['num_matched_terms'] += 1
           results['engines'].append(engine)
         if num == engine['cylinder']:
           if engine in results['engines']:
             results['engines'].remove(engine)
-          engine['matched_terms'].append(0)
+          if 0 not in engine['matched_terms']:
+            engine['matched_terms'].append(0)
+          engine['num_matched_terms'] += 1
           results['engines'].append(engine)
       except:
         pass
