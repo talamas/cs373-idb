@@ -179,8 +179,15 @@ def search(keywords):
         if term.lower() in make['name'].lower():
           if make in results['manufacturers']:
             results['manufacturers'].remove(make)
-          if 6 not in make['matched_terms']:
-            make['matched_terms'].append(6)
+          if 7 not in make['matched_terms']:
+            make['matched_terms'].append(7)
+          make['num_matched_terms'] += 1
+          results['manufacturers'].append(make)
+        if term.lower() in make['max_car'].lower():
+          if make in results['manufacturers']:
+            results['manufacturers'].remove(make)
+          if 5 not in make['matched_terms']:
+            make['matched_terms'].append(5)
           make['num_matched_terms'] += 1
           results['manufacturers'].append(make)
       except:
@@ -190,8 +197,8 @@ def search(keywords):
         if num == make['num_models']:
           if make in results['manufacturers']:
             results['manufacturers'].remove(make)
-          if 8 not in make['matched_terms']:
-            make['matched_terms'].append(8)
+          if 9 not in make['matched_terms']:
+            make['matched_terms'].append(9)
           make['num_matched_terms'] += 1
           results['manufacturers'].append(make)
       except:
