@@ -1,3 +1,54 @@
+commit f5389d543f3ba077051ac07774d6a6108e486530
+Merge: 21b5d64 05fc985
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 21 21:50:53 2016 -0500
+
+    Merge branch 'project3dev' of https://github.com/talamas/cs373-idb into project3dev
+
+commit 21b5d6456f9b051aab049bba3d3fb6fcf0db91cc
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 21 21:50:45 2016 -0500
+
+     changed search
+
+commit 05fc98581537c2f42287a46906efc12581b4f468
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 21 21:47:18 2016 -0500
+
+    updated about page and makefile
+
+commit ecf7f043fdb747dbe3b31591af1bc55c594676a0
+Merge: 550edf3 69ca5b1
+Author: getzchris <getzchris@ymail.com>
+Date:   Thu Apr 21 21:44:09 2016 -0500
+
+    Merge branch 'project3dev' of https://github.com/talamas/cs373-idb into project3dev
+
+commit 550edf38d7fd27e71bcf1e7aa3ff0bf3c622f9d3
+Author: getzchris <getzchris@ymail.com>
+Date:   Thu Apr 21 21:43:45 2016 -0500
+
+    updated UML
+
+commit 69ca5b12996bc452113a4be3122f22853661212c
+Merge: 2c01d4c a059e73
+Author: David Talamas Cano <talamas@cs.utexas.edu>
+Date:   Thu Apr 21 21:43:16 2016 -0500
+
+    Merge branch 'project3dev' of https://github.com/talamas/cs373-idb into project3dev
+
+commit a059e7392023af60c012d55493f619b0b0eefe93
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 21 21:41:57 2016 -0500
+
+    updating log files to turn in
+
+commit 2c01d4c2127678ffbce1c33ddd8553d7bb169dd3
+Author: David Talamas Cano <talamas@cs.utexas.edu>
+Date:   Thu Apr 21 21:41:46 2016 -0500
+
+    working
+
 commit 15103ee39a01fbdffdb95edd9682a9f3cc5eb792
 Author: Lincoln Turner <lincoln.turner@utexas.edu>
 Date:   Thu Apr 21 21:33:31 2016 -0500
