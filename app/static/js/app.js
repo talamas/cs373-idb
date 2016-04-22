@@ -122,6 +122,7 @@ sweatRidesApp.controller("enginesTableCtrl", function($scope,$location,EngineDat
 });
 
 sweatRidesApp.controller("manCtrl", function($scope,$location,ManData, dataService, dataService3, CarData, EngineData){
+    console.log("!!!!!!!!!!!!!!");
     $scope.message="Manufacturer Message";
     $scope.man = ManData.get();
     $scope.cars = null;
@@ -208,46 +209,66 @@ sweatRidesApp.controller("indexCtrl", function($scope,$location,$rootScope, $rou
 
 	dataService4.getData($scope.query).then(function(response) {
 	    $rootScope.searchQuery = response.data;
+	    
+	    $rootScope.showCars = 0;
+	    $rootScope.showMans = 0;
+	    $rootScope.showEngines = 0;
+	    for (i in $rootScope.searchQuery.cars){
+		$rootScope.showCars = 1;
+		break;
+	    }
+	    for (i in $rootScope.searchQuery.manufacturers){
+		$rootScope.showMans = 1;
+		break;
+	    }
+	    for (i in $rootScope.searchQuery.engines){
+		$rootScope.showEngines = 1;
+		break;
+	    }
 	});
 
-	console.log('bbbbbb')
-	$route.reload();
-        $location.path("/search"); // path not hash
+	console.log("indexControl");
+	console.log($rootScope.searchQuery);
+
+
+
+
+	if ($location.url() == '/search'){
+	    console.log('aaaaa')
+	    $route.reload();
+	}
+	else {
+	    console.log('bbbbb')
+            $location.path("/search"); // path not hash
+	}
     };
 });
 
 sweatRidesApp.controller("searchCtrl", function($scope,$rootScope,$location,dataService,dataService2,dataService3,ManData,CarData,EngineData) {
-   $scope.message = $rootScope.searchQuery;
-   $scope.car = null;
-    $scope.mans = null;
-    $scope.engines = null;
+    console.log("getting here");
+
+
+
+    
     $scope.goToMan= function(man){
       ManData.set(man);
       $scope.selectedItem = man;
       $location.path("/man_"+man.id);
     };
-    dataService2.getData().then(function(response) {
-      $scope.mans = response.data;
-    });
-    $scope.random = function(){
-      return 0.5 - Math.random();
-    }
+
+ 
     $scope.goToCar= function(car) {
       CarData.set(car);
       $scope.selectedItem = car;
       $location.path("/car_"+car.id);
     };
-    dataService.getData().then(function(response) {
-      $scope.cars = response.data;
-    });
+
     $scope.goToEngine= function(engine) {
        CarData.set(engine);
        $scope.selectedItem = engine;
        $location.path("/engine_"+engine.id);
     };
-    dataService3.getData().then(function(response) {
-       $scope.engines = response.data;
-    });
+
 });
 
 sweatRidesApp.service('dataService', function($http) {

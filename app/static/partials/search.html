@@ -5,7 +5,12 @@
         </div>
 
 		<!-- CAR TABLE RESULTS -->
-		<table class="table table-hover center-block table-condensed" style="width:200%">
+		<h3>Cars Results</h3>
+		<div ng-show="!showCars">
+		  NO RESULTS MATCHED
+		</div>
+		<div>
+		<table class="table table-hover center-block table-condensed" style="width:200%" ng-show="showCars">
 		    <thead>
 		        <tr>
 		            <th class="col-md-1" style="width:1%">
@@ -56,7 +61,7 @@
 		        </tr>
 		    </thead>
 		    <tbody>           
-		        <tr dir-paginate="car in message.cars | orderBy:sortType:sortReverse | itemsPerPage:4" data-target="{{car.dataTarget}}" class="cars-link" data-toggle="modal" ng-click="goToCar(car)">
+		        <tr dir-paginate="car in searchQuery.cars | orderBy:sortType:sortReverse | itemsPerPage:4" data-target="{{car.dataTarget}}" class="cars-link" data-toggle="modal" ng-click="goToCar(car)">
 		            <td>{{car.id}}</td>
 		            <td><img ng-src='{{car.img_url}}' class="img-responsive" alt=""> </td>
 		            <td>{{car.make}}</td>
@@ -66,10 +71,15 @@
 		            <td>{{car.horsepower}}</td>
 		        </tr>
 		    </tbody>
-		</table><dir-pagination-controls max-size="7" direction-links="true" boundary-links="true"></dir-pagination-controls>
+		</table><dir-pagination-controls max-size="7" direction-links="true" boundary-links="true"></dir-pagination-controls></div>
 
 		<!--cars Table Section-->
-		<table class="table table-hover center-block table-condensed" style="width:500%">
+		<h3>Manufacturers Results</h3>
+		<div ng-show="!showMans">
+		  NO RESULTS MATCHED
+		</div>
+		<div>
+		<table class="table table-hover center-block table-condensed" style="width:500%" ng-show="showMans">
 		    <thead>
 		        <tr>   
 		            <th class="col-md-1" style="width:1%">
@@ -120,7 +130,7 @@
 		        </tr>
 		    </thead>
 		    <tbody>           
-		        <tr dir-paginate="man in message.manufacturers | orderBy:sortTypeMan:sortReverseMan | itemsPerPage:4" data-target="{{man.dataTarget}}" class="cars-link" data-toggle="modal" ng-click="goToMan(man)">
+		        <tr dir-paginate="man in searchQuery.manufacturers | orderBy:sortTypeMan:sortReverseMan | itemsPerPage:4" data-target="{{man.dataTarget}}" class="cars-link" data-toggle="modal" ng-click="goToMan(man)">
 		            <td>{{man.id}}</td>
 		            <td><img ng-src='{{man.img_url}}' class="img-responsive  img.manufacturer"  alt=""> </td>
 		            <td>{{man.name}}</td>
@@ -130,10 +140,15 @@
 		            <td>{{man.num_models}}</td>
 		        </tr>
 		    </tbody>
-		</table><dir-pagination-controls max-size="7" direction-links="true" boundary-links="true"></dir-pagination-controls>
+		</table><dir-pagination-controls max-size="7" direction-links="true" boundary-links="true"></dir-pagination-controls></div>
 
 		<!--Engine Table Section-->
-		<table class="table table-hover center-block table-condensed" style="width:500%">
+		<h3>Engine Results</h3>
+		<div ng-show="!showEngines">
+		  NO RESULTS MATCHED
+		</div>
+		<div>
+		<table class="table table-hover center-block table-condensed" style="width:500%" ng-show="showEngines">
 		    <thead>
 		        <tr>   
 		            <th class="col-md-1" style="width:1%">
@@ -184,7 +199,7 @@
 		        </tr>
 		    </thead>
 		    <tbody>           
-		        <tr dir-paginate="engine in message.engines | orderBy:sortTypeMan:sortReverseMan | itemsPerPage:10" data-target="{{engine.dataTarget}}" class="cars-link" data-toggle="modal" ng-click="goToEngine(engine)">
+		        <tr dir-paginate="engine in searchQuery.engines | orderBy:sortTypeMan:sortReverseMan | itemsPerPage:3" data-target="{{engine.dataTarget}}" class="cars-link" data-toggle="modal" ng-click="goToEngine(engine)">
 		            <td>{{engine.id}}</td>
 		            <td><img ng-src='{{engine.attr1}}' class="img-responsive  img.manufacturer"  alt=""> </td>
 		            <td>{{engine.name}}</td>
@@ -194,6 +209,6 @@
 		            <td>{{engine.fuelType}}</td>
 		        </tr>
 		    </tbody>
-		</table><dir-pagination-controls max-size="7" direction-links="true" boundary-links="true"></dir-pagination-controls>
+		</table><dir-pagination-controls max-size="7" direction-links="true" boundary-links="true"></dir-pagination-controls></div>
 	</div>
 </section>
