@@ -47,7 +47,7 @@ sweatRidesApp.service('dataService2', function($http) {
       return $http({
          method: 'GET',
          //url: 'http://sweetrides.me/get_manufacturers',
-	  url: 'http://private-2ac67-carsapi1.apiary-mock.com/manufacturers',
+	  url: '/get_manufacturers',
          headers: {'Authorization': 'Token token=xxxxYYYYZzzz'}
       });
    };
@@ -72,7 +72,7 @@ sweatRidesApp.service('dataService3', function($http) {
        // $http() returns a $promise that we can add handlers with .then()
       return $http({
          method: 'GET',
-         url: 'http://private-2ac67-carsapi1.apiary-mock.com/engines',
+         url: '/get_engines',
          headers: {'Authorization': 'Token token=xxxxYYYYZzzz'}
       });
    };
@@ -289,7 +289,7 @@ sweatRidesApp.service('dataService', function($http) {
       return $http({
          method: 'GET',
          //url: 'http://sweetrides.me/get_cars',
-	  url: 'http://private-2ac67-carsapi1.apiary-mock.com/cars',
+	  url: '/get_cars',
          headers: {'Authorization': 'Token token=xxxxYYYYZzzz'}
       });
    }
