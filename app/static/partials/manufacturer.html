@@ -45,7 +45,7 @@
         <h2 class="section-heading ">Related Engines</h2>
     </div>
     <div class="row">
-        <div class="col-lg-3 col-md-5 col-sm-6 cars-item" ng-repeat="engine in engines | limitTo:-2"  class="cars-link" data-toggle="modal" ng-click="goToEngine(engine)">
+        <div class="col-lg-3 col-md-5 col-sm-6 cars-item" ng-repeat="engine in engines | limitTo:-4 | orderBy:random"  class="cars-link" data-toggle="modal" ng-click="goToEngine(engine)">
             <div class="cars-hover">
                 <div class="cars-hover-content">
                     <i class="fa fa-plus fa-3x"></i>
