@@ -54,7 +54,7 @@
                     <td>{{man.name}}</td>
                     <td>${{man.avg_price|number:2}}</td>
                     <td>{{man.avg_horsepower|number:2}}</td>
-                    <td ng-repeat="car in cars" ng-show="car.id === man.max_car_id">{{car.model}}</td>
+                    <td>{{man.max_car}}</td>
                     <td>{{man.num_models}}</td>
                 </tr>
             </tbody>
