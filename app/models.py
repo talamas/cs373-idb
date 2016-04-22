@@ -47,7 +47,7 @@ class Engine(db.Model):
   the engine.
   '''
   id = db.Column(db.Integer, primary_key=True)
-  name = db.Column(db.String(80), unique=True)
+  name = db.Column(db.String(80))
   cylinder = db.Column(db.Integer)
   fuel_type = db.Column(db.String)
   horsepower = db.Column(db.Integer)
