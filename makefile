@@ -39,5 +39,5 @@ test:
 models.html:
 	pydoc -w app.models
 
-IDB2.log:
-	git log > IDB2.log
+IDB3.log:
+	git log > IDB3.log
