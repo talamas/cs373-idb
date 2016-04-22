@@ -78,7 +78,7 @@ sweatRidesApp.service('dataService3', function($http) {
    };
 });
 
-sweatRidesApp.controller("manTableCtrl", function($scope,$location,ManData,dataService2) {
+sweatRidesApp.controller("manTableCtrl", function($scope,$location,ManData,dataService,dataService2) {
    $scope.sortTypeMan     = ''; // set the default sort type
    $scope.sortReverseMan  = false;  // set the default sort order
    $scope.message="ManTable Message";
@@ -90,6 +90,9 @@ sweatRidesApp.controller("manTableCtrl", function($scope,$location,ManData,dataS
    $scope.manufacturers = null;
    dataService2.getData().then(function(response) {
        $scope.manufacturers = response.data;
+   });
+   dataService.getData().then(function(response) {
+       $scope.cars = response.data;
    });
 });
 
