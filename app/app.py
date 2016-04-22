@@ -5,7 +5,7 @@ from sqlalchemy import *
 from flask.ext.script import Manager, Server
 from database import db, app, manager
 from setup_database import create_database
-from models import Car, Manufacturer
+from models import Car, Manufacturer, Engine
 #import requests
 import json
 import os
@@ -42,6 +42,16 @@ def make_man_json(man):
   man_json['most_expensive'] = man.most_expensive
   man_json['avg_horsepower'] = man.avg_horsepower
   return man_json
+
+def make_engine_json(eng):
+  eng_json = {}
+  eng_json['id'] = eng.id
+  eng_json['name'] = eng.name
+  eng_json['cylinder'] = eng.cylinder
+  eng_json['fuel_type'] = eng.fuel_type
+  eng_json['horsepower'] = eng.horsepower
+  eng_json['torque'] = eng.torque
+  return eng_json
 
 def sort_results(lst):
   done = False
@@ -90,10 +100,19 @@ def get_manufacturer(man_id):
   # man = Manufacturer.query.filter(Manufacturer.id.like(manufacturer_id)).all()
   # return jsonify(make_man_json(man))
 
-@app.route('/get_manufacturer_cars/<int:id>')
-def get_manufecturer_cars(id):
-  man_name = makes[id-1]['name']
+@app.route('/get_manufacturer_cars/<int:man_id>')
+def get_manufacturer_cars(man_id):
+  man_name = makes[man_id-1]['name']
   return Response(json.dumps([c for c in cars if c['make'] == man_name]),  mimetype='application/json')
+
+@app.route('/get_engines')
+def get_engines():
+  return Response(json.dumps(engines), mimetype='application/json')
+
+@app.route('/get_engine/<int:eng_id>')
+def get_engine(eng_id):
+  if eng_id < len(engines) and eng_id > 0:
+    return jsonify(engines[eng_id-1])
 
 @app.route('/search/<string:keywords>')
 def search(keywords):
