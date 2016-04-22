@@ -247,9 +247,6 @@ sweatRidesApp.controller("indexCtrl", function($scope,$location,$rootScope, $rou
 sweatRidesApp.controller("searchCtrl", function($scope,$rootScope,$location,dataService,dataService2,dataService3,ManData,CarData,EngineData) {
     console.log("getting here");
 
-
-
-    
     $scope.goToMan= function(man){
       ManData.set(man);
       $scope.selectedItem = man;
@@ -268,6 +265,17 @@ sweatRidesApp.controller("searchCtrl", function($scope,$rootScope,$location,data
        $scope.selectedItem = engine;
        $location.path("/engine_"+engine.id);
     };
+
+    $scope.contains=function(list,i){
+      console.log(list);
+
+      for(var v=0; v <list.length;v++){
+        if (list[v] == i){
+          return true;
+        }
+      }
+      return false;
+    }
 
 });
 
