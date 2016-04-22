@@ -108,15 +108,15 @@ def search(keywords):
         if term.lower() in car['make'].lower():
           if car in results['cars']:
             results['cars'].remove(car)
-          if 3 not in car['matched_terms']:
-            car['matched_terms'].append(3)
+          if 4 not in car['matched_terms']:
+            car['matched_terms'].append(4)
           car['num_matched_terms'] += 1
           results['cars'].append(car)
         if term.lower() in car['model'].lower():
           if car in results['cars']:
             results['cars'].remove(car)
-          if 6 not in car['matched_terms']:
-            car['matched_terms'].append(6)
+          if 7 not in car['matched_terms']:
+            car['matched_terms'].append(7)
           car['num_matched_terms'] += 1
           results['cars'].append(car)
       except:
@@ -126,11 +126,11 @@ def search(keywords):
         if num == car['year']:
           if car in results['cars']:
             results['cars'].remove(car)
-          if 9 not in car['matched_terms']:
-            car['matched_terms'].append(9)
+          if 10 not in car['matched_terms']:
+            car['matched_terms'].append(10)
           car['num_matched_terms'] += 1
           results['cars'].append(car)
-        if num == car['horsepower']:
+        if num in range(car['horsepower'] - 10, car['horsepower'] + 10):
           if car in results['cars']:
             results['cars'].remove(car)
           if 1 not in car['matched_terms']:
@@ -141,11 +141,11 @@ def search(keywords):
         pass
       try:
         num = float(term)
-        if num == car['price']:
+        if num in range(int(round(car['price'])) - 1000, int(round(car['price'])) + 1000):
           if car in results['cars']:
             results['cars'].remove(car)
-          if 8 not in car['matched_terms']:
-            car['matched_terms'].append(8)
+          if 9 not in car['matched_terms']:
+            car['matched_terms'].append(9)
           car['num_matched_terms'] += 1
           results['cars'].append(car)
       except:
@@ -179,14 +179,14 @@ def search(keywords):
         pass
       try:
         num = float(term)
-        if num == round(make['avg_horsepower'], 2):
+        if num in range(int(round(make['avg_horsepower'])) - 10, int(round(make['avg_horsepower'])) + 10):
           if make in results['manufacturers']:
             results['manufacturers'].remove(make)
           if 0 not in make['matched_terms']:
             make['matched_terms'].append(0)
           make['num_matched_terms'] += 1
           results['manufacturers'].append(make)
-        if num == round(make['avg_price'], 2):
+        if num in range(int(round(make['avg_price'])) - 1000, int(round(make['avg_price'])) + 1000):
           if make in results['manufacturers']:
             results['manufacturers'].remove(make)
           if 1 not in make['matched_terms']:
@@ -220,14 +220,14 @@ def search(keywords):
         pass
       try:
         num = int(term)
-        if num == engine['horsepower']:
+        if num in range(engine['horsepower'] - 10, engine['horsepower'] + 10):
           if engine in results['engines']:
             results['engines'].remove(engine)
           if 2 not in engine['matched_terms']:
             engine['matched_terms'].append(2)
           engine['num_matched_terms'] += 1
           results['engines'].append(engine)
-        if num == engine['torque']:
+        if num in range(engine['torque'] - 10, engine['torque'] + 10):
           if engine in results['engines']:
             results['engines'].remove(engine)
           if 7 not in engine['matched_terms']:
