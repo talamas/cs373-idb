@@ -1,3 +1,307 @@
+commit 15103ee39a01fbdffdb95edd9682a9f3cc5eb792
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 21 21:33:31 2016 -0500
+
+    updated backend for new most expensive car property
+
+commit 7d41d6fd9580f5067461610ce3e5e89d93620897
+Author: David Talamas Cano <talamas@cs.utexas.edu>
+Date:   Thu Apr 21 21:26:55 2016 -0500
+
+    fixed sorting for engines
+
+commit 974afff8cfda2bc22d6296963ab0b221bbbea1d6
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 21 21:23:43 2016 -0500
+
+    added max_car
+
+commit c7c63b578a9422936578f3444ffa4447be8d474b
+Merge: 973b850 257a5f8
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 21 21:20:42 2016 -0500
+
+    Merge branch 'project3dev' of https://github.com/talamas/cs373-idb into project3dev
+
+commit 973b850268120751968d6775c26530c76f5515f0
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 21 21:19:59 2016 -0500
+
+    added max car name
+
+commit 257a5f8cdc97da82973adbaa828a5d514b0bffdb
+Author: David Talamas Cano <talamas@cs.utexas.edu>
+Date:   Thu Apr 21 21:19:49 2016 -0500
+
+    getting data correctly from api
+
+commit ffce175438366582142449ccb1352875fef154bf
+Author: getzchris <getzchris@ymail.com>
+Date:   Thu Apr 21 21:17:29 2016 -0500
+
+    extended jsons
+
+commit c4035ce40039fc9172ae931565d5ce480857abfc
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 21 21:04:02 2016 -0500
+
+    changed engines.html
+
+commit 0600ebc2054a6f08c520e16e4be3ce44bf0eee0b
+Merge: d75b6c6 6af0ed3
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 21 20:54:25 2016 -0500
+
+    Merge branch 'project3dev' of https://github.com/talamas/cs373-idb into project3dev
+
+commit 6af0ed3768d2ee9c9ff6fa3d047df5cf70599c57
+Author: Samuely94 <samuel@wireless-10-147-97-206.public.utexas.edu>
+Date:   Thu Apr 21 20:54:16 2016 -0500
+
+    fixed typo
+
+commit d75b6c6bc5409f92af7860ebe310a5a9f58a12ad
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 21 20:54:12 2016 -0500
+
+    changed to search
+
+commit 83f24a9a5a0f968d2250e9e4937cbc8b77482bd0
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 21 20:42:36 2016 -0500
+
+    wrote unit tests for engine model
+
+commit dcab8540537cd41d58ef2bd38a755589eb3b9f93
+Merge: cde63ff 98dde24
+Author: Samuely94 <samuel@wireless-10-147-97-206.public.utexas.edu>
+Date:   Thu Apr 21 20:37:20 2016 -0500
+
+    Merge branch 'project3dev' of https://github.com/talamas/cs373-idb into project3dev
+
+commit cde63ff24e99f5f79325b375e348d4f53b0a097e
+Author: Samuely94 <samuel@wireless-10-147-97-206.public.utexas.edu>
+Date:   Thu Apr 21 20:37:12 2016 -0500
+
+    took id out of engines table
+
+commit 98dde249f176b64c875fff6a0a0a8c4a1a4dea03
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 21 20:36:15 2016 -0500
+
+    added pagination on search
+
+commit c9abdc0180a48140755f2a7870108de77c66223d
+Merge: 8e7e4ec 6538dc0
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 21 20:26:14 2016 -0500
+
+    Merge branch 'project3dev' of https://github.com/talamas/cs373-idb into project3dev
+
+commit 8e7e4ec4034acc15dd7c72c8ee2536e4fc8d39a0
+Merge: 66561e5 27b31a4
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 21 20:25:33 2016 -0500
+
+    changed highlighted idnexes in search
+
+commit 6538dc0cd23b4121f3bc2927c5657fd50f47a5d9
+Merge: 6c89ece 4aab4b5
+Author: Samuely94 <samuel@wireless-10-147-97-206.public.utexas.edu>
+Date:   Thu Apr 21 20:21:18 2016 -0500
+
+    Merge branch 'project3dev' of https://github.com/talamas/cs373-idb into project3dev
+
+commit 6c89ece77884b9e4fe05f9fe8324490dcd2938ad
+Author: Samuely94 <samuel@wireless-10-147-97-206.public.utexas.edu>
+Date:   Thu Apr 21 20:21:01 2016 -0500
+
+    fixed some grammar errors
+
+commit 4aab4b546acec36ba5a19a215ed5b2fb264673e4
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 21 20:20:35 2016 -0500
+
+    added engine API calls
+
+commit 66561e543d261bf09bf8a518c0f501c0f0055ae3
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 21 20:15:42 2016 -0500
+
+    highlight searched terms
+
+commit 27b31a49ae88a9392b4343f3ac2631cb036b2c9c
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 21 20:00:05 2016 -0500
+
+    updated search to return results in reasonable range when a number is searched
+
+commit e0463d0455bad643bcda7286ca5e5293675e210b
+Merge: a35d817 8d67a3f
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 21 19:41:06 2016 -0500
+
+    Merge branch 'project3dev' of https://github.com/talamas/cs373-idb into project3dev
+
+commit a35d817bdf0e251c4b04acb44f8e89cbb1ec52f4
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 21 19:40:43 2016 -0500
+
+    fixed duplicate matches in search results
+
+commit 8d67a3f5db8b1a067df8b5b96f54ec31924e33cc
+Author: getzchris <getzchris@ymail.com>
+Date:   Thu Apr 21 19:39:58 2016 -0500
+
+    fixed json files. Engines now added
+
+commit 9334df790b8afdaab64504a078f07a0ce2de9b5b
+Author: Samuely94 <samuel@wireless-10-147-97-206.public.utexas.edu>
+Date:   Thu Apr 21 19:22:20 2016 -0500
+
+    got rid of search id
+
+commit fda85e10c1b841c4a8e37d892d9eeea286f3c594
+Author: Samuely94 <samuel@wireless-10-147-97-206.public.utexas.edu>
+Date:   Thu Apr 21 19:19:24 2016 -0500
+
+    got rid of id
+
+commit bdea1ab32afa43a0815ea97882382e69b4d3c1b9
+Merge: b711f18 ecefd65
+Author: getzchris <getzchris@ymail.com>
+Date:   Thu Apr 21 19:00:13 2016 -0500
+
+    Merge branch 'project3dev' of https://github.com/talamas/cs373-idb into project3dev
+
+commit b711f1838eefd1a25cb1b285c85f3a793cc62141
+Author: getzchris <getzchris@ymail.com>
+Date:   Thu Apr 21 19:00:04 2016 -0500
+
+    progress on new model. Still some issues linking all models together
+
+commit ecefd65a9f1814f3e2e4a270cd0506ba3541b6b6
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 21 18:59:24 2016 -0500
+
+    marked which terms to highlight in search results
+
+commit d3e14947668b2b87b192a4fb756df2a3b819d2a4
+Author: David Talamas Cano <talamas@cs.utexas.edu>
+Date:   Thu Apr 21 18:53:22 2016 -0500
+
+    search UI working
+
+commit 1cde8700cb8dfe02a4564d3dabd831d01d6e69b7
+Author: Samuely94 <samuel@wireless-10-147-97-206.public.utexas.edu>
+Date:   Thu Apr 21 18:45:57 2016 -0500
+
+    fixed front page
+
+commit 75084d8083c682021068e137a2ecc99c1711a118
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 21 17:09:08 2016 -0500
+
+     changed search html
+
+commit 48b3145775a9c9ec9b543cd8d772aa763c5a7446
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Thu Apr 21 16:34:35 2016 -0500
+
+    made the search result tables
+
+commit 0a0b6cefa0bafa93e079213fc044030afdcbf45c
+Author: talamas <david.talamas@utexas.edu>
+Date:   Thu Apr 21 15:51:12 2016 -0500
+
+    query response passed to frontend
+
+commit 9c8e91f12f7439e6f078c3f421e04c1db6255107
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 21 15:13:48 2016 -0500
+
+    added third model to database and made a template for engine unit tests
+
+commit fe4fcc891751bc17be546c65cca264d4042d497c
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Thu Apr 21 14:53:57 2016 -0500
+
+    fixed issue with search function in python3 and updated home page text
+
+commit 4cc0a5f9afa984375825ce3bda0ba33ef85ae8fd
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Wed Apr 20 23:24:31 2016 -0500
+
+    added search bar and search controller
+
+commit 2bda32148ee75d2eb756c6de84100dc99b876856
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Tue Apr 19 13:02:54 2016 -0500
+
+    Sorted search results to be ordered with greatest number of matched terms first
+
+commit c4acec3e883424a2af2f64ed0ef3e0f026ff40e2
+Author: David Talamas Cano <talamas@cs.utexas.edu>
+Date:   Mon Apr 18 22:24:57 2016 -0500
+
+    adding linconl's file back
+
+commit d1219819e8a692250c89f981e977cc2598eb0b6c
+Merge: fcdce5d a500998
+Author: David Talamas Cano <talamas@cs.utexas.edu>
+Date:   Mon Apr 18 22:22:32 2016 -0500
+
+    rename
+
+commit fcdce5d7b1897acc2474764b9cc22c3a80b33361
+Author: David Talamas Cano <talamas@cs.utexas.edu>
+Date:   Mon Apr 18 22:14:14 2016 -0500
+
+    added third model
+
+commit a5009987d5313acc806c7f3048d2369f194deeba
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Mon Apr 18 22:04:33 2016 -0500
+
+    added basic search functionality for cars, manufacturers, and engines
+
+commit 179de00c5816889293a5d56e62c42d6e641eae06
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Mon Apr 18 21:50:06 2016 -0500
+
+    changed app.js to fit engine controlers
+
+commit 6cc201af9a2c906509a864e85c6b8ab535d5cbb7
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Mon Apr 18 21:32:47 2016 -0500
+
+    added related cars/manufacturer/engines to all htmls
+
+commit 362cd11dc16c2e2cf4b15bd433f70e37fd4d4408
+Merge: 42f5668 281c45d
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Mon Apr 18 21:18:31 2016 -0500
+
+    Merge branch 'project3dev' of https://github.com/talamas/cs373-idb into project3dev
+
+commit 42f56689b251c6d358e06ab7d33e2ba7b4872e82
+Author: Adolfo <muller.adolfo@gmail.com>
+Date:   Mon Apr 18 21:18:17 2016 -0500
+
+    added engine.html and enginesTable.html
+
+commit 281c45da94a510780cc0f1e85fb1f25fa5b0293b
+Author: getzchris <getzchris@ymail.com>
+Date:   Mon Apr 18 21:17:23 2016 -0500
+
+    sample engines list
+
+commit 5e91693d0fba67470893ab89eba69e63f134aa66
+Author: Lincoln Turner <lincoln.turner@utexas.edu>
+Date:   Fri Apr 8 19:48:46 2016 -0500
+
+    committing final changes for IDB2
+
 commit 7bda88b35edc3e78d030d9c06296279b3bd9d2f0
 Author: getzchris <getzchris@ymail.com>
 Date:   Fri Apr 8 19:35:00 2016 -0500

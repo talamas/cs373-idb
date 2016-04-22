@@ -31,6 +31,7 @@
 </font></dt><dd>
 <dl>
 <dt><font face="helvetica, arial"><a href="models.html#Car">Car</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Engine">Engine</a>
 </font></dt><dt><font face="helvetica, arial"><a href="models.html#Manufacturer">Manufacturer</a>
 </font></dt></dl>
 </dd>
@@ -42,8 +43,7 @@
 <font color="#000000" face="helvetica, arial"><a name="Car">class <strong>Car</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
-<td colspan=2><tt>A&nbsp;model&nbsp;for&nbsp;a&nbsp;car,&nbsp;encapsulating&nbsp;the&nbsp;attributes&nbsp;we&nbsp;track&nbsp;for&nbsp;the&nbsp;car<br>
-and&nbsp;foreign&nbsp;key&nbsp;for&nbsp;the&nbsp;manufacturer.<br>&nbsp;</tt></td></tr>
+<td colspan=2><tt>A&nbsp;model&nbsp;for&nbsp;a&nbsp;car,&nbsp;encapsulating&nbsp;the&nbsp;attributes&nbsp;we&nbsp;track&nbsp;for&nbsp;the&nbsp;car.<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="models.html#Car">Car</a></dd>
@@ -71,7 +71,7 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x101a5b890; Car&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x105d03890; Car&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('car', MetaData(bind=None), Column('id', I...orsepower', Integer(), table=&lt;car&gt;), schema=None)</dl>
 
@@ -105,11 +105,77 @@ standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ffc8d8">
 <td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Engine">class <strong>Engine</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;model&nbsp;for&nbsp;an&nbsp;engine,&nbsp;encapsulating&nbsp;the&nbsp;attributes&nbsp;we&nbsp;track&nbsp;for<br>
+the&nbsp;engine.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Engine">Engine</a></dd>
+<dd>flask_sqlalchemy.Model</dd>
+<dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Engine-__init__"><strong>__init__</strong></a>(self, name, cylinder, fuel_type, horsepower, torque)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>cylinder</strong></dt>
+</dl>
+<dl><dt><strong>fuel_type</strong></dt>
+</dl>
+<dl><dt><strong>horsepower</strong></dt>
+</dl>
+<dl><dt><strong>id</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<dl><dt><strong>torque</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x105d424d0; Engine&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('engine', MetaData(bind=None), Column('id'...torque', Integer(), table=&lt;engine&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'engine'</dl>
+
+<hr>
+Methods inherited from flask_sqlalchemy.Model:<br>
+<strong>query</strong> = &lt;flask_sqlalchemy.BaseQuery object&gt;
+<hr>
+Data and other attributes inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>The&nbsp;default&nbsp;query&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as<br>
+:attr:`~SQLAlchemy.Query`.&nbsp;This&nbsp;can&nbsp;be&nbsp;subclassed&nbsp;and<br>
+replaced&nbsp;for&nbsp;individual&nbsp;models&nbsp;by&nbsp;setting&nbsp;the&nbsp;:attr:`~Model.query_class`<br>
+attribute.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;subclass&nbsp;of&nbsp;a&nbsp;standard&nbsp;SQLAlchemy<br>
+:class:`~sqlalchemy.orm.query.Query`&nbsp;class&nbsp;and&nbsp;has&nbsp;all&nbsp;the&nbsp;methods&nbsp;of&nbsp;a<br>
+standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
 <font color="#000000" face="helvetica, arial"><a name="Manufacturer">class <strong>Manufacturer</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
 <td colspan=2><tt>A&nbsp;model&nbsp;for&nbsp;a&nbsp;manufacturer,&nbsp;encapsulating&nbsp;the&nbsp;attributes&nbsp;we&nbsp;track&nbsp;for<br>
-the&nbsp;manufacturer<br>&nbsp;</tt></td></tr>
+the&nbsp;manufacturer.<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="models.html#Manufacturer">Manufacturer</a></dd>
@@ -137,7 +203,7 @@ Data descriptors defined here:<br>
 </dl>
 <hr>
 Data and other attributes defined here:<br>
-<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x101a5bed0; Manufacturer&gt;</dl>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x105d03ed0; Manufacturer&gt;</dl>
 
 <dl><dt><strong>__table__</strong> = Table('manufacturer', MetaData(bind=None), Colum...er', Float(), table=&lt;manufacturer&gt;), schema=None)</dl>
 
