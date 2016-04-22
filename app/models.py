@@ -31,7 +31,7 @@ class Manufacturer(db.Model):
   name = db.Column(db.String(80), unique=True)
   num_models = db.Column(db.Integer)
   avg_price = db.Column(db.Float)
-  most_expensive = db.Column(db.Float)
+  most_expensive = db.Column(db.String)
   avg_horsepower = db.Column(db.Float)
 
   def __init__(self,name,num_models,avg_price,most_expensive,avg_horsepower):

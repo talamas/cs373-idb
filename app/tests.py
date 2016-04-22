@@ -69,13 +69,13 @@ class ManufacturerTests(TestCase):
 
 	def setUp(self):
 		db.create_all()
-		man1 = Manufacturer('chrysler', 3, 32971.67, 104, 291.33)
+		man1 = Manufacturer('chrysler', 3, 32971.67, 'town-and-country', 291.33)
 		db.session.add(man1)
-		man2 = Manufacturer('buick', 3, 31050.0, 68, 236.33)
+		man2 = Manufacturer('buick', 3, 31050.0, 'cascada', 236.33)
 		db.session.add(man2)
-		man3 = Manufacturer('kia', 9, 28725.56, 191, 216.11)
+		man3 = Manufacturer('kia', 9, 28725.56, 'k900', 216.11)
 		db.session.add(man3)
-		man4 = Manufacturer('lexus', 25, 52488.2, 222, 290.32)
+		man4 = Manufacturer('lexus', 25, 52488.2, 'ls-600h-l', 290.32)
 		db.session.add(man4)
 		db.session.commit()
 
@@ -106,7 +106,7 @@ class ManufacturerTests(TestCase):
 		self.assertEqual(len(manufacturers), 1)
 
 	def test_filter_manufacturers_4(self):
-		manufacturers = Manufacturer.query.filter(Manufacturer.most_expensive == 104).all()
+		manufacturers = Manufacturer.query.filter(Manufacturer.most_expensive == 'cascada').all()
 		self.assertEqual(len(manufacturers), 1)
 
 	def test_filter_manufacturers_5(self):
