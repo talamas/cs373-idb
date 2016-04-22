@@ -11,7 +11,7 @@ def create_cars(car_json):
 
 def create_manufacturers(manufacturer_json):
 	for man in manufacturer_json:
-		manufacturer_model = Manufacturer(man['name'], man['num_models'], man['avg_price'], man['max_car_id'], man['avg_horsepower'])
+		manufacturer_model = Manufacturer(man['name'], man['num_models'], man['avg_price'], man['max_car'], man['avg_horsepower'])
 		db.session.add(manufacturer_model)
 		db.session.commit()
 

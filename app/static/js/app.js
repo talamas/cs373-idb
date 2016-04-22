@@ -166,7 +166,7 @@ sweatRidesApp.controller("carCtrl",function($scope,$location,CarData, dataServic
       return 0.5 - Math.random();
     }
     $scope.goToEngine= function(engine) {
-       CarData.set(engine);
+       EngineData.set(engine);
        $scope.selectedItem = engine;
        $location.path("/engine_"+engine.id);
     };
@@ -177,7 +177,7 @@ sweatRidesApp.controller("carCtrl",function($scope,$location,CarData, dataServic
 
 sweatRidesApp.controller("engineCtrl",function($scope,$location,EngineData, dataService, dataService2, ManData,CarData){
     $scope.message="Engine Message";
-    $scope.car = EngineData.get();
+    $scope.engine = EngineData.get();
     $scope.mans = null;
     $scope.goToMan= function(man){
       ManData.set(man);
@@ -264,7 +264,7 @@ sweatRidesApp.controller("searchCtrl", function($scope,$rootScope,$location,data
     };
 
     $scope.goToEngine= function(engine) {
-       CarData.set(engine);
+       EngineData.set(engine);
        $scope.selectedItem = engine;
        $location.path("/engine_"+engine.id);
     };
