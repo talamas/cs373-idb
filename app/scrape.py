@@ -36,7 +36,7 @@ def add_engines(engine, model_id):
   if engine_dict not in engines_list:
     engines_list.append(engine_dict)
     engine_id+=1
-    return engine_id
+    return engine_id-1
   else:
     return (engines_list.index(engine_dict) + 1)
 
