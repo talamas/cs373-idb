@@ -1,15 +1,16 @@
 <section>  
     <div class="container">
         <div class="col-lg-12 text-center">
-            <h2 class="section-heading" style="padding-top:30px">{{engine.attr1}}</h2>
+            <h2 class="section-heading" style="padding-top:30px">{{engine.name}}</h2>
         </div>
         <img class="img-responsive img-centered modal-image" ng-src="{{car.img_url}}" alt="">
         <br>        
 
         <ul class="attribute">
-                    <li>Engine Attr2: {{engine.attr2}}</li>
-                    <li>Engine Attr3: ${{engine.attr3}}</li>
-                    <li>Engine Attr3: {{engine.attr4}}</li>
+                    <li>Num of Cylinders: {{engine.cylinder}}</li>
+                    <li>Horsepower: {{engine.horsepower}}</li>
+                    <li>Torque: {{engine.torque}}</li>
+                    <li>Fuel Type: {{engine.fuelType}}</li>
         </ul>
         <br>
         <br>
