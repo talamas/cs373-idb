@@ -119,20 +119,20 @@ class ManufacturerTests(TestCase):
 		manufacturers = Manufacturer.query.all()
 		self.assertEqual(len(manufacturers), 2)
 
-'''class EngineTests(TestCase):
+class EngineTests(TestCase):
 	def create_app(self):
 		app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
 		return app
 
 	def setUp(self):
 		db.create_all()
-		engine1 = Engine('', , '', , )
+		engine1 = Engine('3.5 V6', 6, 'premium unleaded (recommended)', 279, 252)
 		db.session.add(engine1)
-		engine2 = Engine('', , '', , )
+		engine2 = Engine('Engine', 4, 'regular unleaded', 200, 206)
 		db.session.add(engine2)
-		engine3 = Engine('', , '', , )
+		engine3 = Engine('Engine', 4, 'premium unleaded (required)', 237, 258)
 		db.session.add(engine3)
-		engine4 = Engine('', , '', , )
+		engine4 = Engine('Hybrid', 6, 'premium unleaded (recommended)', 377, 341)
 		db.session.add(engine4)
 		db.session.commit()
 
@@ -144,37 +144,37 @@ class ManufacturerTests(TestCase):
 		self.assertEqual(len(engines), 4)
 
 	def test_add_engine(self):
-		engine = Engine('', , '', , )
+		engine = Engine('Standard', 12, 'premium unleaded (required)', 540, 457)
 		db.session.add(engine)
 		db.session.commit()
 		engines = Engine.query.all()
 		self.assertEqual(len(engines), 5)
 
 	def test_filter_engines_1(self):
-		engines = Engine.query.filter(Engine.name == '').all()
+		engines = Engine.query.filter(Engine.name == 'Engine').all()
 		self.assertEqual(len(engines), 2)
 
 	def test_filter_engines_2(self):
-		engines = Engine.query.filter(Engine.cylinder == ).all()
+		engines = Engine.query.filter(Engine.cylinder == 4).all()
 		self.assertEqual(len(engines), 2)
 
 	def test_filter_engines_3(self):
-		engines = Engine.query.filter(Engine.fuel_type == '').all()
+		engines = Engine.query.filter(Engine.fuel_type == 'premium unleaded (recommended)').all()
 		self.assertEqual(len(engines), 2)
 
 	def test_filter_engines_4(self):
-		engines = Engine.query.filter(Engine.horsepower == ).all()
-		self.assertEqual(len(engines), 2)
+		engines = Engine.query.filter(Engine.horsepower == 279).all()
+		self.assertEqual(len(engines), 1)
 
 	def test_filter_engines_5(self):
-		engines = Engine.query.filter(Engine.torque == ).all()
-		self.assertEqual(len(engines), 2)
+		engines = Engine.query.filter(Engine.torque == 341).all()
+		self.assertEqual(len(engines), 1)
 
 	def test_remove_engine(self):
-		Engine.query.filter(Engine.horsepower == ).delete()
+		Engine.query.filter(Engine.name == 'Engine').delete()
 		db.session.commit()
 		engines = Engine.query.all()
-		self.assertEqual(len(engines), 2)'''
+		self.assertEqual(len(engines), 2)
 
 if __name__ == '__main__':
     unittest.main()

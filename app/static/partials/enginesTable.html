@@ -7,48 +7,38 @@
         <!--Engine Table Section-->
         <table class="table table-hover center-block table-condensed" style="width:500%">
             <thead>
-                <tr>   
-                    <th class="col-md-1" style="width:1%">
-                        <a class="column" href="#/engines" ng-click="sortTypeMan = 'id'; sortReverseMan = !sortReverseMan">
-                            Id
-                            <span ng-show="sortTypeMan =='id' && !sortReverseMan" class="fa fa-caret-down"></span>
-                            <span ng-show="sortTypeMan =='id' &&  sortReverseMan" class="fa fa-caret-up"></span>
-                        </a>
-                    </th>               
-                    <th class="col-md-3" style="width:30">
-                        Engine Attr1
-                    </th>
+                <tr>              
                     <th class="col-md-2">
                         <a class="column" href="#/engines" ng-click="sortTypeMan = 'name'; sortReverseMan = !sortReverseMan">
-                            Engine Attr2
+                            Name
                             <span ng-show="sortTypeMan =='name' && !sortReverseMan" class="fa fa-caret-down"></span>
                             <span ng-show="sortTypeMan =='name' &&  sortReverseMan" class="fa fa-caret-up"></span>
                         </a>
                     </th>
                     <th class="col-md-2">
                         <a class="column" href="#/engines" ng-click="sortTypeMan = 'avg_price'; sortReverseMan = !sortReverseMan">
-                             Engine Attr3
+                             Cyclinder
                             <span ng-show="sortTypeMan =='country' && !sortReverseMan" class="fa fa-caret-down"></span>
                             <span ng-show="sortTypeMan =='country' &&  sortReverseMan" class="fa fa-caret-up"></span>
                         </a>
                     </th>
                     <th class="col-md-2">
                         <a class="column" href="#/engines" ng-click="sortTypeMan = 'avg_horsepower'; sortReverseMan = !sortReverseMan">
-                             Engine Attr4
+                             Horsepower
                             <span ng-show="sortTypeMan =='avgSafety' && !sortReverseMan" class="fa fa-caret-down"></span>
                             <span ng-show="sortTypeMan =='avgSafety' &&  sortReverseMan" class="fa fa-caret-up"></span>
                         </a>
                     </th>
                     <th class="col-md-2">
                         <a class="column" href="#/engines" ng-click="sortTypeMan = 'avg_price'; sortReverseMan = !sortReverseMan">
-                              Engine Attr5
+                              Torque
                             <span ng-show="sortTypeMan =='avgPrice' && !sortReverseMan" class="fa fa-caret-down"></span>
                             <span ng-show="sortTypeMan =='avgPrice' &&  sortReverseMan" class="fa fa-caret-up"></span>
                         </a>
                     </th>
                     <th class="col-md-1">
                         <a class="column" href="#/engines" ng-click="sortTypeMan = 'num_models'; sortReverseMan = !sortReverseMan">
-                             Engine Attr6
+                             Fuel Type
                             <span ng-show="sortTypeMan =='modelsNum' && !sortReverseMan" class="fa fa-caret-down"></span>
                             <span ng-show="sortTypeMan =='modelsNum' &&  sortReverseMan" class="fa fa-caret-up"></span>
                         </a>
@@ -57,8 +47,6 @@
             </thead>
             <tbody>           
                 <tr dir-paginate="engine in engines | orderBy:sortTypeMan:sortReverseMan | itemsPerPage:10" data-target="{{engine.dataTarget}}" class="cars-link" data-toggle="modal" ng-click="goToEngine(engine)">
-                    <td>{{engine.id}}</td>
-                    <td><img ng-src='{{engine.attr1}}' class="img-responsive  img.manufacturer"  alt=""> </td>
                     <td>{{engine.name}}</td>
                     <td>{{engine.cylinder}}</td>
                     <td>{{engine.horsepower}}</td>
