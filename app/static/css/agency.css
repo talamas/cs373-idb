@@ -706,6 +706,16 @@ td{
 div.with-padding{
 	padding-top: 200px;
 }
+div.adverts{
+	width: auto;
+    height: auto;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    margin-left: 200px;
+}
 .btn-lg
 {
 	color:#fff;

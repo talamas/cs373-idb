@@ -60,7 +60,48 @@
             </tbody>
         </table><dir-pagination-controls max-size="7" direction-links="true" boundary-links="true"></dir-pagination-controls>
     </div>
+    <!--
     {{restaurant}}
     <-------------
        {{attraction}}
+    <h3>{{restaurant.address}}</h3>
+    <h3>{{restaurant.category}}</h3>
+    <h3>{{restaurant.city_id}}</h3>
+    <h3>{{restaurant.id}}</h3>
+    <h3>{{restaurant.image}}</h3>
+    <h3>{{restaurant.name}}</h3>
+    <h3>{{restaurant.rating}}</h3>
+
+    <h3>{{attraction.category}}</h3>
+    <h3>{{attraction.city_id}}</h3>
+    <h3>{{attraction.image}}</h3>
+    <h3>{{attraction.name}}</h3>
+    <h3>{{attraction.num_reviews}}</h3>
+    <h3>{{attraction.rating}}</h3>
+--><br>
+    <h2 align="center">ADVERTISEMENTS</h2>
+    <div class="row adverts">
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <img ng-src='{{restaurant.image}}' class="img-responsive"  alt="">
+                <div class="caption">
+                    <h4><a href="">{{restaurant.name}}</a>
+                    </h4>
+                    <p>This {{restaurant.category}} is located at {{restaurant.address}}.</p>
+                    <p>Rating: {{restaurant.rating}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <img ng-src='{{attraction.image}}' class="img-responsive"  alt="">
+                <div class="caption">
+                    <h4><a href="">{{attraction.name}}</a>
+                    </h4>
+                    <p>This {{attraction.category}} has {{attraction.num_reviews}} reviews.</p>
+                    <p>Rating: {{attraction.rating}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
