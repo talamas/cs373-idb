@@ -288,6 +288,18 @@ def get_restaurant(rest_id):
   restaurant = requests.get(url)
   return jsonify(restaurant.json())
 
+@app.route('/get_city/<int:city_id>')
+def get_city(city_id):
+  city = {'city' : {}, 'attractions' : [], 'restaurants' : []}
+  url = 'http://sweetspots.me/api/cities/' + str(city_id)
+  city['city'] = requests.get(url).json()
+  for i in range(city_id * 3 - 2, city_id * 3 + 1):
+    attraction_url = 'http://sweetspots.me/api/attractions/' + str(i)
+    city['attractions'].append(requests.get(attraction_url).json())
+    restaurant_url = 'http://sweetspots.me/api/restaurants/' + str(i)
+    city['restaurants'].append(requests.get(restaurant_url).json())
+  return jsonify(city)
+
 @app.route('/unit_tests')
 def unit_tests():
   output = subprocess.getoutput("python tests.py")
