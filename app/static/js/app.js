@@ -37,6 +37,10 @@ var sweatRidesApp = angular.module("sweatRidesApp", ["ngRoute","angularUtils.dir
             templateUrl: '../partials/search.html',
             controller: 'searchCtrl',
          })
+         .when('/new_:id', {
+            templateUrl: '../partials/new.html',
+            controller: 'newCtrl',
+         })
          .otherwise({redirectTo: '/home'});
 }]);
 
@@ -82,6 +86,22 @@ sweatRidesApp.service('dataService6', function($http) {
       });
    };
 });
+
+/*
+sweatRidesApp.service('dataService7', function($http) {
+   delete $http.defaults.headers.common['X-Requested-With'];
+   this.getData = function() {
+       console.log("dataservice7");
+       // $http() returns a $promise that we can add handlers with .then()
+       var id = Math.floor(Math.random() * (150 - 0));
+      return $http({
+         method: 'GET',
+         //url: 'http://sweetrides.me/get_manufacturers',
+    url: '/get_restaurant/'+id,
+         headers: {'Authorization': 'Token token=xxxxYYYYZzzz'}
+      });
+   };
+});*/
 
 
 
@@ -299,29 +319,23 @@ sweatRidesApp.controller("indexCtrl", function($scope,$location,$rootScope, $rou
 
 sweatRidesApp.controller("searchCtrl", function($scope,$rootScope,$location,dataService,dataService2,dataService3,ManData,CarData,EngineData) {
     console.log("getting here");
-
     $scope.goToMan= function(man){
       ManData.set(man);
       $scope.selectedItem = man;
       $location.path("/man_"+man.id);
     };
-
- 
     $scope.goToCar= function(car) {
       CarData.set(car);
       $scope.selectedItem = car;
       $location.path("/car_"+car.id);
     };
-
     $scope.goToEngine= function(engine) {
        EngineData.set(engine);
        $scope.selectedItem = engine;
        $location.path("/engine_"+engine.id);
     };
-
     $scope.contains=function(list,i){
       console.log(list);
-
       for(var v=0; v <list.length;v++){
         if (list[v] == i){
           return true;
@@ -330,6 +344,22 @@ sweatRidesApp.controller("searchCtrl", function($scope,$rootScope,$location,data
       return false;
     }
 
+});
+
+sweatRidesApp.controller("newCtrl", function($scope,$location) {
+   $scope.sortType     = ''; // set the default sort type
+   $scope.sortReverse  = false;  // set the default sort order
+   /*
+   $scope.goToCity= function(city) {
+      CityData.set(city);
+      $scope.selectedItem = city;
+      $location.path("/city_"+city.id);
+   };
+   $scope.cities =null;
+    dataService7.getData().then(function(response) {
+  $scope.cities = response.data;
+    });
+*/
 });
 
 sweatRidesApp.service('dataService', function($http) {
