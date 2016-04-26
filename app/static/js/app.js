@@ -53,6 +53,38 @@ sweatRidesApp.service('dataService2', function($http) {
    };
 });
 
+sweatRidesApp.service('dataService5', function($http) {
+   delete $http.defaults.headers.common['X-Requested-With'];
+   this.getData = function() {
+       console.log("dataservice5");
+       // $http() returns a $promise that we can add handlers with .then()
+       var id = Math.floor(Math.random() * (150 - 0));
+      return $http({
+         method: 'GET',
+         //url: 'http://sweetrides.me/get_manufacturers',
+	  url: '/get_restaurant/'+id,
+         headers: {'Authorization': 'Token token=xxxxYYYYZzzz'}
+      });
+   };
+});
+
+sweatRidesApp.service('dataService6', function($http) {
+   delete $http.defaults.headers.common['X-Requested-With'];
+   this.getData = function() {
+       console.log("dataservice6");
+       // $http() returns a $promise that we can add handlers with .then()
+       var id = Math.floor(Math.random() * (150 - 0));
+      return $http({
+         method: 'GET',
+         //url: 'http://sweetrides.me/get_manufacturers',
+	  url: '/get_attraction/'+id,
+         headers: {'Authorization': 'Token token=xxxxYYYYZzzz'}
+      });
+   };
+});
+
+
+
 sweatRidesApp.service('dataService4', function($http) {
    delete $http.defaults.headers.common['X-Requested-With'];
    this.getData = function(q) {
@@ -78,7 +110,7 @@ sweatRidesApp.service('dataService3', function($http) {
    };
 });
 
-sweatRidesApp.controller("manTableCtrl", function($scope,$location,ManData,dataService,dataService2) {
+sweatRidesApp.controller("manTableCtrl", function($scope,$location,ManData,dataService,dataService2, dataService5, dataService6) {
    $scope.sortTypeMan     = ''; // set the default sort type
    $scope.sortReverseMan  = false;  // set the default sort order
    $scope.message="ManTable Message";
@@ -94,9 +126,15 @@ sweatRidesApp.controller("manTableCtrl", function($scope,$location,ManData,dataS
    dataService.getData().then(function(response) {
        $scope.cars = response.data;
    });
+    dataService5.getData().then(function(response) {
+	$scope.restaurant = response.data;
+    });
+    dataService6.getData().then(function(response) {
+	$scope.attraction = response.data;
+    });
 });
 
-sweatRidesApp.controller("carsTableCtrl", function($scope,$location,CarData, dataService) {
+sweatRidesApp.controller("carsTableCtrl", function($scope,$location,CarData, dataService, dataService5, dataService6) {
    $scope.sortType     = ''; // set the default sort type
    $scope.sortReverse  = false;  // set the default sort order
    $scope.goToCar= function(car) {
@@ -106,11 +144,17 @@ sweatRidesApp.controller("carsTableCtrl", function($scope,$location,CarData, dat
    };
    $scope.cars =null;
    dataService.getData().then(function(response) {
-      $scope.cars = response.data;
+       $scope.cars = response.data;
    });
+    dataService5.getData().then(function(response) {
+	$scope.restaurant = response.data;
+    });
+    dataService6.getData().then(function(response) {
+	$scope.attraction = response.data;
+    });
 });
 
-sweatRidesApp.controller("enginesTableCtrl", function($scope,$location,EngineData, dataService3) {
+sweatRidesApp.controller("enginesTableCtrl", function($scope,$location,EngineData, dataService3, dataService5, dataService6) {
    $scope.sortType     = ''; // set the default sort type
    $scope.sortReverse  = false;  // set the default sort order
    $scope.goToEngine= function(engine) {
@@ -122,6 +166,12 @@ sweatRidesApp.controller("enginesTableCtrl", function($scope,$location,EngineDat
    dataService3.getData().then(function(response) {
       $scope.engines = response.data;
    });
+    dataService5.getData().then(function(response) {
+	$scope.restaurant = response.data;
+    });
+    dataService6.getData().then(function(response) {
+	$scope.attraction = response.data;
+    });
 });
 
 sweatRidesApp.controller("manCtrl", function($scope,$location,ManData, dataService, dataService3, CarData, EngineData){
