@@ -6,7 +6,7 @@ from flask.ext.script import Manager, Server
 from database import db, app, manager
 from setup_database import create_database
 from models import Car, Manufacturer, Engine
-#import requests
+import requests
 import json
 import os
 import sys
@@ -275,6 +275,18 @@ def search(keywords):
   sort_results(results['engines'])
 
   return jsonify(results)
+
+@app.route('/get_attraction/<int:attr_id>')
+def get_attraction(attr_id):
+  url = 'http://sweetspots.me/api/attractions/' + str(attr_id)
+  attraction = requests.get(url)
+  return jsonify(attraction.json())
+
+@app.route('/get_restaurant/<int:rest_id>')
+def get_restaurant(rest_id):
+  url = 'http://sweetspots.me/api/restaurants/' + str(rest_id)
+  restaurant = requests.get(url)
+  return jsonify(restaurant.json())
 
 @app.route('/unit_tests')
 def unit_tests():
