@@ -37,7 +37,7 @@ var sweatRidesApp = angular.module("sweatRidesApp", ["ngRoute","angularUtils.dir
             templateUrl: '../partials/search.html',
             controller: 'searchCtrl',
          })
-         .when('/new_:id', {
+         .when("/new_:id", {
             templateUrl: '../partials/new.html',
             controller: 'newCtrl',
          })
@@ -146,7 +146,7 @@ sweatRidesApp.service('dataService3', function($http) {
    };
 });
 
-sweatRidesApp.controller("manTableCtrl", function($scope,$location,ManData, CityData,dataService,dataService2, dataService5, dataService6, dataservice7) {
+sweatRidesApp.controller("manTableCtrl", function($scope,$location,ManData, CityData,dataService,dataService2, dataService5, dataService6, dataService7) {
    $scope.sortTypeMan     = ''; // set the default sort type
    $scope.sortReverseMan  = false;  // set the default sort order
    $scope.message="ManTable Message";
@@ -168,15 +168,16 @@ sweatRidesApp.controller("manTableCtrl", function($scope,$location,ManData, City
     dataService6.getData().then(function(response) {
 	$scope.attraction = response.data;
     });
+  
   $scope.goToCity = function(city_id){
-    CityData.set(dataservice7.getData(city_id).then(function(response){
-      $scope.cities = response.data;
-    }))
-    $location.path("new_:"+city_id);
+    dataService7.getData(city_id).then(function(response){
+      CityData.set(response.data);
+    })
+    $location.path("new_"+city_id);
   }
 });
 
-sweatRidesApp.controller("carsTableCtrl", function($scope,$location,CarData,CityData, dataService, dataService5, dataService6, dataservice7) {
+sweatRidesApp.controller("carsTableCtrl", function($scope,$location,CarData,CityData, dataService, dataService5, dataService6, dataService7) {
    $scope.sortType     = ''; // set the default sort type
    $scope.sortReverse  = false;  // set the default sort order
    $scope.goToCar= function(car) {
@@ -202,7 +203,7 @@ sweatRidesApp.controller("carsTableCtrl", function($scope,$location,CarData,City
   }
 });
 
-sweatRidesApp.controller("enginesTableCtrl", function($scope,$location,EngineData,CityData, dataService3, dataService5, dataService6, dataservice7) {
+sweatRidesApp.controller("enginesTableCtrl", function($scope,$location,EngineData,CityData, dataService3, dataService5, dataService6, dataService7) {
    $scope.sortType     = ''; // set the default sort type
    $scope.sortReverse  = false;  // set the default sort order
    $scope.goToEngine= function(engine) {

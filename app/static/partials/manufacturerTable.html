@@ -82,7 +82,7 @@
     <h2 align="center">ADVERTISEMENTS</h2>
     <div class="row adverts">
         <div class="col-sm-4 col-lg-4 col-md-4">
-            <div class="thumbnail" ng-click="goToCity({{restaurant.city_id}})">
+            <div class="thumbnail" ng-click="goToCity(restaurant.city_id)">
                 <img ng-src='{{restaurant.image}}' class="img-responsive"  alt="">
                 <div class="caption">
                     <h4><a href="">{{restaurant.name}}</a>
@@ -93,7 +93,7 @@
             </div>
         </div>
         <div class="col-sm-4 col-lg-4 col-md-4">
-            <div class="thumbnail" ng-click="goToCity({{attraction.city_id}}">
+            <div class="thumbnail" ng-click="goToCity(attraction.city_id)">
                 <img ng-src='{{attraction.image}}' class="img-responsive"  alt="">
                 <div class="caption">
                     <h4><a href="">{{attraction.name}}</a>
