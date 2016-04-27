@@ -90,7 +90,7 @@ sweatRidesApp.service('dataService6', function($http) {
 sweatRidesApp.service('dataService7', function($http) {
    delete $http.defaults.headers.common['X-Requested-With'];
    this.getData = function(id) {
-       console.log("dataservice7");
+       console.log("dataService7");
        // $http() returns a $promise that we can add handlers with .then()
       return $http({
          method: 'GET',
@@ -196,10 +196,10 @@ sweatRidesApp.controller("carsTableCtrl", function($scope,$location,CarData,City
 	$scope.attraction = response.data;
     });
   $scope.goToCity = function(city_id){
-    CityData.set(dataservice7.getData(city_id).then(function(response){
-      $scope.cities = response.data;
-    }))
-    $location.path("new_:"+city_id);
+    dataService7.getData(city_id).then(function(response){
+      CityData.set(response.data);
+    })
+    $location.path("new_"+city_id);
   }
 });
 
@@ -222,10 +222,10 @@ sweatRidesApp.controller("enginesTableCtrl", function($scope,$location,EngineDat
 	$scope.attraction = response.data;
     });
   $scope.goToCity = function(city_id){
-    CityData.set(dataservice7.getData(city_id).then(function(response){
-      $scope.cities = response.data;
-    }))
-    $location.path("new_:"+city_id);
+    dataService7.getData(city_id).then(function(response){
+      CityData.set(response.data);
+    })
+    $location.path("new_"+city_id);
   }
 });
 
@@ -381,7 +381,7 @@ sweatRidesApp.controller("searchCtrl", function($scope,$rootScope,$location,data
 
 });
 
-sweatRidesApp.controller("newCtrl", function($scope,$location) {
+sweatRidesApp.controller("newCtrl", function($scope,$location, CityData) {
    $scope.sortType     = ''; // set the default sort type
    $scope.sortReverse  = false;  // set the default sort order
    $scope.cities = CityData.get();
