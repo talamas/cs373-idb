@@ -1,0 +1,78 @@
+<section>   
+    <div class="container" >
+        <div class="col-lg-12 text-center">
+            <h2 class="section-heading" style="padding-top:30px">City</h2>
+            <h3 class="section-subheading text-muted">SWEet Spots.</h3>
+        </div>
+        <div class="col-lg-12 text-center">
+            <h2 class="section-heading" style="padding-top:30px">{{cities.city.name}}, {{cities.city.country}}</h2>
+        </div>
+        <img class="img-responsive img-centered modal-image" ng-src="{{cities.city.image}}" alt="">
+        <br>        
+        <ul class="attribute">
+            <li>{{cities.city.description}}</li>
+            <li>Population: {{cities.city.population}}</li>
+            <li>Elevation: {{cities.city.elevation}}</li>
+        </ul>
+        <br>
+        <br>
+        <!--Attraction Table Section-->
+        <h2>Attractions</h2>
+        <table class="table table-hover center-block table-condensed" style="width:500%">
+            <thead>
+                <tr>                
+                    <th class="col-md-3" style="width:30">
+                        Image
+                    </th>
+                    <th class="col-md-2">
+                        <a class="column" href="#/news" ng-click="sortTypeMan = 'name'; sortReverseMan = !sortReverseMan">
+                            Name
+                            <span ng-show="sortTypeMan =='name' && !sortReverseMan" class="fa fa-caret-down"></span>
+                            <span ng-show="sortTypeMan =='name' &&  sortReverseMan" class="fa fa-caret-up"></span>
+                        </a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>           
+                <tr>
+                    <tr dir-paginate="attraction in cities.attractions | orderBy:sortTypeMan:sortReverseMan | itemsPerPage:10" data-target="{{man.dataTarget}}" class="cars-link" data-toggle="modal" ng-click="goToMan(attraction.city_id)">
+                    <td><img ng-src='{{attraction.image}}' class="img-responsive  img.manufacturer"  alt=""> </td>
+                    <td>{{attraction.name}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <h2>Restaurants</h2>
+        <table class="table table-hover center-block table-condensed" style="width:500%">
+            <thead>
+                <tr>                
+                    <th class="col-md-3" style="width:30">
+                        Image
+                    </th>
+                    <th class="col-md-2">
+                        <a class="column" href="#/news" ng-click="sortTypeMan = 'name'; sortReverseMan = !sortReverseMan">
+                            Name
+                            <span ng-show="sortTypeMan =='name' && !sortReverseMan" class="fa fa-caret-down"></span>
+                            <span ng-show="sortTypeMan =='name' &&  sortReverseMan" class="fa fa-caret-up"></span>
+                        </a>
+                    </th>
+                    <th class="col-md-2">
+                        <a class="column" href="#/news" ng-click="sortTypeMan = 'address'; sortReverseMan = !sortReverseMan">
+                            Address
+                            <span ng-show="sortTypeMan =='name' && !sortReverseMan" class="fa fa-caret-down"></span>
+                            <span ng-show="sortTypeMan =='name' &&  sortReverseMan" class="fa fa-caret-up"></span>
+                        </a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>           
+                <tr>
+                    <tr dir-paginate="restaurant in cities.restaurants | orderBy:sortTypeMan:sortReverseMan | itemsPerPage:10" data-target="{{man.dataTarget}}" class="cars-link" data-toggle="modal" ng-click="goToCity(restaurant.city_id)">
+                    <td><img ng-src='{{restaurant.image}}' class="img-responsive  img.manufacturer"  alt=""> </td>
+                    <td>{{restaurant.name}}</td>
+                    <td>{{restaurant.address}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

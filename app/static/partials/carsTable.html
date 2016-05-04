@@ -61,4 +61,30 @@
     	
         </table><dir-pagination-controls max-size="7" direction-links="true" boundary-links="true"></dir-pagination-controls>
     </div>
+     <br>
+    <h2 align="center">ADVERTISEMENTS</h2>
+    <div class="row adverts">
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail" ng-click="goToCity(restaurant.city_id)">
+                <img ng-src='{{restaurant.image}}' class="img-responsive"  alt="">
+                <div class="caption">
+                    <h4><a href="">{{restaurant.name}}</a>
+                    </h4>
+                    <p>This {{restaurant.category}} is located at {{restaurant.address}}.</p>
+                    <p>Rating: {{restaurant.rating}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail" ng-click="goToCity(attraction.city_id)">
+                <img ng-src='{{attraction.image}}' class="img-responsive"  alt="">
+                <div class="caption">
+                    <h4><a href="">{{attraction.name}}</a>
+                    </h4>
+                    <p>This {{attraction.category}} has {{attraction.num_reviews}} reviews.</p>
+                    <p>Rating: {{attraction.rating}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
